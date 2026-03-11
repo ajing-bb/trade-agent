@@ -1,0 +1,5 @@
+[mcp_servers.onchainos-mcp]
+url = "https://web3.okx.com/api/v1/onchainos-mcp"
+
+[mcp_servers.onchainos-mcp.http_headers]
+OK-ACCESS-KEY = "2b5fac96-243e-47a8-aeda-b443db6197d4"
