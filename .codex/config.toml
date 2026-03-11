@@ -4,12 +4,7 @@ url = "https://web3.okx.com/api/v1/onchainos-mcp"
 [mcp_servers.onchainos-mcp.http_headers]
 OK-ACCESS-KEY = "2b5fac96-243e-47a8-aeda-b443db6197d4"
 
-[mcp_servers.okx-trade-market]
-command = "npx"
-args = ["-y", "@okx_ai/okx-trade-mcp", "--modules", "market"]
-startup_timeout_sec = 30.0
-
 [mcp_servers.okx-trade]
-command = "zsh"
-args = ["-lc", "set -a && source /Users/fayon/workspace/github/pnpm/trade-agent/.env && set +a && export OKX_API_KEY=\"${OKX_API_CEX_KEY:-$OKX_API_KEY}\" && export OKX_SECRET_KEY=\"${OKX_SECRET_CEX_KEY:-$OKX_SECRET_KEY}\" && export OKX_PASSPHRASE=\"${OKX_PASSPHRASE_CEX:-$OKX_PASSPHRASE}\" && exec npx -y @okx_ai/okx-trade-mcp --modules all"]
+command = "npx"
+args = ["-y", "@okx_ai/okx-trade-mcp", "--profile", "live", "--modules", "all"]
 startup_timeout_sec = 30.0
