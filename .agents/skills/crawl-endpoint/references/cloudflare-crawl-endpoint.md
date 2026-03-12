@@ -1,6 +1,6 @@
 # Cloudflare Browser Rendering `/crawl`
 
-Last checked: 2026-03-11
+Last checked: 2026-03-12
 
 Official sources:
 
@@ -155,6 +155,22 @@ If the crawl stays `running` too long:
 - Lower `limit` and split the crawl into multiple smaller jobs.
 - Block unneeded resources with `rejectResourceTypes`.
 - Expect slowdown if the site enforces rate limits; Cloudflare documents backoff and `crawl-delay` compliance.
+
+## Practical Notes For This Repo
+
+The local helper script lives at `scripts/cloudflare-crawl.mjs` and wraps the REST lifecycle:
+
+- Create: `node scripts/cloudflare-crawl.mjs --url https://example.com`
+- Read an existing job: `node scripts/cloudflare-crawl.mjs --job-id <uuid>`
+- Cache-only reuse: `node scripts/cloudflare-crawl.mjs --url https://example.com --cache-only`
+- Force a fresh create: `node scripts/cloudflare-crawl.mjs --url https://example.com --refresh`
+- Full advanced body: `node scripts/cloudflare-crawl.mjs --body-file .tmp/crawl-body.json`
+
+Observed behavior in this repo on 2026-03-12:
+
+- A just-created job may briefly return `404 Crawl job not found` during the first poll. Treat this as transient and retry.
+- A Workers Free account may return `429 Rate limit exceeded` on `POST /crawl` after quota is consumed. Reusing an existing `jobId` still works as long as the result has not expired.
+- Reusing an old `jobId` avoids creating a new crawl job, but `GET` requests still count against the REST API rate limit.
 
 If JSON extraction looks wrong:
 

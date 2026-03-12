@@ -1,4 +1,4 @@
 interface:
   display_name: "Cloudflare Crawl Endpoint"
-  short_description: "Plan and troubleshoot Cloudflare /crawl"
-  default_prompt: "Use $crawl-endpoint to design a Cloudflare Browser Rendering /crawl job with the right filters, polling, and limits."
+  short_description: "Run and troubleshoot Cloudflare /crawl jobs"
+  default_prompt: "Use $crawl-endpoint to design, execute, or debug a Cloudflare Browser Rendering /crawl job, reusing job ids when possible and applying the right filters, auth, polling, and limits."
