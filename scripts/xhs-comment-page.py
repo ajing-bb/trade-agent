@@ -230,6 +230,7 @@ def fetch_thread_via_browser(
     top_comment_id: str,
     browser_executable: str,
     headless: bool,
+    max_root_scrolls: int,
     max_expand_clicks: int,
     expand_wait_ms: int,
 ) -> dict[str, Any]:
@@ -257,6 +258,20 @@ def fetch_thread_via_browser(
             page.goto(note_url, wait_until="networkidle", timeout=60000)
 
             root_locator = page.locator(f"#comment-{top_comment_id}").first
+            scroller = page.locator(".note-scroller").first
+            for _ in range(max_root_scrolls):
+                if root_locator.count() > 0:
+                    break
+                if scroller.count() == 0:
+                    break
+                scroller.evaluate(
+                    """(el) => {
+                        el.scrollTop = el.scrollHeight;
+                        el.dispatchEvent(new Event("scroll"));
+                    }"""
+                )
+                page.wait_for_timeout(expand_wait_ms)
+
             root_locator.wait_for(timeout=60000)
             root_locator.scroll_into_view_if_needed()
 
@@ -345,6 +360,12 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         help="Show the browser window instead of running headless.",
     )
     parser.add_argument(
+        "--max-root-scrolls",
+        type=int,
+        default=80,
+        help="Maximum comment-list scrolls to locate the target root comment. Default: 80.",
+    )
+    parser.add_argument(
         "--max-expand-clicks",
         type=int,
         default=10,
@@ -361,12 +382,20 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
 def main(argv: list[str]) -> int:
     args = parse_args(argv)
-    if args.max_pages <= 0 or args.max_expand_clicks <= 0 or args.expand_wait_ms <= 0:
+    if (
+        args.max_pages <= 0
+        or args.max_root_scrolls <= 0
+        or args.max_expand_clicks <= 0
+        or args.expand_wait_ms <= 0
+    ):
         emit({
             "ok": False,
             "error": {
                 "code": "invalid_argument",
-                "message": "--max-pages, --max-expand-clicks, and --expand-wait-ms must be positive integers.",
+                "message": (
+                    "--max-pages, --max-root-scrolls, --max-expand-clicks, "
+                    "and --expand-wait-ms must be positive integers."
+                ),
             },
         })
         return 1
@@ -396,6 +425,7 @@ def main(argv: list[str]) -> int:
                 top_comment_id=args.top_comment_id,
                 browser_executable=detect_browser_executable(args.browser_executable),
                 headless=not args.headed,
+                max_root_scrolls=args.max_root_scrolls,
                 max_expand_clicks=args.max_expand_clicks,
                 expand_wait_ms=args.expand_wait_ms,
             )
@@ -408,6 +438,7 @@ def main(argv: list[str]) -> int:
                     "cookie_source": args.cookie_source,
                     "browser": cookie_browser,
                     "top_comment_id": args.top_comment_id,
+                    "max_root_scrolls": args.max_root_scrolls,
                     "max_expand_clicks": args.max_expand_clicks,
                     "expand_wait_ms": args.expand_wait_ms,
                 },
