@@ -1,4 +1,6 @@
 .env
 .tmp
 .codex-artifacts
-reports
+reports/
+__pycache__/
+*.pyc

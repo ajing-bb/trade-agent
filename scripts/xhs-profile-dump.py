@@ -189,6 +189,17 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         default=40,
         help="Maximum relevant threads to expand via browser.",
     )
+    parser.add_argument(
+        "--comment-scope",
+        choices=("author-only", "author-complete", "all"),
+        default="author-only",
+        help=(
+            "Which comments to keep in the dataset. "
+            "'author-only' stores only threads where the author spoke; "
+            "'author-complete' expands all hidden-reply threads and then keeps only threads where the author spoke; "
+            "'all' preserves every fetched comment. Default: author-only."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -293,6 +304,98 @@ def sanitize_comment(comment: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def is_author_user(user_info: dict[str, Any] | None, author_id: str) -> bool:
+    return str((user_info or {}).get("user_id") or "") == author_id
+
+
+def filter_comment_by_scope(
+    sanitized_comment: dict[str, Any],
+    *,
+    comment_scope: str,
+    author_id: str,
+) -> dict[str, Any] | None:
+    if comment_scope == "all":
+        return sanitized_comment
+
+    top_is_author = is_author_user(sanitized_comment.get("user_info"), author_id)
+    author_replies = [
+        reply
+        for reply in sanitized_comment.get("sub_comments", [])
+        if is_author_user(reply.get("user_info"), author_id)
+    ]
+    should_keep = top_is_author or bool(author_replies)
+    if comment_scope == "author-complete":
+        should_keep = should_keep or bool(sanitized_comment.get("sub_comment_has_more"))
+
+    if not should_keep:
+        return None
+
+    filtered = dict(sanitized_comment)
+    filtered["author_top_comment"] = top_is_author
+    filtered["author_visible_reply_count"] = len(author_replies)
+    filtered["author_candidate_thread"] = (
+        comment_scope == "author-complete"
+        and bool(sanitized_comment.get("sub_comment_has_more"))
+        and not top_is_author
+        and not author_replies
+    )
+    filtered["sub_comments"] = author_replies
+    return filtered
+
+
+def should_expand_thread(
+    sanitized_comment: dict[str, Any],
+    *,
+    comment_scope: str,
+    author_id: str,
+) -> bool:
+    if not sanitized_comment.get("sub_comment_has_more"):
+        return False
+    if comment_scope == "all":
+        return thread_is_relevant(sanitized_comment)
+    if comment_scope == "author-complete":
+        return True
+
+    if is_author_user(sanitized_comment.get("user_info"), author_id):
+        return True
+    return any(
+        is_author_user(reply.get("user_info"), author_id)
+        for reply in sanitized_comment.get("sub_comments", [])
+    )
+
+
+def filter_expanded_thread_by_scope(
+    expanded_payload: dict[str, Any] | None,
+    *,
+    comment_scope: str,
+) -> dict[str, Any] | None:
+    if expanded_payload is None or comment_scope == "all":
+        return expanded_payload
+    if not expanded_payload.get("ok"):
+        return expanded_payload
+
+    data = expanded_payload.get("data") or {}
+    root_comment = data.get("root_comment") or {}
+    author_replies = [
+        reply
+        for reply in data.get("replies", [])
+        if reply.get("is_author")
+    ]
+    root_is_author = bool(root_comment.get("is_author"))
+    filtered = {
+        **expanded_payload,
+        "data": {
+            **data,
+            "root_comment": root_comment,
+            "reply_count": len(author_replies),
+            "replies": author_replies,
+            "author_top_comment": root_is_author,
+            "has_author_content": bool(root_is_author or author_replies),
+        },
+    }
+    return filtered
+
+
 def expand_thread(note_url: str, comment_id: str) -> dict[str, Any] | None:
     if not THREAD_SCRIPT.exists():
         return None
@@ -344,11 +447,16 @@ def main(argv: list[str]) -> int:
             "cookie_source": args.cookie_source,
             "browser": browser,
             "user_id": args.user_id,
+            "comment_scope": args.comment_scope,
             "profile": payload["profile"],
             "notes": [],
         }
 
         expanded_threads = 0
+        author_id = str(
+            payload["profile"].get("basic_info", {}).get("user_id")
+            or args.user_id
+        )
 
         browser, _ = run_client_action(args.cookie_source, lambda client: True)
         result["browser"] = browser
@@ -370,32 +478,80 @@ def main(argv: list[str]) -> int:
             )
             comments = comments_data.get("comments", [])
             sanitized_comments = [sanitize_comment(comment) for comment in comments]
+            candidate_comments = [
+                filtered
+                for filtered in (
+                    filter_comment_by_scope(
+                        comment,
+                        comment_scope=args.comment_scope,
+                        author_id=author_id,
+                    )
+                    for comment in sanitized_comments
+                )
+                if filtered is not None
+            ]
 
             expanded: list[dict[str, Any]] = []
-            for comment in sanitized_comments:
+            final_comments: list[dict[str, Any]] = []
+            for comment in candidate_comments:
+                keep_comment = True
+                has_visible_author = bool(
+                    comment.get("author_top_comment")
+                    or comment.get("author_visible_reply_count")
+                )
                 if expanded_threads >= args.max_expand_threads:
+                    if args.comment_scope == "author-complete" and not has_visible_author:
+                        keep_comment = False
+                    if keep_comment:
+                        final_comments.append(comment)
                     break
-                if not comment.get("sub_comment_has_more"):
-                    continue
-                if not thread_is_relevant(comment):
+                if not should_expand_thread(
+                    comment,
+                    comment_scope=args.comment_scope,
+                    author_id=author_id,
+                ):
+                    if args.comment_scope == "author-complete" and not has_visible_author:
+                        keep_comment = False
+                    if keep_comment:
+                        final_comments.append(comment)
                     continue
                 if not note_url:
+                    if args.comment_scope == "author-complete" and not has_visible_author:
+                        keep_comment = False
+                    if keep_comment:
+                        final_comments.append(comment)
                     continue
-                expanded_payload = expand_thread(note_url, str(comment["id"]))
-                expanded.append({
-                    "comment_id": comment["id"],
-                    "data": expanded_payload,
-                })
+                expanded_payload = filter_expanded_thread_by_scope(
+                    expand_thread(note_url, str(comment["id"])),
+                    comment_scope=args.comment_scope,
+                )
+                if expanded_payload is not None:
+                    expanded.append({
+                        "comment_id": comment["id"],
+                        "data": expanded_payload,
+                    })
+                    if args.comment_scope == "author-complete" and not has_visible_author:
+                        keep_comment = bool(
+                            (expanded_payload.get("data") or {}).get("has_author_content")
+                        )
+                elif args.comment_scope == "author-complete" and not has_visible_author:
+                    keep_comment = False
+
+                if keep_comment:
+                    final_comments.append(comment)
                 expanded_threads += 1
 
             return {
                 "note": sanitize_note_card(note_card, url=note_url, relevant=relevant),
                 "comments_meta": {
                     "top_level_total": len(sanitized_comments),
+                    "stored_comment_total": len(final_comments),
                     "pages_fetched": comments_data.get("pages_fetched"),
                     "reported_total": note_card.get("interact_info", {}).get("comment_count"),
+                    "comment_scope": args.comment_scope,
+                    "author_id": author_id,
                 },
-                "comments": sanitized_comments,
+                "comments": final_comments,
                 "expanded_threads": expanded,
             }
 
@@ -410,6 +566,8 @@ def main(argv: list[str]) -> int:
             "nickname": payload["profile"].get("basic_info", {}).get("nickname"),
             "note_count": len(notes),
             "relevant_note_count": sum(1 for item in notes if item["note"].get("relevant_for_ai_video")),
+            "comment_scope": args.comment_scope,
+            "stored_comment_total": sum(len(item["comments"]) for item in notes),
             "expanded_thread_count": sum(len(item["expanded_threads"]) for item in notes),
         }
 

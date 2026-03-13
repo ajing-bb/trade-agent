@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Video Consistency"
+  short_description: "Plan script-to-batch AI video production pipelines"
+  default_prompt: "Use $ai-video-consistency to turn a script into a structured AI video production plan with script breakdown, calibration pack, character and scene assets, director queue, continuity control, and Seedance handoff."

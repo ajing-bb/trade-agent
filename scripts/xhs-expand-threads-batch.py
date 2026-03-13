@@ -30,6 +30,14 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         help="Directory for expanded thread JSON files.",
     )
     parser.add_argument(
+        "--seed-dir",
+        default="",
+        help=(
+            "Optional directory with existing expanded thread files to reuse. "
+            "Matching successful files are filtered into --out-dir before fetching."
+        ),
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         default=0,
@@ -83,6 +91,17 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         default=5.0,
         help="Additional random pause when switching to a different note. Default: 5 seconds.",
     )
+    parser.add_argument(
+        "--comment-scope",
+        choices=("author-only", "author-complete", "all"),
+        default="author-only",
+        help=(
+            "Which threads to expand. "
+            "'author-only' keeps only threads where the author spoke and filters replies to author only. "
+            "'author-complete' expands every hidden-reply thread and filters results to author only. "
+            "'all' preserves every queued thread. Default: author-only."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -94,10 +113,87 @@ def save_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def is_successful_thread_file(path: Path) -> bool:
+    if not path.exists() or path.stat().st_size == 0:
+        return False
+    try:
+        payload = load_json(path)
+    except Exception:
+        return False
+    return bool(payload.get("ok"))
+
+
+def note_author_id(item: dict[str, Any]) -> str:
+    note = item.get("note") or {}
+    comments_meta = item.get("comments_meta") or {}
+    return str(
+        comments_meta.get("author_id")
+        or (note.get("user") or {}).get("user_id")
+        or ""
+    )
+
+
+def comment_matches_scope(comment: dict[str, Any], *, comment_scope: str, author_id: str) -> bool:
+    if comment_scope == "all":
+        return True
+    if comment_scope == "author-complete":
+        return True
+
+    top_is_author = str((comment.get("user_info") or {}).get("user_id") or "") == author_id
+    if top_is_author:
+        return True
+
+    return any(
+        str((reply.get("user_info") or {}).get("user_id") or "") == author_id
+        for reply in (comment.get("sub_comments") or [])
+    )
+
+
+def filter_thread_payload(payload: dict[str, Any], *, comment_scope: str) -> dict[str, Any]:
+    if comment_scope == "all" or not payload.get("ok"):
+        return payload
+
+    data = payload.get("data") or {}
+    root_comment = data.get("root_comment") or {}
+    author_replies = [
+        reply
+        for reply in (data.get("replies") or [])
+        if reply.get("is_author")
+    ]
+    has_author_content = bool(root_comment.get("is_author") or author_replies)
+
+    if comment_scope == "author-complete" and not has_author_content:
+        return {
+            **payload,
+            "data": {
+                "root_comment": {},
+                "replies": [],
+                "reply_count": 0,
+                "author_top_comment": False,
+                "filtered_scope": comment_scope,
+                "has_author_content": False,
+                "thread_checked": True,
+            },
+        }
+
+    filtered_data = dict(data)
+    filtered_data["root_comment"] = root_comment
+    filtered_data["replies"] = author_replies
+    filtered_data["reply_count"] = len(author_replies)
+    filtered_data["author_top_comment"] = bool(root_comment.get("is_author"))
+    filtered_data["filtered_scope"] = comment_scope
+    filtered_data["has_author_content"] = has_author_content
+    return {
+        **payload,
+        "data": filtered_data,
+    }
+
+
 def main(argv: list[str]) -> int:
     args = parse_args(argv)
     dataset_path = Path(args.dataset).expanduser().resolve()
     out_dir = Path(args.out_dir).expanduser().resolve()
+    seed_dir = Path(args.seed_dir).expanduser().resolve() if args.seed_dir else None
     out_dir.mkdir(parents=True, exist_ok=True)
 
     data = load_json(dataset_path)
@@ -108,10 +204,15 @@ def main(argv: list[str]) -> int:
         note_url = note.get("url") or ""
         note_id = note.get("note_id") or ""
         title = note.get("title") or ""
+        author_id = note_author_id(item)
         for comment in item["comments"]:
-            total = int(comment.get("sub_comment_count") or 0)
-            preview = len(comment.get("sub_comments") or [])
-            if total <= preview:
+            if not comment.get("sub_comment_has_more"):
+                continue
+            if not comment_matches_scope(
+                comment,
+                comment_scope=args.comment_scope,
+                author_id=author_id,
+            ):
                 continue
             queue.append({
                 "note_id": note_id,
@@ -120,14 +221,26 @@ def main(argv: list[str]) -> int:
                 "comment_id": comment["id"],
             })
 
-    pending_queue: list[dict[str, str]] = []
+    fresh_queue: list[dict[str, str]] = []
+    retry_queue: list[dict[str, str]] = []
     cached_queue: list[dict[str, str]] = []
     for item in queue:
         out_file = out_dir / f"{item['note_id']}__{item['comment_id']}.json"
-        if out_file.exists() and out_file.stat().st_size > 0:
+        if not is_successful_thread_file(out_file) and seed_dir:
+            seed_file = seed_dir / out_file.name
+            if is_successful_thread_file(seed_file):
+                save_json(
+                    out_file,
+                    filter_thread_payload(load_json(seed_file), comment_scope=args.comment_scope),
+                )
+        if is_successful_thread_file(out_file):
             cached_queue.append(item)
+        elif out_file.exists() and out_file.stat().st_size > 0:
+            retry_queue.append(item)
         else:
-            pending_queue.append(item)
+            fresh_queue.append(item)
+
+    pending_queue = fresh_queue + retry_queue
 
     if args.limit > 0:
         pending_queue = pending_queue[:args.limit]
@@ -139,7 +252,11 @@ def main(argv: list[str]) -> int:
         "out_dir": str(out_dir),
         "total_threads": len(queue),
         "cached_threads": len(cached_queue),
+        "fresh_threads": len(fresh_queue),
+        "retry_threads": len(retry_queue),
         "pending_threads_this_run": len(pending_queue),
+        "comment_scope": args.comment_scope,
+        "seed_dir": str(seed_dir) if seed_dir else "",
         "completed": [],
         "failed": [],
     }
@@ -169,10 +286,12 @@ def main(argv: list[str]) -> int:
             "--top-comment-id",
             item["comment_id"],
             "--browser-thread",
+            "--max-root-scrolls",
+            "140",
             "--max-expand-clicks",
-            "30",
+            "40",
             "--expand-wait-ms",
-            "900",
+            "1200",
         ]
         completed = subprocess.run(cmd, capture_output=True, text=True, check=False)
         payload: dict[str, Any]
@@ -196,6 +315,8 @@ def main(argv: list[str]) -> int:
                     "message": completed.stderr[:1000] or completed.stdout[:1000],
                 },
             }
+
+        payload = filter_thread_payload(payload, comment_scope=args.comment_scope)
 
         save_json(out_file, payload)
 
