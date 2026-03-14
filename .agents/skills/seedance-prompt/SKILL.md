@@ -1,5 +1,5 @@
 ---
-name: seedance
+name: seedance-prompt
 description: This skill should be used when the user asks to "generate video prompts", "create Seedance prompts", "write video descriptions", mentions "Seedance", "seedance", "即梦", "即梦平台", "视频提示词", "视频生成", "AI视频", "短剧", "广告视频", "视频延长", or discusses video prompt engineering, AI video generation, or Seedance 2.0 workflows.
 version: 2.0.0
 ---

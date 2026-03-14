@@ -1,0 +1,4 @@
+interface:
+  display_name: "MJ + Banana 剧本资产"
+  short_description: "Midjourney底图与Banana Pro改图的剧本全资产工作流"
+  default_prompt: "Use $mj-banana-character-assets-prompt to generate separate Midjourney base prompts and Banana Pro edit prompts for all still-image assets in an AI manhua script."
