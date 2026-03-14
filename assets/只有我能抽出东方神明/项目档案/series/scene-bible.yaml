@@ -1,0 +1,56 @@
+locations:
+  - id: LOC_KAMIKAZE_PLAYGROUND_DAY
+    name: 神风学院操场
+    time: day
+    function: 开场与抽卡主场景
+    anchors:
+      - 抽卡池
+      - 学院主楼
+      - 西方神魔雕像
+      - 围观学生区
+    status: planned
+  - id: LOC_HEADMASTER_OFFICE_DAY
+    name: 校长办公室
+    time: day
+    function: 校方反应镜头
+    anchors:
+      - 大窗
+      - 书桌
+      - 书架
+      - 天空视野
+    status: planned
+  - id: LOC_CAFETERIA_DAY
+    name: 食堂
+    time: day
+    function: 分手羞辱戏
+    anchors:
+      - 取餐口
+      - 长桌
+      - 柱子
+      - 偏角落座位
+    status: planned
+  - id: LOC_PUBLIC_CARD_POOL_NIGHT
+    name: 公共抽卡池
+    time: night
+    function: 哪吒觉醒主场景
+    anchors:
+      - 夜间抽卡池
+      - 远处天际线
+      - 空旷地面
+      - 红光映照
+    status: planned
+  - id: LOC_CITY_REACTION_MONTAGE
+    name: 多地反应蒙太奇
+    time: night
+    function: 串联校方、宿舍、张家对同一异象的观察
+    status: planned
+  - id: LOC_SENIOR_DORM_WINDOW_NIGHT
+    name: 高级宿舍窗边
+    time: night
+    function: 林倩倩反应镜头
+    status: planned
+  - id: LOC_ZHANG_RESIDENCE_NIGHT
+    name: 张家住宅
+    time: night
+    function: 张家父子反应镜头
+    status: planned

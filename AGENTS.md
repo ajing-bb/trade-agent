@@ -36,3 +36,65 @@ PRs should state the changed paths, the user-facing impact, required auth or `.e
 
 ## Security & Configuration Tips
 Do not commit `.env`, `.tmp/`, credentials, cookies, or generated reports. If a change touches authenticated flows, document the required local tools clearly, for example `uv tool install twitter-cli` or `uv tool install xiaohongshu-cli`.
+
+## AI Manhua Workflow
+For this repository's AI manhua / AI short-drama creation workflow, use the following default system unless the user explicitly overrides it.
+
+- Treat repository archives as canonical memory. Chat discussion, exploratory prompts, and temporary conclusions are not canonical by default.
+- Canonical project memory lives under `assets/<项目名>/项目档案/`.
+- Read canonical files before continuing sequel work, revisions, or prompt generation:
+  - `series/series-bible`
+  - `series/style-bible`
+  - `series/character-bible`
+  - `series/scene-bible`
+  - `series/prop-vfx-bible`
+  - current `episodes/epXXX/` breakdown, continuity-plan, director-queue, and asset-manifest
+
+### Tool Boundary
+- `Midjourney` is for base images only:
+  - character face sheets
+  - full-body base images
+  - turnaround bases
+  - scene masters
+  - prop / VFX base plates
+- `Banana Pro` is the default editor for all revisions:
+  - costume unification
+  - front / side / back correction
+  - single-panel extraction
+  - image repair
+  - reinserting repaired panels into turnaround sheets
+- `Seedance` is used after assets are stable, for video prompt execution and shot generation.
+- `Jianying` / 剪映 handles post-production and publishing assembly:
+  - shot stitching
+  - subtitles
+  - dubbing / voice
+  - music and SFX
+  - final export variants
+
+### Prompting Rules
+- Do not use Midjourney as the primary repair tool once a usable base image exists.
+- Do not write Banana Pro prompts in Midjourney style. Banana Pro prompts should be short, local, and edit-specific.
+- For Banana Pro, prefer one edit objective at a time:
+  - only fix side-view direction
+  - only unify costume
+  - only remove duplicate view
+  - only replace the center turnaround panel
+- For turnaround sheets, explicitly constrain direction when needed:
+  - front must be pure front
+  - side must specify left-facing or right-facing
+  - head, body, and feet must face the same direction
+  - nose direction and shoe-tip direction should be stated when side-view drift is likely
+
+### Canonical Update Order
+Whenever a new asset is actually committed to the repo, update memory in this order:
+
+1. Confirm the real committed path and stable asset ID.
+2. Update the current episode's `asset-manifest`.
+3. Update the matching series bible:
+   - character asset -> `series/character-bible`
+   - scene master -> `series/scene-bible`
+   - prop / card / weapon / anomaly -> `series/prop-vfx-bible`
+4. If the asset changes global visual rules, update `series/style-bible`.
+5. If the asset changes shot dependencies, update `director-queue` or `continuity-plan`.
+
+Do not treat an asset as canonical until steps 1-3 are complete.

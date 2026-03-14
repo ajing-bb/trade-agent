@@ -1,0 +1,33 @@
+project_id: ONLY_I_CAN_DRAW_EASTERN_GODS
+title: 只有我能抽出东方神明
+source_script: assets/只有我能抽出东方神明/剧本/只有我能抽出东方神明.docx
+archive_version: v1
+ingested_units:
+  - opening
+  - episode_1
+  - episode_2
+  - episode_3
+story_form: AI漫剧
+genre:
+  - 玄幻
+  - 校园
+  - 抽卡
+  - 东方神明
+world_rules:
+  - 年满十八即可抽卡
+  - 卡片可赋予对应角色能力
+  - 世界默认只存在西方神魔体系
+  - 孟江是当前唯一已知东方神明召唤者
+  - 异象强度不等于能力激活成功
+production_rules:
+  - 先角色后场景再道具和VFX
+  - Midjourney只做底图
+  - Banana Pro统一做改图和修正
+  - 同校制服体系统一为黑色主服装、暗金线、白内领
+stable_id_prefixes:
+  character: CHAR_
+  location: LOC_
+  prop: PROP_
+  vfx: VFX_
+  shot: EP001-
+

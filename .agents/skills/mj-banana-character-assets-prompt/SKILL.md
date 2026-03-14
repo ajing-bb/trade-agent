@@ -35,6 +35,13 @@ Do not mix the two prompt styles.
    - State head/body/feet direction
    - State whether to preserve identity and outfit
 
+5. `Close the loop into repo memory`
+   - When the project already has a repository archive, prompts should also specify:
+     - `asset_id`
+     - `target_path`
+     - `archive files to update`
+   - Do not leave asset creation disconnected from the project bible or manifest.
+
 ## Asset Scope
 
 This skill covers the still-image assets normally needed before video:
@@ -186,6 +193,7 @@ When the user asks for prompts, prefer this structure:
 - `Midjourney Base Prompt`
 - `Banana Pro Edit Prompt`
 - `Direction Constraint`
+- `Repo Update`
 - `Notes`
 
 If the user asks only for one tool, return only that tool's prompt.
@@ -206,6 +214,7 @@ Use [references/prompt-patterns.md](references/prompt-patterns.md) when you need
 - scene merge edits
 - prop replacement
 - VFX refinement
+- repo update contract
 - removing extra views
 - extracting one sheet panel
 - reintegrating a repaired panel into a turnaround sheet

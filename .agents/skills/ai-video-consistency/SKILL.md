@@ -11,7 +11,9 @@ This skill now supports both:
 - a consistency-first creative workflow
 - an industrial script-to-batch pipeline inspired by AI manhua production tools
 
+Read [references/repo-memory-contract.md](references/repo-memory-contract.md) when the user wants the script breakdown, style bible, character bible, scene bible, director queue, or continuity plan to be persisted into the repository for sequel writing, project memory, or long-term reuse.
 Read [references/ai-video-creation-playbook.md](references/ai-video-creation-playbook.md) first when the user needs a broad strategic summary of AI video creation, tool routing, pitfalls, or “少踩坑” guidance. Read [references/xhs-author-derived-principles.md](references/xhs-author-derived-principles.md) when the user explicitly wants creator-derived workflow guidance, wants the “小红书作者那套方法”, or wants conclusions based only on the creator's own words. Read [references/creator-failure-playbook.md](references/creator-failure-playbook.md) when the user asks why shots fail, how to avoid common drift, or how to recover from unstable AI-video outputs. Read [references/industrial-pipeline.md](references/industrial-pipeline.md) when the user wants an end-to-end industrial workflow, script-to-batch pipeline, desktop-tool style production flow, or asks how to organize “剧本 -> 角色 -> 场景 -> 导演 -> Seedance” as one system. Read [references/script-breakdown-template.md](references/script-breakdown-template.md) when the user needs script parsing and structured scene/shot extraction. Read [references/calibration-pack-template.md](references/calibration-pack-template.md) when the user needs prompt refinement for scene, shot, character, or emotional calibration before generation. Read [references/director-queue-template.md](references/director-queue-template.md) when the user wants batch routing, shot assignment, first/last-frame planning, or provider/model mapping. Read [references/consistency-sop.md](references/consistency-sop.md) for the detailed workflow, [references/character-bible-template.md](references/character-bible-template.md) for recurring character lock tables, [references/scene-master-template.md](references/scene-master-template.md) for recurring location planning, [references/shot-continuity-checklist.md](references/shot-continuity-checklist.md) for per-shot execution planning, [references/asset-prompt-pack-template.md](references/asset-prompt-pack-template.md) for reusable asset prompt outputs, [references/midjourney-asset-prompting.md](references/midjourney-asset-prompting.md) for Midjourney-specific asset prompting rules, and [references/seedance-handoff.md](references/seedance-handoff.md) when the project will later be executed in `$seedance`.
+Read [references/style-bible-template.md](references/style-bible-template.md) when the user needs a show-level visual canon for line quality, shading depth, material language, lens temperament, world palette, or “不要跑成乙游/韩漫/甜妹/写实”的风格边界.
 
 ## Workflow
 
@@ -54,8 +56,16 @@ Read [references/ai-video-creation-playbook.md](references/ai-video-creation-pla
    - Use `$seedance` for execution prompts, multi-modal references, first/last-frame prompts, video extension, and edit prompts after the consistency plan exists.
    - If the user wants industrial batch flow, define provider routing and retry strategy at the same time as model routing.
 
-7. Produce practical outputs.
+7. Persist the project memory when needed.
+   - If the user wants long-term reuse, sequels, or team memory, persist the canonical outputs into the repository instead of leaving them only in the conversation.
+   - Default path: `assets/<项目名>/项目档案/`
+   - Default structure: `series/` for cross-episode canon and `episodes/epXXX/` for batch or episode execution data.
+   - Prefer paired `.md + .yaml` files so humans can read them and later agents can reuse them.
+   - Record actual committed asset paths and explicitly mark missing assets as `planned` or `missing`.
+
+8. Produce practical outputs.
    - Script breakdown
+   - Style bible
    - Calibration pack
    - Character bible table
    - Scene master table
@@ -75,6 +85,7 @@ When helping the user, prefer this structure:
 - `Creator Failure Playbook` when the user asks how to avoid or recover from common failure modes
 - `Project Adaptation` when the user wants the creator logic translated to a target style such as 2D manhua, stylized 3D, or semi-real CG
 - `Script Breakdown`
+- `Style Bible`
 - `Calibration Pack`
 - `Character Bible`
 - `Scene Master Plan`
@@ -83,6 +94,7 @@ When helping the user, prefer this structure:
 - `Director Queue`
 - `Provider / Model Routing`
 - `Continuity Risks`
+- `Repo Archive Update` when the project memory should be written back into the repository
 - `Seedance Handoff` when prompt writing is needed
 - `Seedance Multi-Shot Plan` when the user wants multi-shot stitched narrative generation
 
@@ -125,7 +137,11 @@ If the user asks for prompt writing immediately, first give the minimum viable c
 - “AI 视频创作到底该怎么做”
 - “怎么做工业化批量生产”
 - “剧本到成片怎么串起来”
+- “这个技能拆分出的剧本应该沉淀在代码库中”
+- “把拆分结果保存到仓库里，方便续集”
 - “先给我一版少踩坑总结”
 - “帮我写角色定稿图 prompt”
 - “帮我写场景母图 prompt”
 - “帮我写 Midjourney 资产提示词”
+- “帮我把整部剧的风格定下来”
+- “给我一份 style canon / style bible”

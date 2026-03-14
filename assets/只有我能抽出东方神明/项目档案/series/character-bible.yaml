@@ -1,0 +1,65 @@
+characters:
+  - id: CHAR_MENGJIANG
+    name: 孟江
+    role: 男主
+    status: committed
+    visual_anchors:
+      - 黑色微乱短发
+      - 偏瘦直立体型
+      - 黑金立领男生制服
+      - 隐忍倔强
+    asset_root: assets/只有我能抽出东方神明/角色/孟江
+  - id: CHAR_LIN_QIANQIAN
+    name: 林倩倩
+    role: 前女友
+    status: committed
+    visual_anchors:
+      - 长黑发
+      - 女生黑金制服
+      - 粉色小领结
+      - 冷淡轻蔑
+    asset_root: assets/只有我能抽出东方神明/角色/林倩倩
+  - id: CHAR_ZHANG_HE
+    name: 张贺
+    role: 对手男配
+    status: committed
+    visual_anchors:
+      - 黑短发
+      - 精英版黑金男生制服
+      - 贵气压迫感
+    asset_root: "assets/只有我能抽出东方神明/角色/ 张贺"
+    note: 真实目录名前存在空格
+  - id: CHAR_SITU_KUNLUN
+    name: 司徒昆仑
+    role: 校长
+    status: committed
+    visual_anchors:
+      - 中年强者
+      - 黑金长外套
+      - 沉稳威压
+    asset_root: assets/只有我能抽出东方神明/角色/司徒昆仑
+  - id: CHAR_SITU_QINGQING
+    name: 司徒青青
+    role: 校长之女
+    status: planned
+    visual_anchors:
+      - 长黑发
+      - 端正理性
+      - 女生黑金制服
+    asset_root: null
+  - id: CHAR_OLD_PROFESSOR
+    name: 老教授
+    role: 抽卡主持者
+    status: planned
+    asset_root: null
+  - id: CHAR_ZHANG_QIANG
+    name: 张强
+    role: 张家家主
+    status: planned
+    asset_root: null
+  - id: ARCH_STUDENT_GENERIC
+    name: 学生模板群
+    role: 群演模板
+    status: planned
+    asset_root: null
+

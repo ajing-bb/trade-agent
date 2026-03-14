@@ -12,6 +12,32 @@ version: 2.0.0
 
 根据用户的创意需求，生成结构化、可直接使用的 Seedance 2.0 视频提示词。你需要充分利用 Seedance 2.0 的多模态能力和自然语言理解能力，生成电影级别的视频描述。
 
+## Canon First 规则
+
+当项目已经有仓库内档案时，先读取 canonical 资料，再写 Seedance 提示词。
+
+默认优先级：
+
+1. `assets/<项目名>/项目档案/series/`
+   - `series-bible`
+   - `style-bible`
+   - `character-bible`
+   - `scene-bible`
+   - `prop-vfx-bible`
+2. `assets/<项目名>/项目档案/episodes/epXXX/`
+   - `breakdown`
+   - `continuity-plan`
+   - `director-queue`
+   - `asset-manifest`
+
+用途：
+
+- 续集写作时先继承人物、场景、道具和 VFX canon
+- 多镜头提示词先继承既有景别与连续性规则
+- 已落盘资产优先使用仓库里的 canonical 文件路径，不重新发明人物或场景
+
+如果仓库中已存在 canonical 档案，不要只凭聊天上下文重写角色或场景设定。
+
 ## Seedance 2.0 核心能力
 
 ### 平台参数
@@ -85,6 +111,8 @@ version: 2.0.0
 
 通过上传参考图片保持人物、商品、场景的一致性。
 
+当这是系列项目时，先确认参考图与仓库 canonical 档案一致，再写 `@图片N` 用法。
+
 **提示词模式**：
 
 ```
@@ -144,6 +172,8 @@ version: 2.0.0
 ### 5. 剧情创作/补全
 
 模型具备强大的创意性和剧情补全能力，可根据图片或分镜脚本自动生成剧情。
+
+如果是续集或已有项目，不要脱离 `series-bible` 和 `episodes/` 中的既有剧情、人物状态与场景 ID。
 
 **提示词模式**：
 

@@ -1,0 +1,34 @@
+queue:
+  - shot_id: EP001-S00-SH01
+    scene_id: EP001-S00
+    execution_mode: image
+    status: planned
+  - shot_id: EP001-S01-SH01
+    scene_id: EP001-S01
+    execution_mode: image
+    status: planned
+  - shot_id: EP001-S01-SH02
+    scene_id: EP001-S01
+    execution_mode: first-last
+    status: planned
+  - shot_id: EP001-S01-SH03
+    scene_id: EP001-S01
+    execution_mode: image-merge
+    status: planned
+  - shot_id: EP001-S02-SH01
+    scene_id: EP001-S02
+    execution_mode: image
+    status: planned
+  - shot_id: EP001-S03-SH01
+    scene_id: EP001-S03
+    execution_mode: first-last
+    status: planned
+  - shot_id: EP001-S04-SH01
+    scene_id: EP001-S04
+    execution_mode: image
+    status: planned
+  - shot_id: EP001-S05-SH01
+    scene_id: EP001-S05
+    execution_mode: layered-video
+    status: planned
+

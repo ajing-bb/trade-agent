@@ -86,6 +86,19 @@ Banana Pro prompts should be shorter than the Midjourney base prompts.
 保留人物、场景和构图不变，只调整这个特效的颜色、能量形态和边缘轮廓。保持世界观一致，不要改变人物身份、镜头和背景。
 ```
 
+### Repo Update Contract
+
+Use this alongside a prompt result when the project already uses repository memory.
+
+```text
+asset_id: [stable asset id]
+target_path: [repo path]
+archive_updates:
+  - [series or episode file 1]
+  - [series or episode file 2]
+status_after_commit: committed / planned
+```
+
 ### Side-View Head And Foot Repair
 
 ```text

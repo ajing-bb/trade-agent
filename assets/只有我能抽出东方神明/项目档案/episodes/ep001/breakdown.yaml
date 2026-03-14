@@ -1,0 +1,53 @@
+project_type: AI漫剧
+target_style: 国风玄幻校园2.5D漫剧
+scenes:
+  - id: EP001-S00
+    unit: opening
+    location_id: LOC_KAMIKAZE_PLAYGROUND_DAY
+    purpose: 建立世界观
+  - id: EP001-S01
+    unit: episode_1
+    location_id: LOC_KAMIKAZE_PLAYGROUND_DAY
+    purpose: 通天教主抽卡失败
+  - id: EP001-S02
+    unit: episode_2
+    location_id: LOC_CAFETERIA_DAY
+    purpose: 分手羞辱
+  - id: EP001-S03
+    unit: episode_3
+    location_id: LOC_PUBLIC_CARD_POOL_NIGHT
+    purpose: 哪吒抽卡启动
+  - id: EP001-S04
+    unit: episode_3
+    location_id: LOC_CITY_REACTION_MONTAGE
+    purpose: 多地反应镜头
+  - id: EP001-S05
+    unit: episode_3
+    location_id: LOC_PUBLIC_CARD_POOL_NIGHT
+    purpose: 哪吒觉醒成功
+shots:
+  - id: EP001-S00-SH01
+    scene_id: EP001-S00
+    purpose: 世界观建立
+  - id: EP001-S01-SH01
+    scene_id: EP001-S01
+    purpose: 抽卡前蓄势
+  - id: EP001-S01-SH02
+    scene_id: EP001-S01
+    purpose: 金色异象降临
+  - id: EP001-S01-SH03
+    scene_id: EP001-S01
+    purpose: 通天教主卡失败
+  - id: EP001-S02-SH01
+    scene_id: EP001-S02
+    purpose: 食堂对峙
+  - id: EP001-S03-SH01
+    scene_id: EP001-S03
+    purpose: 夜间抽卡启动
+  - id: EP001-S04-SH01
+    scene_id: EP001-S04
+    purpose: 多地反应
+  - id: EP001-S05-SH01
+    scene_id: EP001-S05
+    purpose: 哪吒觉醒
+

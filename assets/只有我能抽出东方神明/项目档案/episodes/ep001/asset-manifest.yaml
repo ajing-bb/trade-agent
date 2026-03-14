@@ -1,0 +1,61 @@
+assets:
+  - id: SRC_SCRIPT_DOCX
+    type: script
+    status: committed
+    path: assets/只有我能抽出东方神明/剧本/只有我能抽出东方神明.docx
+  - id: CHAR_MENGJIANG
+    type: character
+    status: committed
+    path: assets/只有我能抽出东方神明/角色/孟江
+  - id: CHAR_LIN_QIANQIAN
+    type: character
+    status: committed
+    path: assets/只有我能抽出东方神明/角色/林倩倩
+  - id: CHAR_ZHANG_HE
+    type: character
+    status: committed
+    path: "assets/只有我能抽出东方神明/角色/ 张贺"
+  - id: CHAR_SITU_KUNLUN
+    type: character
+    status: committed
+    path: assets/只有我能抽出东方神明/角色/司徒昆仑
+  - id: CHAR_SITU_QINGQING
+    type: character
+    status: planned
+    path: null
+  - id: LOC_KAMIKAZE_PLAYGROUND_DAY
+    type: scene
+    status: planned
+    path: null
+  - id: LOC_CAFETERIA_DAY
+    type: scene
+    status: planned
+    path: null
+  - id: LOC_PUBLIC_CARD_POOL_NIGHT
+    type: scene
+    status: planned
+    path: null
+  - id: LOC_CITY_REACTION_MONTAGE
+    type: scene
+    status: planned
+    path: null
+  - id: PROP_CARD_POOL_SCHOOL
+    type: prop
+    status: planned
+    path: null
+  - id: CARD_TONGTIAN
+    type: prop
+    status: planned
+    path: null
+  - id: CARD_NEZHA
+    type: prop
+    status: planned
+    path: null
+  - id: VFX_GOLDEN_SKY
+    type: vfx
+    status: planned
+    path: null
+  - id: VFX_RED_SKY
+    type: vfx
+    status: planned
+    path: null

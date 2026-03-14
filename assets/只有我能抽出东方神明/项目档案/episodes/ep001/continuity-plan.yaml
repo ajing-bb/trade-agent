@@ -1,0 +1,23 @@
+canonical_character_assets:
+  - CHAR_MENGJIANG
+  - CHAR_LIN_QIANQIAN
+  - CHAR_ZHANG_HE
+  - CHAR_SITU_KUNLUN
+pending_character_assets:
+  - CHAR_SITU_QINGQING
+build_methods:
+  EP001-S00-SH01: master-shot crop + montage
+  EP001-S01-SH01: still first
+  EP001-S01-SH02: first/last frame
+  EP001-S01-SH03: image merge
+  EP001-S02-SH01: still first + reverse coverage
+  EP001-S03-SH01: still first + first/last frame
+  EP001-S04-SH01: scene seed + montage
+  EP001-S05-SH01: layered video + regional composite
+risks:
+  - 制服体系漂移
+  - 张贺目录异常
+  - 司徒青青未落盘
+  - 通天与哪吒VFX混线
+  - 三视图方向错误
+
