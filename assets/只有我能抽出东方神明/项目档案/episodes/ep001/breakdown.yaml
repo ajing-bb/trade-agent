@@ -5,6 +5,157 @@ core_continuity_risks:
 - 高风险镜头已自动标出
 - 强 VFX 与剧情转折并存
 - 多人镜头存在一致性压力
+manual_review_summary:
+- scope: scene
+  target_id: EP001-S01
+  review_flags:
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S02
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S03
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S04
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S05
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S06
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: shot
+  target_id: EP001-S02-SH02
+  review_flags:
+  - high_difficulty
+  - many_characters
+  - lip_sync_high
+- scope: shot
+  target_id: EP001-S02-SH05
+  review_flags:
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S02-SH07
+  review_flags:
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S02-SH08
+  review_flags:
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S02-SH09
+  review_flags:
+  - high_difficulty
+- scope: shot
+  target_id: EP001-S02-SH10
+  review_flags:
+  - high_difficulty
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S02-SH13
+  review_flags:
+  - high_difficulty
+- scope: shot
+  target_id: EP001-S02-SH15
+  review_flags:
+  - high_difficulty
+  - many_characters
+- scope: shot
+  target_id: EP001-S02-SH17
+  review_flags:
+  - high_difficulty
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S02-SH18
+  review_flags:
+  - high_difficulty
+  - many_characters
+- scope: shot
+  target_id: EP001-S03-SH01
+  review_flags:
+  - high_difficulty
+  - many_characters
+- scope: shot
+  target_id: EP001-S03-SH06
+  review_flags:
+  - high_difficulty
+  - many_characters
+- scope: shot
+  target_id: EP001-S03-SH07
+  review_flags:
+  - high_difficulty
+  - many_characters
+- scope: shot
+  target_id: EP001-S03-SH14
+  review_flags:
+  - lip_sync_high
+- scope: shot
+  target_id: EP001-S03-SH15
+  review_flags:
+  - high_difficulty
+  - many_characters
+- scope: shot
+  target_id: EP001-S04-SH05
+  review_flags:
+  - high_difficulty
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S04-SH06
+  review_flags:
+  - high_difficulty
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S04-SH08
+  review_flags:
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S05-SH02
+  review_flags:
+  - high_difficulty
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S05-SH04
+  review_flags:
+  - strong_vfx
+- scope: shot
+  target_id: EP001-S05-SH05
+  review_flags:
+  - high_difficulty
+- scope: character
+  target_id: 学生1
+  review_flags:
+  - generic_extra_candidate
+- scope: character
+  target_id: 学生2
+  review_flags:
+  - generic_extra_candidate
+- scope: character
+  target_id: 学生3
+  review_flags:
+  - generic_extra_candidate
+- scope: character
+  target_id: 学生4
+  review_flags:
+  - generic_extra_candidate
+- scope: character
+  target_id: 跟班1
+  review_flags:
+  - generic_extra_candidate
+- scope: character
+  target_id: 跟班2
+  review_flags:
+  - generic_extra_candidate
 scenes:
 - id: EP001-S01
   unit: opening
@@ -19,6 +170,8 @@ scenes:
   - 卡片
   - 雕像
   - 操场
+  review_flags:
+  - canonical_asset_binding_needed
 - id: EP001-S02
   unit: episode_1
   time_location: 日/外 神风学院操场
@@ -41,6 +194,9 @@ scenes:
   - 天空
   - 光柱
   - 办公室
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S03
   unit: episode_2
   time_location: 日/内 食堂
@@ -49,8 +205,8 @@ scenes:
   purpose: 食堂，人声鼎沸。 / 孟江端着碗，坐在偏僻角落，满脸疲…
   characters:
   - 孟江
-  - 林倩倩
   - 张贺
+  - 林倩倩
   - 学生1
   - 学生2
   - 学生3
@@ -59,6 +215,9 @@ scenes:
   key_assets:
   - 食堂
   - 卡片
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S04
   unit: episode_3
   time_location: 夜/外 公共抽卡池
@@ -75,6 +234,9 @@ scenes:
   - 火轮
   - 长枪
   - 红绫
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S05
   unit: episode_3
   time_location: 夜/内 各处
@@ -92,6 +254,9 @@ scenes:
   - 各处
   - 天空
   - 宿舍
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S06
   unit: episode_3
   time_location: 夜/内 公共抽卡池
@@ -104,6 +269,9 @@ scenes:
   - 公共抽卡池
   - 抽卡池
   - 卡片
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 shots:
 - id: EP001-S01-SH01
   scene_id: EP001-S01
@@ -162,6 +330,7 @@ shots:
   - △一个学生站在抽卡池前，随着他按下抽奖按钮，抽卡池上浮现出恶魔图案。
   - △学生拿上卡片贴在额前，背后瞬间出现一对恶魔之翼。
   - VO（男主音）：只要年满十八，即可参与抽卡，抽出卡片，能获得卡片对应角色的相应能力！
+  review_flags: []
 - id: EP001-S01-SH02
   scene_id: EP001-S01
   characters: []
@@ -191,6 +360,7 @@ shots:
   source_lines:
   - △镜头切换，操场周围，到处都是西方神魔雕像。
   - VO（男主音）：这是一个只有西方神魔的世界。
+  review_flags: []
 - id: EP001-S01-SH03
   scene_id: EP001-S01
   characters:
@@ -219,6 +389,7 @@ shots:
   source_lines:
   - △下一刻，镜头定格在男主身上，他身后，隐约可见诸多东方神明。
   - VO（男主音）：但，我孟江，是一个穿越者，能召唤出不属于这方世界的东方神明。
+  review_flags: []
 - id: EP001-S02-SH01
   scene_id: EP001-S02
   characters:
@@ -247,6 +418,7 @@ shots:
   source_lines:
   - △孟江站在抽卡池旁，右手轻轻放在抽奖按钮上。
   - △抽卡池四周，黑压压站满了学生，议论纷纷。
+  review_flags: []
 - id: EP001-S02-SH02
   scene_id: EP001-S02
   characters:
@@ -289,6 +461,10 @@ shots:
   - 学生1：你们看，又是孟江！
   - 学生2：哈哈哈，笑死，我没记错的话，如果今天没抽到，那就是连续十次都轮空。
   - 学生3：连续这么多次都没抽到，说明他不被认可，老老实实做个普通人就行了，非要坚持丢人现眼！
+  review_flags:
+  - high_difficulty
+  - many_characters
+  - lip_sync_high
 - id: EP001-S02-SH03
   scene_id: EP001-S02
   characters:
@@ -316,6 +492,7 @@ shots:
   source_lines:
   - △孟江深吸一口气，眼神陡然变得坚定，眼中仿佛浮现出一道伟岸的身影。
   - △右手缓缓用力。
+  review_flags: []
 - id: EP001-S02-SH04
   scene_id: EP001-S02
   characters: []
@@ -338,6 +515,7 @@ shots:
   difficulty: low
   source_lines:
   - △天空忽然变色。
+  review_flags: []
 - id: EP001-S02-SH05
   scene_id: EP001-S02
   characters: []
@@ -360,6 +538,8 @@ shots:
   difficulty: low
   source_lines:
   - △整片天空，凭空办成金色。
+  review_flags:
+  - strong_vfx
 - id: EP001-S02-SH06
   scene_id: EP001-S02
   characters:
@@ -384,6 +564,7 @@ shots:
   difficulty: low
   source_lines:
   - 学生4：这……这什么情况？
+  review_flags: []
 - id: EP001-S02-SH07
   scene_id: EP001-S02
   characters: []
@@ -406,6 +587,8 @@ shots:
   difficulty: low
   source_lines:
   - △金色的天空，将大地也渲染成一片金色。
+  review_flags:
+  - strong_vfx
 - id: EP001-S02-SH08
   scene_id: EP001-S02
   characters:
@@ -430,6 +613,8 @@ shots:
   difficulty: low
   source_lines:
   - △校长办公室，司徒昆仑猛地起身，惊诧的看向金色天空。
+  review_flags:
+  - strong_vfx
 - id: EP001-S02-SH09
   scene_id: EP001-S02
   characters:
@@ -462,6 +647,8 @@ shots:
   source_lines:
   - 司徒青青（震惊）：爸，天地为何发生这样的变化？
   - 司徒昆仑：有人在抽卡，这是抽卡造成的异象。
+  review_flags:
+  - high_difficulty
 - id: EP001-S02-SH10
   scene_id: EP001-S02
   characters: []
@@ -486,6 +673,9 @@ shots:
   difficulty: high
   source_lines:
   - △抽卡池上空，金色天空，一道七彩光柱从天而降，将整个抽卡池笼罩。
+  review_flags:
+  - high_difficulty
+  - strong_vfx
 - id: EP001-S02-SH11
   scene_id: EP001-S02
   characters:
@@ -511,6 +701,7 @@ shots:
   difficulty: medium
   source_lines:
   - 学生1：孟江前九次没中，第十次这是憋了个大的吗？
+  review_flags: []
 - id: EP001-S02-SH12
   scene_id: EP001-S02
   characters:
@@ -533,6 +724,7 @@ shots:
   difficulty: low
   source_lines:
   - △主持抽奖仪式的老教授，瞪大了眼珠子。
+  review_flags: []
 - id: EP001-S02-SH13
   scene_id: EP001-S02
   characters:
@@ -557,6 +749,8 @@ shots:
   difficulty: high
   source_lines:
   - 老教授：这个异象，难道是上古神魔？
+  review_flags:
+  - high_difficulty
 - id: EP001-S02-SH14
   scene_id: EP001-S02
   characters:
@@ -585,6 +779,7 @@ shots:
   source_lines:
   - △一张周身散发着古朴气息的卡片从出奖口滑出。
   - △孟江死死盯着卡片，手微微颤抖。
+  review_flags: []
 - id: EP001-S02-SH15
   scene_id: EP001-S02
   characters:
@@ -625,6 +820,9 @@ shots:
   - 孟江：通天教主！
   - 学生1：通天教主是什么？为何从未见过？
   - 学生2：听都没听过，该不会是什么名不见经传的野神吧？
+  review_flags:
+  - high_difficulty
+  - many_characters
 - id: EP001-S02-SH16
   scene_id: EP001-S02
   characters:
@@ -648,6 +846,7 @@ shots:
   difficulty: medium
   source_lines:
   - △孟江抬手将卡片贴在额前。
+  review_flags: []
 - id: EP001-S02-SH17
   scene_id: EP001-S02
   characters:
@@ -686,6 +885,9 @@ shots:
   - △孟江愣住了，他没等到想要的力量。
   - △全场死一般的寂静。
   - △几秒种后，抽卡池下方哄堂大笑。
+  review_flags:
+  - high_difficulty
+  - strong_vfx
 - id: EP001-S02-SH18
   scene_id: EP001-S02
   characters:
@@ -726,6 +928,9 @@ shots:
   - 学生1：哈哈哈，就这！
   - 学生2：笑死老子了，刚出场搞得那么威风，结果雷声大雨点小！
   - 学生3：小丑，下去吧，别丢人现眼了。
+  review_flags:
+  - high_difficulty
+  - many_characters
 - id: EP001-S02-SH19
   scene_id: EP001-S02
   characters:
@@ -750,6 +955,7 @@ shots:
   difficulty: medium
   source_lines:
   - △孟江脸色苍白，低头看着卡片走下抽卡池，嘴里喃喃自语。
+  review_flags: []
 - id: EP001-S02-SH20
   scene_id: EP001-S02
   characters:
@@ -796,12 +1002,13 @@ shots:
   - 孟江OS：可我明明能感受到那毁灭性的力量。
   - 孟江OS：难道因为我不是这个世界的人？
   - 孟江OS：亦或者，通天教主实力太强，我承载不了他的能力？
+  review_flags: []
 - id: EP001-S03-SH01
   scene_id: EP001-S03
   characters:
   - 孟江
-  - 林倩倩
   - 张贺
+  - 林倩倩
   beat: 食堂，人声鼎沸。 / 孟江端着碗，坐在偏僻角落，满脸疲…
   action_core: 食堂，人声鼎沸。 / 孟江端着碗，坐在偏僻角落…
   camera_intent: story beat coverage
@@ -830,6 +1037,9 @@ shots:
   - △食堂，人声鼎沸。
   - △孟江端着碗，坐在偏僻角落，满脸疲惫。
   - △刚坐下，正准备吃饭，女友林倩倩挽着一个高富帅学生朝他走来，这个学生他认识，叫张贺，算是年级风云人物。
+  review_flags:
+  - high_difficulty
+  - many_characters
 - id: EP001-S03-SH02
   scene_id: EP001-S03
   characters:
@@ -855,11 +1065,12 @@ shots:
   difficulty: medium
   source_lines:
   - 孟江（皱眉）：林倩倩，你这是什么意思？
+  review_flags: []
 - id: EP001-S03-SH03
   scene_id: EP001-S03
   characters:
-  - 林倩倩
   - 张贺
+  - 林倩倩
   beat: 林倩倩紧了紧手臂，让自己更贴紧张贺。 / 张贺很享受林…
   action_core: 林倩倩紧了紧手臂，让自己更贴紧张贺。 / 张贺…
   camera_intent: story beat coverage
@@ -883,6 +1094,7 @@ shots:
   source_lines:
   - △林倩倩紧了紧手臂，让自己更贴紧张贺。
   - △张贺很享受林倩倩的行为，微微昂首，以鼻孔看人。
+  review_flags: []
 - id: EP001-S03-SH04
   scene_id: EP001-S03
   characters:
@@ -908,6 +1120,7 @@ shots:
   difficulty: medium
   source_lines:
   - 林倩倩（傲慢）：孟江，我们分手吧。
+  review_flags: []
 - id: EP001-S03-SH05
   scene_id: EP001-S03
   characters: []
@@ -929,6 +1142,7 @@ shots:
   difficulty: low
   source_lines:
   - △周边，吃饭的学生纷纷看过来，一副看好戏的模样。
+  review_flags: []
 - id: EP001-S03-SH06
   scene_id: EP001-S03
   characters:
@@ -973,12 +1187,15 @@ shots:
   - 学生1：早就该分手了，林倩倩这么漂亮，和一个废物谈恋爱，我都觉得浪费。
   - 学生2：是呀，张贺不仅背靠张家，还拥有A级卡片阿瑞斯。
   - 学生3：阿瑞斯虽然是A级，但凭实力，完全可以跻身于S级。
+  review_flags:
+  - high_difficulty
+  - many_characters
 - id: EP001-S03-SH07
   scene_id: EP001-S03
   characters:
   - 张贺
-  - 林倩倩
   - 孟江
+  - 林倩倩
   beat: 听着学生们的议论，张贺很是满意。 / 孟江冷冷的看着林…
   action_core: 听着学生们的议论，张贺很是满意。 / 孟江冷冷…
   camera_intent: story beat coverage
@@ -1002,6 +1219,9 @@ shots:
   source_lines:
   - △听着学生们的议论，张贺很是满意。
   - △孟江冷冷的看着林倩倩，见她紧紧挽着张贺胳膊，这一刻，只觉得恶心。
+  review_flags:
+  - high_difficulty
+  - many_characters
 - id: EP001-S03-SH08
   scene_id: EP001-S03
   characters:
@@ -1026,6 +1246,7 @@ shots:
   difficulty: low
   source_lines:
   - 孟江：说完了吗？说完可以滚了。
+  review_flags: []
 - id: EP001-S03-SH09
   scene_id: EP001-S03
   characters: []
@@ -1047,6 +1268,7 @@ shots:
   difficulty: low
   source_lines:
   - △四周，学生们惊呆了。
+  review_flags: []
 - id: EP001-S03-SH10
   scene_id: EP001-S03
   characters:
@@ -1079,6 +1301,7 @@ shots:
   source_lines:
   - 学生1：这家伙不会是魔怔了吧？
   - 张贺（怒极而笑）：你应该庆幸这里是学校，不然……
+  review_flags: []
 - id: EP001-S03-SH11
   scene_id: EP001-S03
   characters:
@@ -1101,6 +1324,7 @@ shots:
   difficulty: low
   source_lines:
   - △张贺狞笑着，做出了一个抹脖子的手势。
+  review_flags: []
 - id: EP001-S03-SH12
   scene_id: EP001-S03
   characters:
@@ -1126,6 +1350,7 @@ shots:
   difficulty: medium
   source_lines:
   - 林倩倩（轻蔑）：孟江，你这辈子就这样了，你我不是同一个世界的人。
+  review_flags: []
 - id: EP001-S03-SH13
   scene_id: EP001-S03
   characters:
@@ -1148,6 +1373,7 @@ shots:
   difficulty: low
   source_lines:
   - △张贺身边的两个跟班冷笑。
+  review_flags: []
 - id: EP001-S03-SH14
   scene_id: EP001-S03
   characters:
@@ -1181,11 +1407,13 @@ shots:
   source_lines:
   - 跟班1：林小姐前两天抽出了A级阿佛诺狄忒卡片，你这种不被神明认可的废物，以后能仰人鼻息，都是一种奢望。
   - 跟班2：以后千万别出校门，不然，我怕一不小心打死你。
+  review_flags:
+  - lip_sync_high
 - id: EP001-S03-SH15
   scene_id: EP001-S03
   characters:
-  - 林倩倩
   - 张贺
+  - 林倩倩
   - 孟江
   beat: 张贺嚣张搂着林倩倩小蛮腰，大笑着离开了食堂。 / 孟江…
   action_core: 张贺嚣张搂着林倩倩小蛮腰，大笑着离开了食堂。…
@@ -1210,6 +1438,9 @@ shots:
   source_lines:
   - △张贺嚣张搂着林倩倩小蛮腰，大笑着离开了食堂。
   - △孟江眼神冷冽。
+  review_flags:
+  - high_difficulty
+  - many_characters
 - id: EP001-S03-SH16
   scene_id: EP001-S03
   characters:
@@ -1234,6 +1465,7 @@ shots:
   difficulty: low
   source_lines:
   - 孟江OS：的确不是一个世界的人，过了今晚，一切都将分明。
+  review_flags: []
 - id: EP001-S04-SH01
   scene_id: EP001-S04
   characters:
@@ -1267,6 +1499,7 @@ shots:
   - △深夜。
   - △孟江独自站在抽卡池前。
   - △他深吸一口气，拿出积分卡，抬手插入卡槽中。
+  review_flags: []
 - id: EP001-S04-SH02
   scene_id: EP001-S04
   characters:
@@ -1298,6 +1531,7 @@ shots:
   source_lines:
   - 孟江OS：好不容易积攒足够积分抽卡，是骡子是马，就靠这一哆嗦了。
   - 孟江OS：哪吒，三坛海会大神，显显灵吧！
+  review_flags: []
 - id: EP001-S04-SH03
   scene_id: EP001-S04
   characters: []
@@ -1319,6 +1553,7 @@ shots:
   difficulty: low
   source_lines:
   - △右手放在按钮上，缓缓按下。
+  review_flags: []
 - id: EP001-S04-SH04
   scene_id: EP001-S04
   characters: []
@@ -1340,6 +1575,7 @@ shots:
   difficulty: low
   source_lines:
   - △轰！
+  review_flags: []
 - id: EP001-S04-SH05
   scene_id: EP001-S04
   characters: []
@@ -1362,6 +1598,9 @@ shots:
   difficulty: high
   source_lines:
   - △大地巨震，漆黑的天空，仿佛被大火瞬间点燃，整个城市，被火光照亮。
+  review_flags:
+  - high_difficulty
+  - strong_vfx
 - id: EP001-S04-SH06
   scene_id: EP001-S04
   characters: []
@@ -1385,6 +1624,9 @@ shots:
   difficulty: high
   source_lines:
   - △随着按钮彻底按下，红色光柱从抽卡池冲天而起。
+  review_flags:
+  - high_difficulty
+  - strong_vfx
 - id: EP001-S04-SH07
   scene_id: EP001-S04
   characters:
@@ -1409,6 +1651,7 @@ shots:
   difficulty: low
   source_lines:
   - 孟江（惊喜）：成了？
+  review_flags: []
 - id: EP001-S04-SH08
   scene_id: EP001-S04
   characters: []
@@ -1440,6 +1683,8 @@ shots:
   source_lines:
   - △大地不断震动，天空通红一片，抽卡池上空，凭空凝聚出两个滚动的火轮，一杆长枪，上面缠绕着红绫乍然出现。
   - △威压震天。
+  review_flags:
+  - strong_vfx
 - id: EP001-S05-SH01
   scene_id: EP001-S05
   characters:
@@ -1472,6 +1717,7 @@ shots:
   source_lines:
   - 司徒昆仑（震惊）：白天学校学生刚闹出巨大动静，现在又来！
   - 司徒青青：爸，不会跟白天一样只是雷声大雨点小吧？
+  review_flags: []
 - id: EP001-S05-SH02
   scene_id: EP001-S05
   characters:
@@ -1501,6 +1747,9 @@ shots:
   source_lines:
   - △司徒昆仑脸色凝重，远眺异象中心。
   - △同一时间，学校高级宿舍楼，林倩倩站在窗前，目视远方。
+  review_flags:
+  - high_difficulty
+  - strong_vfx
 - id: EP001-S05-SH03
   scene_id: EP001-S05
   characters:
@@ -1533,6 +1782,7 @@ shots:
   source_lines:
   - 林倩倩：这动静……S级以上？
   - 林倩倩（冷笑）：别又不是和孟江那个废物一样雷声大雨点小。
+  review_flags: []
 - id: EP001-S05-SH04
   scene_id: EP001-S05
   characters:
@@ -1556,6 +1806,8 @@ shots:
   difficulty: low
   source_lines:
   - △张家，张贺抬头看着赤红天空，脸上带着不屑。
+  review_flags:
+  - strong_vfx
 - id: EP001-S05-SH05
   scene_id: EP001-S05
   characters:
@@ -1595,6 +1847,8 @@ shots:
   - 张强：贺儿，看异象，至少S级，你为何这种反应？
   - 张贺：爸，白天学校动静比这还大，但却是个笑话。
   - 张强：若是如此，那就不用去拉拢了。
+  review_flags:
+  - high_difficulty
 - id: EP001-S05-SH06
   scene_id: EP001-S05
   characters: []
@@ -1616,6 +1870,7 @@ shots:
   difficulty: low
   source_lines:
   - △整个城市，数不清的人们抬头望天，纷纷惊叹。
+  review_flags: []
 - id: EP001-S06-SH01
   scene_id: EP001-S06
   characters:
@@ -1644,6 +1899,7 @@ shots:
   source_lines:
   - △映衬着哪吒的卡片，出现在出奖口。
   - △孟江神情激动，双手拿走卡片，缓缓贴在额前。
+  review_flags: []
 - id: EP001-S06-SH02
   scene_id: EP001-S06
   characters: []
@@ -1671,6 +1927,7 @@ shots:
   source_lines:
   - △轰隆隆！
   - △抽卡池上空，哪吒身影彻底凝实，三头六臂凭空出现，霸气凛然。
+  review_flags: []
 - id: EP001-S06-SH03
   scene_id: EP001-S06
   characters:
@@ -1695,6 +1952,7 @@ shots:
   difficulty: low
   source_lines:
   - 孟江OS（激动）：三坛海会大神，您的力量，我体会到了！
+  review_flags: []
 character_mention_map:
 - character: 孟江
   first_scene: EP001-S01
@@ -1706,73 +1964,92 @@ character_mention_map:
   - EP001-S06
   dialogue_density: high
   asset_priority: high
+  review_flags: []
 - character: 学生1
   first_scene: EP001-S02
   recurring_scenes:
   - EP001-S03
   dialogue_density: high
   asset_priority: high
+  review_flags:
+  - generic_extra_candidate
 - character: 学生2
   first_scene: EP001-S02
   recurring_scenes:
   - EP001-S03
   dialogue_density: high
   asset_priority: high
+  review_flags:
+  - generic_extra_candidate
 - character: 学生3
   first_scene: EP001-S02
   recurring_scenes:
   - EP001-S03
   dialogue_density: medium
   asset_priority: high
+  review_flags:
+  - generic_extra_candidate
 - character: 学生4
   first_scene: EP001-S02
   recurring_scenes: []
   dialogue_density: low
   asset_priority: medium
+  review_flags:
+  - generic_extra_candidate
 - character: 司徒昆仑
   first_scene: EP001-S02
   recurring_scenes:
   - EP001-S05
   dialogue_density: medium
   asset_priority: high
+  review_flags: []
 - character: 司徒青青
   first_scene: EP001-S02
   recurring_scenes:
   - EP001-S05
   dialogue_density: medium
   asset_priority: high
+  review_flags: []
 - character: 老教授
   first_scene: EP001-S02
   recurring_scenes: []
   dialogue_density: low
   asset_priority: medium
-- character: 林倩倩
-  first_scene: EP001-S03
-  recurring_scenes:
-  - EP001-S05
-  dialogue_density: high
-  asset_priority: high
+  review_flags: []
 - character: 张贺
   first_scene: EP001-S03
   recurring_scenes:
   - EP001-S05
   dialogue_density: medium
   asset_priority: high
+  review_flags: []
+- character: 林倩倩
+  first_scene: EP001-S03
+  recurring_scenes:
+  - EP001-S05
+  dialogue_density: high
+  asset_priority: high
+  review_flags: []
 - character: 跟班1
   first_scene: EP001-S03
   recurring_scenes: []
   dialogue_density: low
   asset_priority: medium
+  review_flags:
+  - generic_extra_candidate
 - character: 跟班2
   first_scene: EP001-S03
   recurring_scenes: []
   dialogue_density: low
   asset_priority: medium
+  review_flags:
+  - generic_extra_candidate
 - character: 张强
   first_scene: EP001-S05
   recurring_scenes: []
   dialogue_density: medium
   asset_priority: medium
+  review_flags: []
 dialogue_and_emotion_notes:
 - shot_id: EP001-S01-SH01
   speaker: ''

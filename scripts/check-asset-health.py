@@ -351,6 +351,301 @@ def check_prop_vfx_prompt_pack(archive_dir: Path, findings: list[dict[str, str]]
             )
 
 
+def load_episode_breakdown_index(
+    episode_dir: Path, findings: list[dict[str, str]]
+) -> tuple[set[str], set[str]]:
+    path = episode_dir / "breakdown.yaml"
+    scene_ids: set[str] = set()
+    shot_ids: set[str] = set()
+    if not path.exists():
+        return scene_ids, shot_ids
+    data = load_yaml(path)
+    for item in data.get("scenes", []):
+        scene_id = item.get("id", "")
+        if not scene_id:
+            continue
+        if scene_id in scene_ids:
+            add_finding(
+                findings,
+                "error",
+                "duplicate_breakdown_scene",
+                f"{episode_dir.name}/breakdown.yaml",
+                scene_id,
+                "id",
+                scene_id,
+                "scene id is duplicated in breakdown",
+            )
+            continue
+        scene_ids.add(scene_id)
+    for item in data.get("shots", []):
+        shot_id = item.get("id", "")
+        if not shot_id:
+            continue
+        if shot_id in shot_ids:
+            add_finding(
+                findings,
+                "error",
+                "duplicate_breakdown_shot",
+                f"{episode_dir.name}/breakdown.yaml",
+                shot_id,
+                "id",
+                shot_id,
+                "shot id is duplicated in breakdown",
+            )
+            continue
+        shot_ids.add(shot_id)
+    return scene_ids, shot_ids
+
+
+def load_episode_asset_index(
+    episode_dir: Path, findings: list[dict[str, str]]
+) -> dict[str, dict[str, str]]:
+    path = episode_dir / "asset-manifest.yaml"
+    index: dict[str, dict[str, str]] = {}
+    if not path.exists():
+        return index
+    data = load_yaml(path)
+    for item in data.get("assets", []):
+        item_id = item.get("id", "")
+        if not item_id:
+            continue
+        if item_id in index:
+            add_finding(
+                findings,
+                "error",
+                "duplicate_asset_manifest_id",
+                f"{episode_dir.name}/asset-manifest.yaml",
+                item_id,
+                "id",
+                item_id,
+                "asset id is duplicated in asset-manifest",
+            )
+            continue
+        index[item_id] = {
+            "type": str(item.get("type", "")),
+            "status": str(item.get("status", "")),
+        }
+    return index
+
+
+def validate_continuity_plan(
+    episode_dir: Path,
+    shot_ids: set[str],
+    asset_index: dict[str, dict[str, str]],
+    findings: list[dict[str, str]],
+) -> set[str]:
+    path = episode_dir / "continuity-plan.yaml"
+    policy_shots: set[str] = set()
+    if not path.exists():
+        return policy_shots
+    data = load_yaml(path)
+    for item in data.get("shot_build_policy", []):
+        shot_id = item.get("shot_id", "")
+        if not shot_id:
+            continue
+        if shot_id in policy_shots:
+            add_finding(
+                findings,
+                "error",
+                "duplicate_continuity_policy_shot",
+                f"{episode_dir.name}/continuity-plan.yaml",
+                shot_id,
+                "shot_id",
+                shot_id,
+                "shot_build_policy references the same shot more than once",
+            )
+            continue
+        policy_shots.add(shot_id)
+        if shot_id not in shot_ids:
+            add_finding(
+                findings,
+                "error",
+                "missing_breakdown_shot",
+                f"{episode_dir.name}/continuity-plan.yaml",
+                shot_id,
+                "shot_id",
+                shot_id,
+                "shot_build_policy references a shot id missing from breakdown",
+            )
+    for field_name, expected_status in (
+        ("canonical_character_assets", "committed"),
+        ("pending_character_assets", "pending"),
+    ):
+        for asset_id in data.get(field_name, []):
+            asset = asset_index.get(asset_id)
+            if not asset:
+                add_finding(
+                    findings,
+                    "error",
+                    f"missing_{field_name}_asset",
+                    f"{episode_dir.name}/continuity-plan.yaml",
+                    asset_id,
+                    field_name,
+                    asset_id,
+                    f"{field_name} references an asset id missing from asset-manifest",
+                )
+                continue
+            if asset["type"] != "character":
+                add_finding(
+                    findings,
+                    "error",
+                    f"invalid_{field_name}_type",
+                    f"{episode_dir.name}/continuity-plan.yaml",
+                    asset_id,
+                    field_name,
+                    asset_id,
+                    f"{field_name} must only reference character assets",
+                )
+                continue
+            if field_name == "canonical_character_assets" and asset["status"] != expected_status:
+                add_finding(
+                    findings,
+                    "error",
+                    "invalid_canonical_character_asset",
+                    f"{episode_dir.name}/continuity-plan.yaml",
+                    asset_id,
+                    field_name,
+                    asset_id,
+                    "canonical_character_assets must reference committed character assets",
+                )
+            if field_name == "pending_character_assets" and asset["status"] == "committed":
+                add_finding(
+                    findings,
+                    "error",
+                    "invalid_pending_character_asset",
+                    f"{episode_dir.name}/continuity-plan.yaml",
+                    asset_id,
+                    field_name,
+                    asset_id,
+                    "pending_character_assets must not reference committed character assets",
+                )
+    return policy_shots
+
+
+def validate_director_queue(
+    episode_dir: Path,
+    shot_ids: set[str],
+    asset_index: dict[str, dict[str, str]],
+    continuity_shots: set[str],
+    findings: list[dict[str, str]],
+) -> set[str]:
+    path = episode_dir / "director-queue.yaml"
+    queue_shots: set[str] = set()
+    if not path.exists():
+        return queue_shots
+    data = load_yaml(path)
+    allowed_statuses = set(data.get("queue_rules", {}).keys()) or {"blocked", "ready", "in_progress", "done"}
+    for item in data.get("queue", []):
+        shot_id = item.get("shot_id", "")
+        if not shot_id:
+            continue
+        if shot_id in queue_shots:
+            add_finding(
+                findings,
+                "error",
+                "duplicate_director_queue_shot",
+                f"{episode_dir.name}/director-queue.yaml",
+                shot_id,
+                "shot_id",
+                shot_id,
+                "director queue references the same shot more than once",
+            )
+            continue
+        queue_shots.add(shot_id)
+        if shot_id not in shot_ids:
+            add_finding(
+                findings,
+                "error",
+                "missing_breakdown_shot",
+                f"{episode_dir.name}/director-queue.yaml",
+                shot_id,
+                "shot_id",
+                shot_id,
+                "director queue references a shot id missing from breakdown",
+            )
+        queue_status = item.get("queue_status", "")
+        if queue_status not in allowed_statuses:
+            add_finding(
+                findings,
+                "error",
+                "invalid_queue_status",
+                f"{episode_dir.name}/director-queue.yaml",
+                shot_id,
+                "queue_status",
+                queue_status,
+                "queue_status is not defined in queue_rules",
+            )
+        blocked_by_assets = item.get("blocked_by_assets", [])
+        if queue_status == "blocked" and not blocked_by_assets:
+            add_finding(
+                findings,
+                "warning",
+                "blocked_without_assets",
+                f"{episode_dir.name}/director-queue.yaml",
+                shot_id,
+                "blocked_by_assets",
+                "",
+                "blocked queue item has no blocking assets recorded",
+            )
+        for asset_id in blocked_by_assets:
+            asset = asset_index.get(asset_id)
+            if not asset:
+                add_finding(
+                    findings,
+                    "error",
+                    "missing_blocking_asset",
+                    f"{episode_dir.name}/director-queue.yaml",
+                    shot_id,
+                    "blocked_by_assets",
+                    asset_id,
+                    "blocked_by_assets references an asset id missing from asset-manifest",
+                )
+                continue
+            if queue_status in {"ready", "in_progress", "done"} and asset["status"] != "committed":
+                add_finding(
+                    findings,
+                    "error",
+                    "uncommitted_blocking_asset",
+                    f"{episode_dir.name}/director-queue.yaml",
+                    shot_id,
+                    "blocked_by_assets",
+                    asset_id,
+                    "active queue item still references a non-committed blocking asset",
+                )
+        if shot_id not in continuity_shots:
+            add_finding(
+                findings,
+                "warning",
+                "missing_continuity_policy",
+                f"{episode_dir.name}/director-queue.yaml",
+                shot_id,
+                "shot_id",
+                shot_id,
+                "director queue shot has no matching continuity shot_build_policy entry",
+            )
+    return queue_shots
+
+
+def check_episode_semantics(archive_dir: Path, findings: list[dict[str, str]]) -> None:
+    episodes_dir = archive_dir / "episodes"
+    for episode_dir in sorted(episodes_dir.glob("ep*")):
+        _, shot_ids = load_episode_breakdown_index(episode_dir, findings)
+        asset_index = load_episode_asset_index(episode_dir, findings)
+        continuity_shots = validate_continuity_plan(episode_dir, shot_ids, asset_index, findings)
+        queue_shots = validate_director_queue(episode_dir, shot_ids, asset_index, continuity_shots, findings)
+        for shot_id in sorted(continuity_shots - queue_shots):
+            add_finding(
+                findings,
+                "warning",
+                "missing_director_queue_shot",
+                f"{episode_dir.name}/continuity-plan.yaml",
+                shot_id,
+                "shot_id",
+                shot_id,
+                "continuity shot_build_policy has no matching director queue entry",
+            )
+
+
 def check_cross_consistency(
     findings: list[dict[str, str]],
     item_type: str,
@@ -468,6 +763,7 @@ def main() -> None:
     check_character_prompt_pack(archive_dir, findings)
     check_scene_prompt_pack(archive_dir, findings)
     check_prop_vfx_prompt_pack(archive_dir, findings)
+    check_episode_semantics(archive_dir, findings)
     check_cross_consistency(
         findings,
         "character",

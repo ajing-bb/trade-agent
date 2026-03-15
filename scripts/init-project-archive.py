@@ -76,6 +76,7 @@ TRANSITION_KEYWORDS = (
 )
 MESSAGE_CUE_KEYWORDS = ("手机", "短信", "微信", "消息", "弹窗", "群聊", "通知", "聊天记录")
 SKILL_CUE_KEYWORDS = ("技能", "招式", "法术", "术式", "绝技", "必杀", "剑招", "拳法", "阵法", "施展", "发动")
+GENERIC_EXTRA_RE = re.compile(r"^(学生|跟班)\d+$")
 ASSET_KEYWORDS = (
     "抽卡池",
     "卡片",
@@ -612,6 +613,7 @@ def build_breakdown_structures(episode_id: str, sections: list[dict[str, Any]]) 
                     "purpose": summarize_text(block["lines"]),
                     "characters": scene_characters,
                     "key_assets": find_asset_keywords(block["lines"], block.get("location_raw", "")),
+                    "review_flags": [],
                 }
             )
             shots.extend(scene_shots)
@@ -627,14 +629,79 @@ def build_breakdown_structures(episode_id: str, sections: list[dict[str, Any]]) 
                 "recurring_scenes": stats["recurring_scenes"][1:],
                 "dialogue_density": density,
                 "asset_priority": priority,
+                "review_flags": [],
             }
         )
 
     return scenes, shots, character_map, dialogue_notes
 
 
+def scene_review_flags(scene: dict[str, Any]) -> list[str]:
+    flags: list[str] = []
+    if scene.get("location_raw") and not scene.get("location_id"):
+        flags.append("location_binding_needed")
+    if scene.get("key_assets"):
+        flags.append("canonical_asset_binding_needed")
+    return flags
+
+
+def shot_review_flags(shot: dict[str, Any], high_lip_sync_shots: set[str]) -> list[str]:
+    flags: list[str] = []
+    if shot.get("difficulty") == "high":
+        flags.append("high_difficulty")
+    if len(shot.get("characters", [])) > 2:
+        flags.append("many_characters")
+    required_assets = set(shot.get("required_assets", []))
+    if "vfx" in shot.get("action_types", []) or any(keyword in required_assets for keyword in VFX_KEYWORDS):
+        flags.append("strong_vfx")
+    if shot.get("id", "") in high_lip_sync_shots:
+        flags.append("lip_sync_high")
+    return flags
+
+
+def character_review_flags(item: dict[str, Any]) -> list[str]:
+    flags: list[str] = []
+    character = item.get("character", "")
+    if GENERIC_EXTRA_RE.match(character):
+        flags.append("generic_extra_candidate")
+    return flags
+
+
+def manual_review_summary(
+    scenes: list[dict[str, Any]], shots: list[dict[str, Any]], character_map: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    summary: list[dict[str, Any]] = []
+    for scope, items, id_field in (
+        ("scene", scenes, "id"),
+        ("shot", shots, "id"),
+        ("character", character_map, "character"),
+    ):
+        for item in items:
+            flags = item.get("review_flags", [])
+            if flags:
+                summary.append(
+                    {
+                        "scope": scope,
+                        "target_id": item.get(id_field, ""),
+                        "review_flags": list(flags),
+                    }
+                )
+    return summary
+
+
 def breakdown_data(episode_id: str, sections: list[dict[str, Any]]) -> dict[str, Any]:
     scenes, shots, character_map, dialogue_notes = build_breakdown_structures(episode_id, sections)
+    high_lip_sync_shots = {
+        item["shot_id"]
+        for item in dialogue_notes
+        if item.get("delivery_mode") == "spoken" and item.get("lip_sync_sensitivity") == "high"
+    }
+    for scene in scenes:
+        scene["review_flags"] = scene_review_flags(scene)
+    for shot in shots:
+        shot["review_flags"] = shot_review_flags(shot, high_lip_sync_shots)
+    for item in character_map:
+        item["review_flags"] = character_review_flags(item)
     theme_counter = Counter()
     for section in sections:
         for beat in section.get("beats", []):
@@ -654,6 +721,7 @@ def breakdown_data(episode_id: str, sections: list[dict[str, Any]]) -> dict[str,
         "target_style": "",
         "core_theme": core_theme,
         "core_continuity_risks": risk_counter,
+        "manual_review_summary": manual_review_summary(scenes, shots, character_map),
         "scenes": scenes,
         "shots": shots,
         "character_mention_map": character_map,

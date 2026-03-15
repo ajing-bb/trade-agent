@@ -353,6 +353,7 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
     data = load_yaml(yaml_path)
     episode_label = yaml_path.parent.name.upper()
     lines = generated_header(f"{episode_label} Breakdown", yaml_path.name)
+    manual_review_summary = data.get("manual_review_summary", [])
     lines.extend(
         [
             "## Project Summary",
@@ -363,11 +364,38 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
             f"| Target Style | {escape_cell(data.get('target_style', ''))} |",
             f"| Core Theme | {escape_cell(data.get('core_theme', ''))} |",
             f"| Core Continuity Risks | {escape_cell('、'.join(data.get('core_continuity_risks', [])))} |",
+            f"| Manual Review Count | {escape_cell(len(manual_review_summary))} |",
+        ]
+    )
+    if manual_review_summary:
+        lines.extend(
+            [
+                "",
+                "## Manual Review Summary",
+                "",
+                "| Scope | Target | Review Flags |",
+                "| --- | --- | --- |",
+            ]
+        )
+        for item in manual_review_summary:
+            lines.append(
+                "| "
+                + " | ".join(
+                    [
+                        f"`{escape_cell(item.get('scope', ''))}`",
+                        escape_cell(item.get("target_id", "")),
+                        escape_cell("、".join(item.get("review_flags", [])) or "-"),
+                    ]
+                )
+                + " |"
+            )
+    lines.extend(
+        [
             "",
             "## Scene List",
             "",
-            "| Scene ID | 单元 | 时间/地点 | 目的 | 角色 | 关键资产 |",
-            "| --- | --- | --- | --- | --- | --- |",
+            "| Scene ID | 单元 | 时间/地点 | 目的 | 角色 | 关键资产 | Review Flags |",
+            "| --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     for scene in data.get("scenes", []):
@@ -381,6 +409,7 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
                     escape_cell(scene.get("purpose", "")),
                     escape_cell("、".join(scene.get("characters", []))),
                     escape_cell("、".join(scene.get("key_assets", []))),
+                    escape_cell("、".join(scene.get("review_flags", [])) or "-"),
                 ]
             )
             + " |"
@@ -390,8 +419,8 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
             "",
             "## Shot List",
             "",
-            "| Shot ID | Scene ID | Characters | Beat | Action Core | Camera Intent | Dialogue | Emotion | Difficulty | Required Assets |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+            "| Shot ID | Scene ID | Characters | Beat | Action Core | Camera Intent | Dialogue | Emotion | Difficulty | Required Assets | Review Flags |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     for shot in data.get("shots", []):
@@ -409,6 +438,7 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
                     escape_cell(shot.get("emotion", "")),
                     escape_cell(shot.get("difficulty", "")),
                     escape_cell("、".join(shot.get("required_assets", []))),
+                    escape_cell("、".join(shot.get("review_flags", [])) or "-"),
                 ]
             )
             + " |"
@@ -420,8 +450,8 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
                 "",
                 "## Character Mention Map",
                 "",
-                "| Character | First Scene | Recurring Scenes | Dialogue Density | Asset Priority |",
-                "| --- | --- | --- | --- | --- |",
+                "| Character | First Scene | Recurring Scenes | Dialogue Density | Asset Priority | Review Flags |",
+                "| --- | --- | --- | --- | --- | --- |",
             ]
         )
         for item in character_map:
@@ -434,6 +464,7 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
                         escape_cell("、".join(item.get("recurring_scenes", []))),
                         escape_cell(item.get("dialogue_density", "")),
                         escape_cell(item.get("asset_priority", "")),
+                        escape_cell("、".join(item.get("review_flags", [])) or "-"),
                     ]
                 )
                 + " |"

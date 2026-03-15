@@ -65,6 +65,9 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
   - `episodes/epXXX/script-normalized.yaml`
   - `episodes/epXXX/asset-manifest.yaml`
   - `episodes/epXXX/director-queue.yaml`
+- Treat `episodes/epXXX/breakdown.yaml` as both a script breakdown and a manual review queue:
+  - `manual_review_summary` is the episode-level review inbox
+  - `scenes[].review_flags`, `shots[].review_flags`, and `character_mention_map[].review_flags` mark heuristic rows that still need human production cleanup
 - Do not manually edit generated Markdown for those files. Update the YAML first, then run:
   - `python3 scripts/render-project-archive.py assets/<项目名>/项目档案`
 - To wipe a project back to only its source script, use:
@@ -75,6 +78,9 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
   - `python3 scripts/init-project-archive.py assets/<项目名>`
 - To verify that canonical YAML paths still match the filesystem, use:
   - `python3 scripts/check-asset-health.py assets/<项目名>`
+- `check-asset-health.py` validates more than file existence:
+  - it checks cross-file semantic consistency between `breakdown`, `continuity-plan`, `director-queue`, and `asset-manifest`
+  - broken `shot_id` references, invalid queue states, and character-asset status/type mismatches should be treated as canonical errors, not bookkeeping warnings
 - Optional repo automation:
   - install hooks with `sh scripts/install-git-hooks.sh`
   - current `pre-commit` hook auto-renders generated Markdown from YAML before commit

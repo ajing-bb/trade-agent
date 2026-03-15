@@ -380,6 +380,7 @@ def breakdown_data() -> dict[str, Any]:
         "target_style": "",
         "core_theme": "",
         "core_continuity_risks": [],
+        "manual_review_summary": [],
         "scenes": [],
         "shots": [],
         "character_mention_map": [],
