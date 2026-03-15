@@ -1,0 +1,44 @@
+project_id: ONLY_EASTERN_GODS
+title: 只有我能抽出东方神明
+source_script: assets/只有我能抽出东方神明/剧本/只有我能抽出东方神明.docx
+archive_version: v1
+ingested_units:
+- opening
+- episode_1
+- episode_2
+- episode_3
+current_ingested_range: opening ~ episode_3
+story_form: AI漫剧
+story_hook: 穿越者孟江在只承认西方神魔的抽卡世界里抽出东方神明卡牌，并以异类召唤者身份撕开世界秩序裂口。
+genre:
+- 校园异能
+- 神话抽卡
+- 东方神明逆袭
+world_rules:
+- 所有人年满十八后可参与抽卡，并获得对应神魔能力。
+- 世界主流神话体系为西方神魔，校园、城市公共空间与权力结构均围绕该体系建立。
+- 孟江是穿越者，能感应并抽出不属于本世界常识的东方神明卡牌。
+- 东方神明卡牌初期会出现强异象、认知落差与能力延迟释放，形成剧情悬念与压制反转。
+production_rules:
+- 首轮试产只正式覆盖 opening 与 episode_1，episode_2 和 episode_3 作为上下文与压力测试储备。
+- 先锁孟江与学院主场景，再补齐公开抽卡仪式相关 speaking cast、夜间公共抽卡池与核心 VFX。
+- Midjourney 只做 canonical base / master asset，不负责后续派生包。
+- Banana Pro 基于定稿做角色角度包、表情包、场景反打、道具修复和 VFX 细修。
+- Seedance 只在静帧、首尾帧和关键资产稳定后进入镜头执行阶段。
+- 首轮优先验证两个压力样本：白天金色异象抽卡、夜间哪吒异象抽卡。
+canonical_rules:
+- 本目录与 episodes 中已确认的档案文件，构成本项目的 canonical memory。
+- 后续续集、资产补画、Seedance prompt、角色返修，默认先读 canonical 档案，再参考聊天记录。
+- 如果聊天结论与仓库档案冲突，以仓库中最新确认版本为准。
+- 临时探索图、未落盘图片、未写回档案的 prompt 结论，不视为 canonical。
+current_import_notes:
+- 当前 DOCX 已整体导入 ep001 工作区，用于统一管理 opening 至 episode_3 的上下文。
+- 首轮导演队列与资产优先级以 opening 和 episode_1 为主。
+- episode_3 的夜间公共抽卡池保留为第二个压力测试样本，用于验证哪吒异象链路。
+stable_id_prefixes:
+  character: CHAR_
+  location: LOC_
+  prop: PROP_
+  card: CARD_
+  vfx: VFX_
+  shot: EP001-

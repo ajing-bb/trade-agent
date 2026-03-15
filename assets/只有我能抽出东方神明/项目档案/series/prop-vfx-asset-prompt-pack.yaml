@@ -1,0 +1,205 @@
+prompt_pack_id: PROP_VFX_ASSET_PROMPT_PACK_V1
+project_id: ONLY_EASTERN_GODS
+rules:
+  midjourney_role: asset_master_only
+  banana_role: derive_variant_and_repair
+props:
+- id: PROP_DRAW_POOL_MAIN
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/道具/PROP_DRAW_POOL_MAIN
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    master_view: one 抽卡池, 公开抽卡仪式与夜间公共抽卡的核心设施。, circular ceremonial machine-pool hybrid
+      structure, central output slot and button area, readable pedestal silhouette,
+      clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese
+      manhua still, clean background, readable silhouette, not photoreal --ar 1:1
+      --v 7 --raw
+  banana:
+    cleanup: 保留抽卡池的主体轮廓和识别符号不变，只清理边框、结构与细节，使其更稳定。
+- id: CARD_SUMMON_CARD_BASE
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/道具/CARD_SUMMON_CARD_BASE
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    master_card: one 通用抽卡卡片, 世界通用抽卡卡片基础版式，用于通天教主与哪吒卡面派生。, vertical card frame, readable
+      emblem area, clean ritual object silhouette, clean comic linework, 2-step cel
+      shade with restrained rim light, 2D Chinese manhua still, clean background,
+      readable silhouette, not photoreal --ar 2:3 --v 7 --raw
+  banana:
+    cleanup: 保留通用抽卡卡片的主体轮廓和识别符号不变，只清理边框、结构与细节，使其更稳定。
+- id: PROP_WESTERN_STATUE_SET
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/道具/PROP_WESTERN_STATUE_SET
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    master_view: one 西方神魔雕像群, 学院操场周边的世界观说明性雕像群。, western myth stone statues, wings,
+      horns, and divine silhouettes, repetitive ceremonial arrangement, clean comic
+      linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still,
+      clean background, readable silhouette, not photoreal --ar 1:1 --v 7 --raw
+  banana:
+    cleanup: 保留西方神魔雕像群的主体轮廓和识别符号不变，只清理边框、结构与细节，使其更稳定。
+- id: CARD_TONGTIAN_JIAOZHU
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/道具/CARD_TONGTIAN_JIAOZHU
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    master_card: one 通天教主卡面, 第1集 reveal 的东方神明卡面。, ancient Eastern deity card motif,
+      archaic sacred border, solemn destructive aura hint, clean comic linework, 2-step
+      cel shade with restrained rim light, 2D Chinese manhua still, clean background,
+      readable silhouette, not photoreal --ar 2:3 --v 7 --raw
+  banana:
+    cleanup: 保留通天教主卡面的主体轮廓和识别符号不变，只清理边框、结构与细节，使其更稳定。
+- id: CARD_NEZHA
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/道具/CARD_NEZHA
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    master_card: one 哪吒卡面, 第3集 reveal 的哪吒卡面。, fiery youthful deity card motif, weapon
+      silhouette hints, hot red-orange energy accent, clean comic linework, 2-step
+      cel shade with restrained rim light, 2D Chinese manhua still, clean background,
+      readable silhouette, not photoreal --ar 2:3 --v 7 --raw
+  banana:
+    cleanup: 保留哪吒卡面的主体轮廓和识别符号不变，只清理边框、结构与细节，使其更稳定。
+vfx:
+- id: VFX_GOLDEN_SKY_ANOMALY
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/VFX/VFX_GOLDEN_SKY_ANOMALY
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    keyframe: 金色天幕, 第1集抽卡时把白天校园整体染成金色的天幕异象。, clean comic linework, 2-step cel shade
+      with restrained rim light, 2D Chinese manhua still, clear effect silhouette,
+      clean large-scale energy read, not photoreal --ar 16:9 --v 7 --raw
+  banana:
+    refine: 保留金色天幕的核心颜色和能量逻辑不变，只调整边缘、层次和识别度，使其更稳定。
+- id: VFX_RAINBOW_LIGHT_PILLAR
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/VFX/VFX_RAINBOW_LIGHT_PILLAR
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    keyframe: 七彩光柱, 第1集抽卡池上空降下的七彩光柱。, clean comic linework, 2-step cel shade with
+      restrained rim light, 2D Chinese manhua still, clear effect silhouette, clean
+      large-scale energy read, not photoreal --ar 16:9 --v 7 --raw
+  banana:
+    refine: 保留七彩光柱的核心颜色和能量逻辑不变，只调整边缘、层次和识别度，使其更稳定。
+- id: VFX_TONGTIAN_AURA
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/VFX/VFX_TONGTIAN_AURA
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    keyframe: 通天教主古朴异象, 第1集通天教主卡片与上古威压感的局部异象层。, clean comic linework, 2-step cel shade
+      with restrained rim light, 2D Chinese manhua still, clear effect silhouette,
+      clean large-scale energy read, not photoreal --ar 16:9 --v 7 --raw
+  banana:
+    refine: 保留通天教主古朴异象的核心颜色和能量逻辑不变，只调整边缘、层次和识别度，使其更稳定。
+- id: VFX_RED_SKY_ANOMALY
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/VFX/VFX_RED_SKY_ANOMALY
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    keyframe: 赤红天幕, 第3集夜间哪吒抽卡点燃全城天空的赤红异象。, clean comic linework, 2-step cel shade
+      with restrained rim light, 2D Chinese manhua still, clear effect silhouette,
+      clean large-scale energy read, not photoreal --ar 16:9 --v 7 --raw
+  banana:
+    refine: 保留赤红天幕的核心颜色和能量逻辑不变，只调整边缘、层次和识别度，使其更稳定。
+- id: VFX_RED_LIGHT_PILLAR
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/VFX/VFX_RED_LIGHT_PILLAR
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    keyframe: 赤红光柱, 第3集从公共抽卡池直冲天空的红色光柱。, clean comic linework, 2-step cel shade with
+      restrained rim light, 2D Chinese manhua still, clear effect silhouette, clean
+      large-scale energy read, not photoreal --ar 16:9 --v 7 --raw
+  banana:
+    refine: 保留赤红光柱的核心颜色和能量逻辑不变，只调整边缘、层次和识别度，使其更稳定。
+- id: VFX_NEZHA_AVATAR
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/VFX/VFX_NEZHA_AVATAR
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    keyframe: 哪吒法相, 第3集哪吒三头六臂显形时的主体法相。, clean comic linework, 2-step cel shade with
+      restrained rim light, 2D Chinese manhua still, clear effect silhouette, clean
+      large-scale energy read, not photoreal --ar 16:9 --v 7 --raw
+  banana:
+    refine: 保留哪吒法相的核心颜色和能量逻辑不变，只调整边缘、层次和识别度，使其更稳定。
+- id: VFX_NEZHA_WEAPON_SUITE
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/VFX/VFX_NEZHA_WEAPON_SUITE
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/prop-vfx-asset-prompt-pack.yaml
+  midjourney:
+    keyframe: 火轮长枪红绫套件, 第3集哪吒异象中的火轮、长枪与红绫组合套件。, clean comic linework, 2-step cel shade
+      with restrained rim light, 2D Chinese manhua still, clear effect silhouette,
+      clean large-scale energy read, not photoreal --ar 16:9 --v 7 --raw
+  banana:
+    refine: 保留火轮长枪红绫套件的核心颜色和能量逻辑不变，只调整边缘、层次和识别度，使其更稳定。

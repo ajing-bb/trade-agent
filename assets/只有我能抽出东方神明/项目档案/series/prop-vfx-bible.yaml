@@ -1,0 +1,114 @@
+rules:
+- 先建立抽卡池、通用卡片、雕像群和核心异象套件，再补细分卡面与武器层。
+- 卡面与 VFX 统一保留“西方体系 vs 东方体系”的显著视觉差异。
+props:
+- id: PROP_DRAW_POOL_MAIN
+  name: 抽卡池
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/道具/PROP_DRAW_POOL_MAIN
+  function: 公开抽卡仪式与夜间公共抽卡的核心设施。
+  visual_anchors:
+  - circular ceremonial machine-pool hybrid structure
+  - central output slot and button area
+  - readable pedestal silhouette
+  continuity_use:
+  - opening
+  - episode_1
+  - episode_3
+- id: CARD_SUMMON_CARD_BASE
+  name: 通用抽卡卡片
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/道具/CARD_SUMMON_CARD_BASE
+  function: 世界通用抽卡卡片基础版式，用于通天教主与哪吒卡面派生。
+  visual_anchors:
+  - vertical card frame
+  - readable emblem area
+  - clean ritual object silhouette
+  continuity_use:
+  - opening
+  - episode_1
+  - episode_3
+- id: PROP_WESTERN_STATUE_SET
+  name: 西方神魔雕像群
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/道具/PROP_WESTERN_STATUE_SET
+  function: 学院操场周边的世界观说明性雕像群。
+  visual_anchors:
+  - western myth stone statues
+  - wings, horns, and divine silhouettes
+  - repetitive ceremonial arrangement
+  continuity_use:
+  - opening
+  - episode_1
+- id: CARD_TONGTIAN_JIAOZHU
+  name: 通天教主卡面
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/道具/CARD_TONGTIAN_JIAOZHU
+  function: 第1集 reveal 的东方神明卡面。
+  visual_anchors:
+  - ancient Eastern deity card motif
+  - archaic sacred border
+  - solemn destructive aura hint
+  continuity_use:
+  - episode_1
+- id: CARD_NEZHA
+  name: 哪吒卡面
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/道具/CARD_NEZHA
+  function: 第3集 reveal 的哪吒卡面。
+  visual_anchors:
+  - fiery youthful deity card motif
+  - weapon silhouette hints
+  - hot red-orange energy accent
+  continuity_use:
+  - episode_3
+vfx:
+- id: VFX_GOLDEN_SKY_ANOMALY
+  name: 金色天幕
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/VFX/VFX_GOLDEN_SKY_ANOMALY
+  function: 第1集抽卡时把白天校园整体染成金色的天幕异象。
+  continuity_use:
+  - episode_1
+- id: VFX_RAINBOW_LIGHT_PILLAR
+  name: 七彩光柱
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/VFX/VFX_RAINBOW_LIGHT_PILLAR
+  function: 第1集抽卡池上空降下的七彩光柱。
+  continuity_use:
+  - episode_1
+- id: VFX_TONGTIAN_AURA
+  name: 通天教主古朴异象
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/VFX/VFX_TONGTIAN_AURA
+  function: 第1集通天教主卡片与上古威压感的局部异象层。
+  continuity_use:
+  - episode_1
+- id: VFX_RED_SKY_ANOMALY
+  name: 赤红天幕
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/VFX/VFX_RED_SKY_ANOMALY
+  function: 第3集夜间哪吒抽卡点燃全城天空的赤红异象。
+  continuity_use:
+  - episode_3
+- id: VFX_RED_LIGHT_PILLAR
+  name: 赤红光柱
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/VFX/VFX_RED_LIGHT_PILLAR
+  function: 第3集从公共抽卡池直冲天空的红色光柱。
+  continuity_use:
+  - episode_3
+- id: VFX_NEZHA_AVATAR
+  name: 哪吒法相
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/VFX/VFX_NEZHA_AVATAR
+  function: 第3集哪吒三头六臂显形时的主体法相。
+  continuity_use:
+  - episode_3
+- id: VFX_NEZHA_WEAPON_SUITE
+  name: 火轮长枪红绫套件
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/VFX/VFX_NEZHA_WEAPON_SUITE
+  function: 第3集哪吒异象中的火轮、长枪与红绫组合套件。
+  continuity_use:
+  - episode_3

@@ -1,0 +1,205 @@
+notes:
+- 首轮先锁孟江，再补齐学院公开抽卡仪式相关 speaking cast。
+- status 约定：planned=已入 canon 未进入当前轮主攻，prompted=已纳入当前轮提示词，committed=已有仓库落盘母资产。
+characters:
+- id: CHAR_MENGJIANG
+  name: 孟江
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG
+  role: male academy student protagonist
+  narrative_function: 穿越者男主，唯一能抽出东方神明卡牌的异类召唤者。
+  face_anchors:
+  - sharp young East Asian face
+  - calm determined eyes
+  - straight nose bridge
+  - clean jawline
+  hair_headwear: black layered short hair, clean forehead, no accessories
+  visual_anchors:
+  - restrained underdog aura before awakening
+  - upright posture under public pressure
+  - modern academy silhouette with mythic undertone
+  costume_core: black academy uniform with muted gold trim, white inner shirt, fitted trousers
+  material_texture: matte school fabric, restrained metallic trim, no glossy leather
+  color_anchors:
+  - black
+  - charcoal
+  - muted gold
+  - off white
+  body_silhouette: lean athletic young male, long legs, clean upright stance
+  required_angles:
+  - front hero full body
+  - left-facing pure side
+  - pure back
+  - waist-up intense reaction
+  first_story_units:
+  - opening
+  - episode_1
+  - episode_2
+  - episode_3
+  continuity_warnings:
+  - 不能从普通校园男主漂成偶像美型或成熟总裁。
+  - 异象前后只允许气场变化，不允许角色本体换脸换发型。
+- id: CHAR_SITUKUNLUN
+  name: 司徒昆仑
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_SITUKUNLUN
+  role: male academy principal, around 50
+  narrative_function: 学院权威者，负责从制度视角感知异常。
+  face_anchors:
+  - stern mature East Asian face
+  - deep-set observant eyes
+  - pronounced brow line
+  - calm authority
+  hair_headwear: neatly combed dark hair with slight gray, no hat
+  visual_anchors:
+  - principal authority silhouette
+  - composed under pressure
+  - traditional discipline mixed with modern academy leadership
+  costume_core: dark principal suit with academy insignia and structured collar
+  material_texture: matte formal fabric, restrained metallic badge detail
+  color_anchors:
+  - black
+  - dark navy
+  - steel gray
+  - muted gold
+  body_silhouette: tall middle-aged male, broad shoulders, restrained movement
+  required_angles:
+  - front standing portrait
+  - office medium shot
+  - three-quarter reaction
+  first_story_units:
+  - episode_1
+  - episode_3
+  continuity_warnings:
+  - 不要画成反派家主或黑帮大佬，要保留学院校长气质。
+- id: CHAR_SITUQINGQING
+  name: 司徒青青
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_SITUQINGQING
+  role: female academy elite student
+  narrative_function: 校长之女，作为上层学生视角承接“世界规则被撬动”的第一反应。
+  face_anchors:
+  - clean pretty East Asian face
+  - alert intelligent eyes
+  - refined nose and chin
+  - restrained elegance
+  hair_headwear: long dark hair, tidy academy styling, no oversized ornaments
+  visual_anchors:
+  - elite academy bearing
+  - sharp reaction readability
+  - controlled confidence
+  costume_core: fitted elite academy uniform with dark skirt system and subtle gold detailing
+  material_texture: matte uniform cloth, crisp pleats, minimal jewelry
+  color_anchors:
+  - black
+  - deep navy
+  - muted gold
+  - ivory
+  body_silhouette: slim young female, upright posture, clean shoulder line
+  required_angles:
+  - front full body
+  - office reaction medium shot
+  - side profile dialogue shot
+  first_story_units:
+  - episode_1
+  - episode_3
+  continuity_warnings:
+  - 不要跑成甜妹偶像风或现代都市白领风。
+- id: CHAR_OLD_PROFESSOR
+  name: 老教授
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_OLD_PROFESSOR
+  role: male senior ceremony professor, late 50s
+  narrative_function: 公开抽卡仪式主持者，负责把异象抬升到“上古神魔级”的认知震动。
+  face_anchors:
+  - elderly scholarly East Asian face
+  - widened curious eyes
+  - thin lips
+  - academic seriousness
+  hair_headwear: gray sparse hair, slightly receded hairline, thin professor spectacles
+  visual_anchors:
+  - ceremonial academic authority
+  - readable shock reaction
+  - old-school scholar silhouette
+  costume_core: formal professor robe layered over academy attire
+  material_texture: matte cloth, old ceremonial trim, no luxury shine
+  color_anchors:
+  - dark brown
+  - charcoal
+  - faded gold
+  - ivory
+  body_silhouette: slender elderly male, slightly forward posture, hands often gathered
+  required_angles:
+  - front standing portrait
+  - medium reaction shot
+  - side dialogue shot
+  first_story_units:
+  - episode_1
+  continuity_warnings:
+  - 不要画成年轻导师或搞笑老头，保持仪式主持教授的庄重感。
+- id: CHAR_LINQIANQIAN
+  name: 林倩倩
+  status: planned
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_LINQIANQIAN
+  role: female academy student, ex-girlfriend
+  narrative_function: 男主前期情感羞辱线的代表人物，也是第三集夜景反应中的对照角色。
+  face_anchors:
+  - attractive East Asian student face
+  - slightly arrogant eyes
+  - delicate lips
+  - fashionable campus styling
+  hair_headwear: long styled dark hair, polished academy grooming
+  visual_anchors:
+  - beauty with superiority
+  - visible class selection instinct
+  - can shift from public disdain to startled reaction
+  costume_core: upgraded academy uniform variant with feminine tailoring
+  material_texture: matte cloth with slightly better trim and accessories than standard students
+  color_anchors:
+  - black
+  - burgundy accent
+  - muted gold
+  - ivory
+  body_silhouette: slim young female, graceful but slightly aggressive body language
+  required_angles:
+  - front full body
+  - cafeteria medium shot
+  - dorm window reaction shot
+  first_story_units:
+  - episode_2
+  - episode_3
+  continuity_warnings:
+  - 不要画成成熟御姐或网红写真风。
+- id: CHAR_ZHANGHE
+  name: 张贺
+  status: planned
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_ZHANGHE
+  role: male rich academy student rival
+  narrative_function: 男主前期校园压制者，也是第三集夜景反应中的轻蔑对照。
+  face_anchors:
+  - handsome East Asian young male face
+  - arrogant lifted chin
+  - sharp confident eyes
+  - clean rich-kid grooming
+  hair_headwear: styled dark hair, controlled volume, no accessories
+  visual_anchors:
+  - rich elite academy presence
+  - dismissive body language
+  - visually opposite to Mengjiang's restrained underdog look
+  costume_core: premium academy uniform variant with cleaner tailoring and family-status badge
+  material_texture: crisp uniform cloth, slightly more polished shoes and trim
+  color_anchors:
+  - black
+  - dark wine red
+  - muted gold
+  - steel gray
+  body_silhouette: fit young male, confident shoulder line, slightly aggressive stance
+  required_angles:
+  - front full body
+  - cafeteria confrontation shot
+  - rooftop or terrace reaction shot
+  first_story_units:
+  - episode_2
+  - episode_3
+  continuity_warnings:
+  - 不要画成社会青年或反派打手，仍然是学院体系内的风云学生。
