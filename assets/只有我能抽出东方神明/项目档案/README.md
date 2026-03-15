@@ -22,7 +22,7 @@
   - `episodes/ep001/asset-manifest`
   - `episodes/ep001/director-queue`
 - 对以上结构化文件，不要手改生成出来的 `.md`；应先改 `.yaml`，再运行：
-  - `python3 scripts/render-project-archive.py assets/只有我能抽出东方神明/项目档案`
+  - `python3 scripts/archive_cli.py render assets/只有我能抽出东方神明/项目档案`
 
 ## 结构
 
@@ -36,7 +36,7 @@
 ## 当前约定
 
 - 原始剧本来源：`assets/只有我能抽出东方神明/剧本/只有我能抽出东方神明.docx`
-- 当前状态：`fresh reset`
+- 当前状态：`script imported + breakdown ready + first-round canon drafted`
 - `Midjourney` 只负责底图
 - `Banana Pro` 统一负责改图、修正规则、抽单格和回拼
 - 对角色资产，优先增加 `Face Draft` 步骤：先用 `Midjourney` 生成脸部或半身定稿，再用它作为最高优面部参考去生成全身定稿

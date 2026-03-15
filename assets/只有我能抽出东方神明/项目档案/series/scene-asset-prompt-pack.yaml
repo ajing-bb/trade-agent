@@ -4,4 +4,58 @@ rules:
   midjourney_role: scene_master_only
   banana_role: derive_reverse_angle_variant_and_repair
   scene_pipeline: scene_master_then_banana_derived_views
-locations: []
+locations:
+- id: LOC_ACADEMY_PLAYGROUND_DAY
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/场景/LOC_ACADEMY_PLAYGROUND_DAY
+  reference_assets:
+  - assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-bible.yaml
+  required_outputs:
+  - scene_master_day
+  - reverse_seed
+  midjourney:
+    scene_master_day: Shenfeng Academy playground, wide academy plaza used for ritual card drawing, academy main building in background, central stone draw pool device in the middle of the field, rows of western god and demon statues along the axis, track edge lines and viewing stand readable, bright daylight, clear sky, crowd-ready open space, gothic academy architecture, clean comic linework, 2-step cel shading, 2D Chinese manhua still, readable wide composition, not modern high school, not shopping mall, not sci-fi campus --ar 16:9 --v 7 --raw
+    reverse_seed: same Shenfeng Academy playground, reverse-side view of the same ritual space, preserve academy main building relationship, preserve central draw pool position, preserve statue-lined axis, preserve field markings and viewing stand logic, same daylight mood, readable shot coverage for character reverse shots, clean comic linework, 2-step cel shading, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ACADEMY_PLAYGROUND_MASTER] --ow 200
+  banana:
+    crowd_ready_cleanup: 保留操场、抽卡池、学院主体建筑、雕像轴线和白天光照不变，只清理画面里不稳定的杂乱人群或错误建筑，使这个场景能作为后续多人镜头母图。保持透视、地面高度和场景布局不变。
+  archive_updates:
+  - assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-bible.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-asset-prompt-pack.yaml
+- id: LOC_HEADMASTER_OFFICE_DAY
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/场景/LOC_HEADMASTER_OFFICE_DAY
+  reference_assets:
+  - assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-bible.yaml
+  required_outputs:
+  - office_master_day
+  - window_dialogue_reverse
+  midjourney:
+    office_master_day: headmaster office inside Shenfeng Academy, large window looking out to the academy sky, heavy desk, bookshelves or file wall, western god relief details, authority space for high-ranking school leader, daylight interior, clean spatial layout, clean comic linework, 2-step cel shading, 2D Chinese manhua still, not CEO office, not palace, not modern glass conference room --ar 16:9 --v 7 --raw
+    window_dialogue_reverse: same academy headmaster office, reverse-side view of the same room, preserve large window, heavy desk, shelf wall and relief details, same daylight mood, readable father-daughter dialogue coverage, clean comic linework, 2-step cel shading, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [HEADMASTER_OFFICE_MASTER] --ow 200
+  banana:
+    office_cleanup: 保留校长办公室的大窗、办公桌、书柜墙和学院装饰浮雕不变，只清理错误家具和不稳定细节，使其成为司徒昆仑与司徒青青对话的稳定母图。不要改成企业总裁室。
+  archive_updates:
+  - assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-bible.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-asset-prompt-pack.yaml
+- id: LOC_PUBLIC_DRAW_POOL_NIGHT
+  status: prompted
+  target_path: assets/只有我能抽出东方神明/场景/LOC_PUBLIC_DRAW_POOL_NIGHT
+  reference_assets:
+  - assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-bible.yaml
+  required_outputs:
+  - scene_master_night
+  - skyline_reverse_seed
+  midjourney:
+    scene_master_night: public draw pool at night, ritual plaza in the city, central circular stone draw pool device, carved ground patterns, card slot and button platform readable, distant city skyline behind, dark blue-black night base with crimson anomaly reflection on the ground, empty single-character-ready space, sacred mythic mood, clean comic linework, 2-step cel shading, 2D Chinese manhua still, not wasteland, not ruin, not cyberpunk neon city --ar 16:9 --v 7 --raw
+    skyline_reverse_seed: same public draw pool night plaza, reverse-side view of the same space, preserve central draw pool scale, preserve skyline placement, preserve carved ground pattern and red light reflection, same night mood, readable reverse-shot coverage, clean comic linework, 2-step cel shading, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [PUBLIC_DRAW_POOL_NIGHT_MASTER] --ow 200
+  banana:
+    anomaly_plate_cleanup: 保留公共抽卡池、城市天际线、地面红光反射和夜景布局不变，只清理不稳定的灯光、错误建筑和多余人物，使其成为后续哪吒异象叠加的稳定 plate。不要改变空间结构和视角。
+  archive_updates:
+  - assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-bible.yaml
+  - assets/只有我能抽出东方神明/项目档案/series/scene-asset-prompt-pack.yaml

@@ -14,14 +14,14 @@ echo "Syncing project archive Markdown from canonical YAML..."
 
 echo "$archives" | while IFS= read -r archive; do
   [ -n "$archive" ] || continue
-  python3 scripts/render-project-archive.py "$archive"
+  python3 scripts/archive_cli.py render "$archive"
 done
 
 echo "Validating project archive canonical links..."
 
 echo "$archives" | while IFS= read -r archive; do
   [ -n "$archive" ] || continue
-  python3 scripts/check-asset-health.py "$archive"
+  python3 scripts/archive_cli.py check "$archive"
 done
 
 git add \

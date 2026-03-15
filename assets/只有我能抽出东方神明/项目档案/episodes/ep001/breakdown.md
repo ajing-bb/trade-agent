@@ -7,7 +7,7 @@
 | Field | Value |
 | --- | --- |
 | Project Type | AI漫剧 |
-| Target Style |  |
+| Target Style | 东方神明学院异象热血漫剧 |
 | Core Theme | 抽卡 / 异象 / 学院 |
 | Core Continuity Risks | 高风险镜头已自动标出、强 VFX 与剧情转折并存、多人镜头存在一致性压力 |
 | Manual Review Count | 33 |

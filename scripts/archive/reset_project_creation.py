@@ -178,7 +178,7 @@ def archive_readme(ctx: ResetContext) -> str:
   - `episodes/{ctx.episode_id}/asset-manifest`
   - `episodes/{ctx.episode_id}/director-queue`
 - 对以上结构化文件，不要手改生成出来的 `.md`；应先改 `.yaml`，再运行：
-  - `python3 scripts/render-project-archive.py {archive_label}`
+  - `python3 scripts/archive_cli.py render {archive_label}`
 
 ## 结构
 
@@ -245,7 +245,7 @@ def progress_update_sop(ctx: ResetContext) -> str:
 渲染命令：
 
 ```bash
-python3 scripts/render-project-archive.py {archive_label}
+python3 scripts/archive_cli.py render {archive_label}
 ```
 
 ## Fresh Start 默认顺序
@@ -512,7 +512,7 @@ def write_archive_files(ctx: ResetContext) -> None:
 
 
 def render_archive(ctx: ResetContext) -> None:
-    render_script = Path(__file__).with_name("render-project-archive.py")
+    render_script = Path(__file__).with_name("render_project_archive.py")
     subprocess.run(
         [sys.executable, str(render_script), str(ctx.archive_dir)],
         check=True,

@@ -1,10 +1,52 @@
-style_name: ''
-core_format: ''
-overall_density: ''
-realism_level: ''
-reference_warning: []
-line_and_render: {}
-color_and_light: {}
-world_design: {}
-camera_rules: {}
-failure_boundaries: []
+style_name: 东方神明学院异象热血漫剧
+core_format: 2D manhua
+overall_density: medium
+realism_level: semi-flat
+reference_warning:
+- do not drift into glossy乙游立绘
+- do not drift into韩系写真脸
+- do not drift into萌系校园番
+- do not drift into高写实电影级CG
+line_and_render:
+  line_quality: hard-clean with selective weight change
+  shadow_depth: 2-step cel shade with restrained rim light
+  skin_finish: matte with slight warm highlight
+  hair_finish: grouped locks first, detail strands second
+  fabric_finish: medium folds, readable silhouette before texture
+  metallic_finish: limited bright edges, no mirror chrome
+color_and_light:
+  day_palette:
+  - cool white daylight
+  - academy stone gray
+  - muted navy uniform
+  night_palette:
+  - blue-black night base
+  - city amber window light
+  - crimson anomaly reflection
+  gold_fire_energy_palette:
+  - ancient gold
+  - rainbow halo only at peak descent
+  - fire red for Nezha system
+  academy_base_palette:
+  - stone gray
+  - desaturated blue
+  - dark bronze
+  contrast_policy: high when异象爆发, medium in dialogue scenes
+  highlight_policy: strong only on cards, eyes, and core VFX edges
+world_design:
+  school_uniform_system: Western-magic academy uniforms with dark jackets, crest details, structured collars, and hierarchy visible through tailoring rather than fantasy armor.
+  architecture_language: gothic-academy massing plus broad campus plazas, stone facades, statue-lined axes, and ritual-device insertion points.
+  prop_language: draw-card devices use carved stone plus restrained metal, cards read as sacred artifacts rather than sci-fi chips.
+  vfx_split_rules: western summons use darker violet-black, winged, infernal energy; eastern deity异象 use ancient gold or fire red with cleaner sacred geometry.
+  east_vs_west_visual_contrast: western system is cold, carved, heavy, and institutional; eastern system is radiant, upright, sacred, and mythic.
+camera_rules:
+  default_framing: medium wides and hero mediums, keeping devices and architecture readable.
+  dialogue_coverage: use 3/4 front and side-reverse pairs, avoid flat talking-head framing.
+  reveal_shots: reserve low-angle silhouettes and skyline-backed freezes for东方神明首次显现。
+  vfx_hero_shots: effects must emerge from a stable environment plate, then add layered VFX rather than repainting the whole frame.
+  crowd_policy: foreground crowd uses 2-4 stable archetypes, background crowd stays soft and modular.
+failure_boundaries:
+- do not let孟江变成油亮偶像脸或轻浮少年漫表情包
+- do not let学院场景跑成现代商场或普通高中
+- do not mix金色东方异象和赤红哪吒异象为同一种能量材质
+- do not over-render every shot into poster art at the cost of shot continuity

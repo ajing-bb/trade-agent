@@ -4,13 +4,16 @@
 This repository is a lightweight workspace for local agent skills, helper scripts, and reference assets.
 
 - `.agents/skills/`: installable or vendored skills. Each skill keeps its own `SKILL.md`, and some include full Python packages with `pyproject.toml`, source, and `tests/`.
-- `scripts/`: repo-local utilities such as `cloudflare-crawl.mjs`, `xhs-*.py`, and `twitter-post-media.py`.
+- `scripts/`: repo-local utilities. For AI manhua / AI short-drama archive work, use the unified `archive_cli.py` entrypoint. Archive implementation files live under `scripts/archive/`. Keep `xhs-*.py`, `twitter-post-media.py`, and `cloudflare-crawl.mjs` as separate external-platform helpers; they are not part of the archive CLI surface.
 - `assets/`: static creative assets and source material. Treat large binaries and generated content as data, not code.
 - `skills-lock.json`: lockfile for pinned skill sources and hashes.
 
 ## Build, Test, and Development Commands
 There is no single root build or test command. Use the script or skill you are changing.
 
+- `python3 scripts/archive_cli.py --help`: inspect the unified archive workflow CLI.
+- `python3 scripts/archive_cli.py sync assets/<项目名> --episode ep001 --batch-id Batch-01`: refresh prompt packs, queue, runbook, and archive checks for one episode.
+- `python3 scripts/archive_cli.py ingest assets/<项目名> --dry-run`: preview which generated asset folders can be promoted to `committed`.
 - `node scripts/cloudflare-crawl.mjs --help`: inspect and run the Cloudflare crawl helper.
 - `python3 scripts/xhs-profile-dump.py --help`: dump Xiaohongshu profile data.
 - `python3 scripts/xhs-expand-threads-batch.py --help`: expand stored XHS threads.
@@ -42,6 +45,9 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
 
 - Treat repository archives as canonical memory. Chat discussion, exploratory prompts, and temporary conclusions are not canonical by default.
 - Canonical project memory lives under `assets/<项目名>/项目档案/`.
+- Prefer `python3 scripts/archive_cli.py ...` for archive commands. It is the single user-facing CLI entrypoint for the archive workflow.
+- Archive implementation code lives under `scripts/archive/`. Add new archive logic there rather than in `scripts/` root.
+- `xhs` / `twitter` / `crawl` scripts are out of scope for `archive_cli.py`; treat them as separate external-platform utilities.
 - If `assets/<项目名>/项目档案/` does not exist, treat the project as a true fresh start with no canonical memory yet. In that case, do not infer old canon from prior chats or deleted files; rebuild the archive only when the user explicitly starts `ai-video-consistency` work again.
 - Read canonical files before continuing sequel work, revisions, or prompt generation:
   - `series/series-bible`
@@ -69,15 +75,29 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
   - `manual_review_summary` is the episode-level review inbox
   - `scenes[].review_flags`, `shots[].review_flags`, and `character_mention_map[].review_flags` mark heuristic rows that still need human production cleanup
 - Do not manually edit generated Markdown for those files. Update the YAML first, then run:
-  - `python3 scripts/render-project-archive.py assets/<项目名>/项目档案`
+  - `python3 scripts/archive_cli.py render assets/<项目名>/项目档案`
 - To wipe a project back to only its source script, use:
-  - `python3 scripts/reset-project-creation.py assets/<项目名> --yes`
+  - `python3 scripts/archive_cli.py reset assets/<项目名> --yes`
 - To wipe a project and immediately recreate an empty archive skeleton, use:
-  - `python3 scripts/reset-project-creation.py assets/<项目名> --rebuild-skeleton --yes`
+  - `python3 scripts/archive_cli.py reset assets/<项目名> --rebuild-skeleton --yes`
 - To initialize a fresh project archive from the remaining source script, use:
-  - `python3 scripts/init-project-archive.py assets/<项目名>`
+  - `python3 scripts/archive_cli.py init assets/<项目名>`
 - To verify that canonical YAML paths still match the filesystem, use:
-  - `python3 scripts/check-asset-health.py assets/<项目名>`
+  - `python3 scripts/archive_cli.py check assets/<项目名>`
+- To switch style presets across style bible and prompt packs, use:
+  - `python3 scripts/archive_cli.py style assets/<项目名> --preset 2d-manhua`
+- To regenerate prompt packs from canonical bibles, use:
+  - `python3 scripts/archive_cli.py prompts assets/<项目名> --episode ep001 --render`
+- To regenerate continuity policy and director queue, use:
+  - `python3 scripts/archive_cli.py queue assets/<项目名> --episode ep001 --render`
+- To regenerate batch execution and prompt docs, use:
+  - `python3 scripts/archive_cli.py runbook assets/<项目名> --episode ep001 --batch-id Batch-01`
+- To update one asset's canonical status, use:
+  - `python3 scripts/archive_cli.py status assets/<项目名> CHAR_MENGJIANG --status committed --path assets/<项目名>/角色/CHAR_MENGJIANG`
+- To batch-promote generated assets using strict file-selection rules, use:
+  - `python3 scripts/archive_cli.py ingest assets/<项目名> --episode ep001 --dry-run`
+- To run the repo-internal archive pipeline end-to-end, use:
+  - `python3 scripts/archive_cli.py sync assets/<项目名> --episode ep001 --batch-id Batch-01`
 - `check-asset-health.py` validates more than file existence:
   - it checks cross-file semantic consistency between `breakdown`, `continuity-plan`, `director-queue`, and `asset-manifest`
   - broken `shot_id` references, invalid queue states, and character-asset status/type mismatches should be treated as canonical errors, not bookkeeping warnings

@@ -733,7 +733,7 @@ def ensure_archive(project_root: Path, source_script: Path, episode_id: str) -> 
     archive_dir = project_root / "项目档案"
     if archive_dir.exists():
         return
-    reset_script = Path(__file__).with_name("reset-project-creation.py")
+    reset_script = Path(__file__).with_name("reset_project_creation.py")
     subprocess.run(
         [
             sys.executable,
@@ -765,7 +765,7 @@ def archive_has_imported_content(script_yaml: Path, breakdown_yaml: Path) -> boo
 
 
 def render_archive(project_root: Path) -> None:
-    render_script = Path(__file__).with_name("render-project-archive.py")
+    render_script = Path(__file__).with_name("render_project_archive.py")
     subprocess.run(
         [sys.executable, str(render_script), str(project_root / "项目档案")],
         check=True,

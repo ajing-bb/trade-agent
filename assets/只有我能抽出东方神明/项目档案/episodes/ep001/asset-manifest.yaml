@@ -1,8 +1,66 @@
 notes:
-- 项目已 fresh reset，当前只保留原始剧本文件。
-- 后续新图落盘后，应先更新本文件，再同步对应 bible。
+- 当前只有原始剧本文件 committed；视觉资产尚未落盘。
+- series/ 已完成第一轮文字级 canonical 设定，第一批孟江 / 神风学院操场 / 公共抽卡池 / 抽卡池装置已进入 prompted。
+- 第二批司徒父女 / 校长办公室 / 通天教主卡 / 哪吒卡 / 关键异象已进入 prompted。
+- 后续新图落盘后应先更新本文件，再同步对应 bible。
 assets:
 - id: SRC_SCRIPT_DOCX
   type: script
   status: committed
   path: assets/只有我能抽出东方神明/剧本/只有我能抽出东方神明.docx
+- id: CHAR_MENGJIANG
+  type: character
+  status: prompted
+  path: assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG
+- id: CHAR_SITUKUNLUN
+  type: character
+  status: prompted
+  path: assets/只有我能抽出东方神明/角色/CHAR_SITUKUNLUN
+- id: CHAR_SITUQINGQING
+  type: character
+  status: prompted
+  path: assets/只有我能抽出东方神明/角色/CHAR_SITUQINGQING
+- id: LOC_ACADEMY_PLAYGROUND_DAY
+  type: scene
+  status: prompted
+  path: assets/只有我能抽出东方神明/场景/LOC_ACADEMY_PLAYGROUND_DAY
+- id: LOC_HEADMASTER_OFFICE_DAY
+  type: scene
+  status: prompted
+  path: assets/只有我能抽出东方神明/场景/LOC_HEADMASTER_OFFICE_DAY
+- id: LOC_PUBLIC_DRAW_POOL_NIGHT
+  type: scene
+  status: prompted
+  path: assets/只有我能抽出东方神明/场景/LOC_PUBLIC_DRAW_POOL_NIGHT
+- id: PROP_DRAW_POOL_DEVICE
+  type: prop
+  status: prompted
+  path: assets/只有我能抽出东方神明/道具/PROP_DRAW_POOL_DEVICE
+- id: CARD_TONGTIANJIAOZHU
+  type: prop
+  status: prompted
+  path: assets/只有我能抽出东方神明/道具/CARD_TONGTIANJIAOZHU
+- id: CARD_NEZHA
+  type: prop
+  status: prompted
+  path: assets/只有我能抽出东方神明/道具/CARD_NEZHA
+- id: VFX_GOLDEN_SKY_OMEN
+  type: vfx
+  status: prompted
+  path: assets/只有我能抽出东方神明/VFX/VFX_GOLDEN_SKY_OMEN
+- id: VFX_RAINBOW_DESCENT_PILLAR
+  type: vfx
+  status: prompted
+  path: assets/只有我能抽出东方神明/VFX/VFX_RAINBOW_DESCENT_PILLAR
+- id: VFX_RED_SKY_FIRE_OMEN
+  type: vfx
+  status: prompted
+  path: assets/只有我能抽出东方神明/VFX/VFX_RED_SKY_FIRE_OMEN
+- id: VFX_RED_ASCENT_PILLAR
+  type: vfx
+  status: prompted
+  path: assets/只有我能抽出东方神明/VFX/VFX_RED_ASCENT_PILLAR
+- id: VFX_NEZHA_WEAPON_MANIFEST
+  type: vfx
+  status: prompted
+  path: assets/只有我能抽出东方神明/VFX/VFX_NEZHA_WEAPON_MANIFEST

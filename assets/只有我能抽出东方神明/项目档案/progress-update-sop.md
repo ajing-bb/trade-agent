@@ -33,7 +33,7 @@
 渲染命令：
 
 ```bash
-python3 scripts/render-project-archive.py assets/只有我能抽出东方神明/项目档案
+python3 scripts/archive_cli.py render assets/只有我能抽出东方神明/项目档案
 ```
 
 ## Fresh Start 默认顺序

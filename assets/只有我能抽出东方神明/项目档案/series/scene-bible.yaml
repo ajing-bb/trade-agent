@@ -1,3 +1,233 @@
 rules:
-- 项目已 fresh reset，场景 canonical 资产待重新建立。
-locations: []
+- 已完成第一轮文字级场景锁定，当前待补各场景 master shot 与反打种子。
+- LOC_ACADEMY_PLAYGROUND_DAY 与 LOC_PUBLIC_DRAW_POOL_NIGHT 已进入 prompted 阶段，等待 Midjourney 场景母图。
+- LOC_HEADMASTER_OFFICE_DAY 已进入 prompted，作为第二批解释位场景母图。
+- EP001-S05 的“各处”按办公室 / 宿舍窗边 / 张家会客厅拆开处理，不把它当单一场景生成。
+locations:
+- id: LOC_ACADEMY_PLAYGROUND_DAY
+  name: 神风学院操场
+  function: 开场说明世界观、白天抽卡、学生围观、金色异象第一次爆发。
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/场景/LOC_ACADEMY_PLAYGROUND_DAY
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/scene-asset-prompt-pack.yaml
+  recurring: true
+  master_shot_needed: true
+  environment_type: 校园广场 / 抽卡仪式区
+  time: day
+  weather: clear
+  anchors:
+  - 学院主体建筑
+  - 操场中央抽卡池
+  - 西方神魔雕像列阵
+  - 跑道边线与看台
+  - 教授主持位
+  character_zones:
+  - 抽卡池正前方主角位
+  - 池边教授主持位
+  - 环形围观学生位
+  - 远处学院高层观察位
+  camera_seeds:
+  - front wide
+  - pool-side medium
+  - high-angle crowd
+  - reverse from audience
+  - low-angle hero reveal
+  reverse_shot_needed: true
+  crowd_policy: 前景只固定2个男学生模板与2个女学生模板，远景人群保持软背景，不做逐个身份锁定。
+  signature_assets:
+  - 抽卡池装置
+  - 西方神魔雕像
+  - 金色天空异象
+  - 七彩光柱
+  must_not_drift:
+  - 抽卡池永远在操场中央
+  - 背后必须能看到学院主体建筑或其延伸轴线
+  - 雕像应保持西方神魔体系的冷硬石雕语言
+  acceptable_variation:
+  - 围观人数
+  - 云层厚度
+  - 光柱强度
+  high_risk_angles:
+  - giant high-angle crowd
+  - full 360 reveal with many extras
+- id: LOC_CANTEEN_DAY
+  name: 学院食堂
+  function: 分手羞辱戏、校园舆论压力与张贺阵营亮相。
+  status: planned
+  recurring: true
+  master_shot_needed: true
+  environment_type: 校园食堂
+  time: day
+  weather: indoor
+  anchors:
+  - 打饭窗口
+  - 长桌排布
+  - 立柱与吊灯
+  - 偏僻角落座位
+  - 人流背景
+  character_zones:
+  - 孟江角落座位
+  - 林倩倩与张贺入镜动线
+  - 周边学生看戏位
+  camera_seeds:
+  - corner medium
+  - aisle approach
+  - seated reverse
+  - crowd reaction side
+  reverse_shot_needed: true
+  crowd_policy: 食堂人群主要是中后景氛围层，前景只保留少量可复用学生模板。
+  signature_assets:
+  - 食堂长桌
+  - 托盘与餐碗
+  must_not_drift:
+  - 长桌方向与窗口区关系保持稳定
+  - 孟江的角落位应始终显得边缘
+  acceptable_variation:
+  - 桌面杂物
+  - 背景学生密度
+  high_risk_angles:
+  - long dialogue walk-and-talk through crowd
+- id: LOC_PUBLIC_DRAW_POOL_NIGHT
+  name: 公共抽卡池
+  function: 夜间第二次抽卡、哪吒异象全面爆发与力量真正显化。
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/场景/LOC_PUBLIC_DRAW_POOL_NIGHT
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/scene-asset-prompt-pack.yaml
+  recurring: true
+  master_shot_needed: true
+  environment_type: 城市公共仪式广场
+  time: night
+  weather: clear
+  anchors:
+  - 圆形抽卡池主体
+  - 石质广场地面纹样
+  - 卡槽与按钮台
+  - 城市天际线
+  - 异象映射到地面的红光
+  character_zones:
+  - 抽卡池正前单人位
+  - 卡槽近景操作位
+  - 上空法器显化区
+  camera_seeds:
+  - front wide night
+  - low-angle pool hero
+  - button close-up
+  - skyline-backed reverse
+  reverse_shot_needed: true
+  crowd_policy: 该场景首批以无人夜景为主，只做孟江单人版，不加围观群众。
+  signature_assets:
+  - 抽卡池装置
+  - 赤红天空异象
+  - 红色光柱
+  - 火轮长枪红绫显化
+  must_not_drift:
+  - 必须保留城市天际线与地面红光反射
+  - 抽卡池尺寸和结构不能比学院版更小气
+  - 夜景不能跑成废墟或荒郊野外
+  acceptable_variation:
+  - 天际线远近
+  - 红光强弱
+  - 烟尘粒子密度
+  high_risk_angles:
+  - giant vertical upshot of full anomaly
+  - top-down plus weapon manifestation
+- id: LOC_HEADMASTER_OFFICE_DAY
+  name: 校长办公室
+  function: 学院高层感知异象，抬高事件级别。
+  status: prompted
+  asset_root: assets/只有我能抽出东方神明/场景/LOC_HEADMASTER_OFFICE_DAY
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/scene-asset-prompt-pack.yaml
+  recurring: true
+  master_shot_needed: true
+  environment_type: 学院高层办公室
+  time: day
+  weather: indoor
+  anchors:
+  - 大窗
+  - 厚重办公桌
+  - 书柜或文件墙
+  - 西方神魔装饰浮雕
+  character_zones:
+  - 办公桌后校长位
+  - 窗边观察位
+  - 司徒青青站位
+  camera_seeds:
+  - desk medium
+  - window reaction
+  - father-daughter reverse
+  reverse_shot_needed: true
+  crowd_policy: 无群演，双人关系位必须稳定。
+  signature_assets:
+  - 办公桌
+  - 窗景中的异象天色
+  must_not_drift:
+  - 办公室必须保留学院权威感，不做现代企业总裁室
+  acceptable_variation:
+  - 桌面文件数量
+  - 室内暖冷光比例
+  high_risk_angles:
+  - simultaneous window reflection and dialogue close-up
+- id: LOC_ELITE_DORM_WINDOW_NIGHT
+  name: 高级宿舍窗边
+  function: 林倩倩在夜间异象中的单人反应位。
+  status: planned
+  recurring: true
+  master_shot_needed: true
+  environment_type: 学院精英宿舍
+  time: night
+  weather: indoor
+  anchors:
+  - 落地窗或大窗
+  - 室内简洁床位
+  - 夜色下的学院或城市远景
+  - 赤红异象投射
+  character_zones:
+  - 窗前单人位
+  camera_seeds:
+  - window medium
+  - side reaction
+  reverse_shot_needed: false
+  crowd_policy: 单人反应场景。
+  signature_assets:
+  - 窗面红光
+  must_not_drift:
+  - 不能跑成豪宅卧室
+  - 必须保留学院宿舍属性
+  acceptable_variation:
+  - 室内陈设简繁
+  high_risk_angles:
+  - reflective glass close-up
+- id: LOC_ZHANG_RESIDENCE_HALL_NIGHT
+  name: 张家会客厅
+  function: 张贺与张强的家族利益判断场景。
+  status: planned
+  recurring: true
+  master_shot_needed: true
+  environment_type: 家族宅邸会客厅
+  time: night
+  weather: indoor
+  anchors:
+  - 厚重会客椅
+  - 高窗或挑高背景
+  - 家族纹章
+  - 赤红天光映入室内
+  character_zones:
+  - 张强主位
+  - 张贺侧位
+  camera_seeds:
+  - family dialogue two-shot
+  - seated reverse
+  - window-side reaction
+  reverse_shot_needed: true
+  crowd_policy: 双人主场，不加群演。
+  signature_assets:
+  - 家族纹章
+  - 赤红天光
+  must_not_drift:
+  - 不能跑成欧式皇宫或现代酒店大堂
+  - 必须体现家族势力而非校园空间
+  acceptable_variation:
+  - 家具纹样
+  - 室内明暗层次
+  high_risk_angles:
+  - two-shot with visible sky anomaly
