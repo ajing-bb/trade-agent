@@ -1,0 +1,34 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+
+archives=$(find assets -type d -name '项目档案' 2>/dev/null || true)
+
+if [ -z "${archives}" ]; then
+  exit 0
+fi
+
+echo "Syncing project archive Markdown from canonical YAML..."
+
+echo "$archives" | while IFS= read -r archive; do
+  [ -n "$archive" ] || continue
+  python3 scripts/render-project-archive.py "$archive"
+done
+
+git add \
+  'assets/*/项目档案/series/series-bible.md' \
+  'assets/*/项目档案/series/style-bible.md' \
+  'assets/*/项目档案/series/character-bible.md' \
+  'assets/*/项目档案/series/character-asset-prompt-pack.md' \
+  'assets/*/项目档案/series/scene-bible.md' \
+  'assets/*/项目档案/series/scene-asset-prompt-pack.md' \
+  'assets/*/项目档案/series/prop-vfx-bible.md' \
+  'assets/*/项目档案/series/prop-vfx-asset-prompt-pack.md' \
+  'assets/*/项目档案/episodes/*/breakdown.md' \
+  'assets/*/项目档案/episodes/*/continuity-plan.md' \
+  'assets/*/项目档案/episodes/*/script-normalized.md' \
+  'assets/*/项目档案/episodes/*/asset-manifest.md' \
+  'assets/*/项目档案/episodes/*/director-queue.md' \
+  2>/dev/null || true

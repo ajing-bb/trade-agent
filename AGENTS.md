@@ -42,6 +42,7 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
 
 - Treat repository archives as canonical memory. Chat discussion, exploratory prompts, and temporary conclusions are not canonical by default.
 - Canonical project memory lives under `assets/<项目名>/项目档案/`.
+- If `assets/<项目名>/项目档案/` does not exist, treat the project as a true fresh start with no canonical memory yet. In that case, do not infer old canon from prior chats or deleted files; rebuild the archive only when the user explicitly starts `ai-video-consistency` work again.
 - Read canonical files before continuing sequel work, revisions, or prompt generation:
   - `series/series-bible`
   - `series/style-bible`
@@ -49,15 +50,44 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
   - `series/scene-bible`
   - `series/prop-vfx-bible`
   - current `episodes/epXXX/` breakdown, continuity-plan, director-queue, and asset-manifest
+- For structured production archive files, use `YAML` as the canonical single source of truth and treat Markdown as generated read-only views.
+- Current YAML-canonical files:
+  - `series/series-bible.yaml`
+  - `series/style-bible.yaml`
+  - `series/character-bible.yaml`
+  - `series/character-asset-prompt-pack.yaml`
+  - `series/scene-bible.yaml`
+  - `series/scene-asset-prompt-pack.yaml`
+  - `series/prop-vfx-bible.yaml`
+  - `series/prop-vfx-asset-prompt-pack.yaml`
+  - `episodes/epXXX/breakdown.yaml`
+  - `episodes/epXXX/continuity-plan.yaml`
+  - `episodes/epXXX/script-normalized.yaml`
+  - `episodes/epXXX/asset-manifest.yaml`
+  - `episodes/epXXX/director-queue.yaml`
+- Do not manually edit generated Markdown for those files. Update the YAML first, then run:
+  - `python3 scripts/render-project-archive.py assets/<项目名>/项目档案`
+- To wipe a project back to only its source script, use:
+  - `python3 scripts/reset-project-creation.py assets/<项目名> --yes`
+- To wipe a project and immediately recreate an empty archive skeleton, use:
+  - `python3 scripts/reset-project-creation.py assets/<项目名> --rebuild-skeleton --yes`
+- To initialize a fresh project archive from the remaining source script, use:
+  - `python3 scripts/init-project-archive.py assets/<项目名>`
+- Optional repo automation:
+  - install hooks with `sh scripts/install-git-hooks.sh`
+  - current `pre-commit` hook auto-renders generated Markdown from YAML before commit
+  - hooks enforce sync, but they do not infer semantic progress changes for you
 
 ### Tool Boundary
 - `Midjourney` is for base images only:
-  - character face sheets
-  - full-body base images
-  - turnaround bases
+  - character face drafts
+  - character full-body masters
   - scene masters
   - prop / VFX base plates
 - `Banana Pro` is the default editor for all revisions:
+  - generate turnaround / expression / angle packs from an approved character master
+  - generate reverse angles / shot variants from an approved scene master
+  - generate prop / VFX variants from an approved master asset
   - costume unification
   - front / side / back correction
   - single-panel extraction
@@ -72,8 +102,20 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
   - final export variants
 
 ### Prompting Rules
+- Default character pipeline:
+  - `Face Draft -> Full Body Master -> Banana Derived Pack`
+  - first lock the face in Midjourney using a face draft or half-body close-up
+  - then use that face draft as the highest-priority reference to generate the full-body master
+  - then generate turnaround / expression / angle assets in Banana Pro from that approved full-body master
+- Default scene / prop / VFX pipeline:
+  - `Midjourney master -> Banana derived variants`
+  - do not keep re-generating parallel variants in Midjourney after one usable master is approved
 - Do not use Midjourney as the primary repair tool once a usable base image exists.
 - Do not write Banana Pro prompts in Midjourney style. Banana Pro prompts should be short, local, and edit-specific.
+- For Banana Pro derived prompts, explicitly reference the approved master:
+  - use phrases like `请参考当前资产定稿`
+  - for characters, use phrases like `请参考当前人物全身照`
+  - treat the approved master as the only primary identity / layout reference unless the user explicitly overrides it
 - For Banana Pro, prefer one edit objective at a time:
   - only fix side-view direction
   - only unify costume
@@ -90,11 +132,27 @@ Whenever a new asset is actually committed to the repo, update memory in this or
 
 1. Confirm the real committed path and stable asset ID.
 2. Update the current episode's `asset-manifest`.
-3. Update the matching series bible:
+3. Update the matching series bible YAML:
    - character asset -> `series/character-bible`
    - scene master -> `series/scene-bible`
    - prop / card / weapon / anomaly -> `series/prop-vfx-bible`
 4. If the asset changes global visual rules, update `series/style-bible`.
 5. If the asset changes shot dependencies, update `director-queue` or `continuity-plan`.
+6. Re-render generated Markdown from YAML for the structured archive files.
 
 Do not treat an asset as canonical until steps 1-3 are complete.
+
+### Progress Tracking
+- This workflow is expected to survive Codex exits and later resumptions.
+- If any of the following changes, update repository memory before ending the work session:
+  - a new asset master or face draft is approved
+  - an asset moves from `planned` to `prompted`
+  - an asset moves from `prompted` to `committed`
+  - a global workflow or style rule changes
+  - a shot's blocking state changes in `director-queue`
+- Keep `director-queue` as a production queue, not just a shot list:
+  - record blocking assets
+  - record primary refs
+  - record the next action
+  - record fallback execution
+- Prefer checking `assets/<项目名>/项目档案/progress-update-sop.md` before wrapping up a session.
