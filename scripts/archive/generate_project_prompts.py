@@ -101,6 +101,14 @@ def style_fragments(style: dict[str, Any]) -> tuple[str, str]:
     return portrait, general
 
 
+def needs_full_body_master(item: dict[str, Any]) -> bool:
+    required_angles = [str(angle).lower() for angle in item.get("required_angles", [])]
+    if len(required_angles) >= 4:
+        return True
+    keywords = ("full", "side", "back", "hero", "low-angle", "front")
+    return any(any(keyword in angle for keyword in keywords) for angle in required_angles)
+
+
 def build_character_prompt_pack(
     project_id: str, archive_dir: Path, style: dict[str, Any], bible: dict[str, Any], episode: str
 ) -> dict[str, Any]:
@@ -147,7 +155,7 @@ def build_character_prompt_pack(
             f"{material_texture}, {visual_anchors}, not photoreal --ar 3:4 --v 7 --raw"
         )
 
-        if any(token in item["id"] for token in ("MENGJIANG", "LINQIANQIAN", "ZHANGHE")):
+        if needs_full_body_master(item):
             record["required_outputs"].extend(["face_draft", "full_body_master"])
             body_prompt = (
                 f"one East Asian {role or 'character'}, {age_hint}, same face and same hairstyle as the selected reference, "

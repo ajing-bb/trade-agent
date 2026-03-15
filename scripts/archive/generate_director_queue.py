@@ -13,14 +13,6 @@ from typing import Any
 import yaml
 
 
-TYPE_LABELS = {
-    "character": "角色",
-    "scene": "场景",
-    "prop": "道具",
-    "vfx": "特效",
-}
-
-
 def load_yaml(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         data = yaml.safe_load(handle)
@@ -59,43 +51,48 @@ def norm(text: str) -> str:
     return text.strip().lower().replace(" ", "")
 
 
-def candidate_asset_ids(required_assets: list[str], manifest: dict[str, Any], continuity: dict[str, Any]) -> list[str]:
-    by_id, by_type = load_asset_lookup(manifest)
-    lookup_names: list[tuple[str, str]] = []
+def build_asset_name_catalog(archive_dir: Path, manifest: dict[str, Any]) -> dict[str, str]:
+    catalog: dict[str, str] = {}
+    for path, section in (
+        (archive_dir / "series" / "character-bible.yaml", "characters"),
+        (archive_dir / "series" / "scene-bible.yaml", "locations"),
+        (archive_dir / "series" / "prop-vfx-bible.yaml", "props"),
+        (archive_dir / "series" / "prop-vfx-bible.yaml", "vfx"),
+    ):
+        data = load_yaml(path)
+        for item in data.get(section, []):
+            item_id = item.get("id")
+            name = item.get("name")
+            if item_id and isinstance(name, str) and name:
+                catalog[item_id] = name
     for item in manifest.get("assets", []):
-        lookup_names.append((item["id"], norm(item["id"])))
-        raw_path = item.get("path") or ""
-        lookup_names.append((item["id"], norm(Path(raw_path).name)))
+        catalog.setdefault(item["id"], Path(item.get("path", "")).name)
+    return catalog
 
+
+def candidate_asset_ids(
+    required_assets: list[str],
+    shot_characters: list[str],
+    manifest: dict[str, Any],
+    asset_names: dict[str, str],
+) -> list[str]:
+    by_id, _ = load_asset_lookup(manifest)
     candidates: list[str] = []
-    required_joined = " ".join(required_assets)
-    needed_character_ids = set(continuity.get("canonical_character_assets", []) + continuity.get("pending_character_assets", []))
-    if "孟江" in required_joined and "CHAR_MENGJIANG" in by_id:
-        candidates.append("CHAR_MENGJIANG")
 
-    asset_name_map = {
-        "神风学院操场": "LOC_ACADEMY_PLAYGROUND_DAY",
-        "操场": "LOC_ACADEMY_PLAYGROUND_DAY",
-        "食堂": "LOC_CANTEEN_DAY",
-        "公共抽卡池": "LOC_PUBLIC_DRAW_POOL_NIGHT",
-        "办公室": "LOC_HEADMASTER_OFFICE_DAY",
-        "抽卡池": "PROP_DRAW_POOL_DEVICE",
-        "卡片": "PROP_SUMMON_CARD_STANDARD",
-        "天空": "VFX_GOLDEN_SKY_OMEN",
-        "光柱": "VFX_RAINBOW_DESCENT_PILLAR",
-        "火轮": "VFX_NEZHA_WEAPON_MANIFEST",
-        "长枪": "VFX_NEZHA_WEAPON_MANIFEST",
-        "红绫": "VFX_NEZHA_WEAPON_MANIFEST",
-        "雕像": "PROP_WESTERN_GOD_STATUE_CLUSTER",
-    }
-    for raw in required_assets:
-        for key, asset_id in asset_name_map.items():
-            if key in raw and asset_id in by_id and asset_id not in candidates:
+    def maybe_add(raw_text: str) -> None:
+        raw_norm = norm(raw_text)
+        if not raw_norm:
+            return
+        for asset_id, asset_name in asset_names.items():
+            if asset_id not in by_id or asset_id in candidates:
+                continue
+            name_norm = norm(asset_name)
+            if raw_norm == name_norm or raw_norm in name_norm or name_norm in raw_norm:
                 candidates.append(asset_id)
-
-    for asset_id in needed_character_ids:
-        if asset_id in by_id and asset_id not in candidates and asset_id.split("CHAR_")[-1] in required_joined:
-            candidates.append(asset_id)
+    for character in shot_characters:
+        maybe_add(character)
+    for raw in required_assets:
+        maybe_add(raw)
     return candidates
 
 
@@ -141,10 +138,10 @@ def infer_priority_score(shot: dict[str, Any], blocked_by_assets: list[str]) -> 
 
 def primary_refs_for_shot(shot: dict[str, Any], blocked_by_assets: list[str]) -> list[str]:
     refs: list[str] = []
-    if "CHAR_MENGJIANG" in blocked_by_assets:
-        refs.append("CHAR_MENGJIANG face/full body master")
     for asset_id in blocked_by_assets:
-        if asset_id.startswith("LOC_"):
+        if asset_id.startswith("CHAR_"):
+            refs.append(f"{asset_id} face/full body master")
+        elif asset_id.startswith("LOC_"):
             refs.append(f"{asset_id} scene master")
         elif asset_id.startswith("PROP_") or asset_id.startswith("CARD_"):
             refs.append(f"{asset_id} master")
@@ -179,6 +176,7 @@ def generate_queue_and_policy(archive_dir: Path, episode: str) -> tuple[dict[str
     director_queue = load_yaml(episode_dir / "director-queue.yaml")
     manifest = load_yaml(episode_dir / "asset-manifest.yaml")
     manifest_by_id, _ = load_asset_lookup(manifest)
+    asset_names = build_asset_name_catalog(archive_dir, manifest)
 
     policies: list[dict[str, str]] = []
     queue: list[dict[str, Any]] = []
@@ -189,7 +187,12 @@ def generate_queue_and_policy(archive_dir: Path, episode: str) -> tuple[dict[str
     for shot in shots:
         blocked_by_assets = [
             asset_id
-            for asset_id in candidate_asset_ids(shot.get("required_assets", []), manifest, continuity)
+            for asset_id in candidate_asset_ids(
+                shot.get("required_assets", []),
+                shot.get("characters", []),
+                manifest,
+                asset_names,
+            )
             if asset_id in manifest_by_id
         ]
         score = infer_priority_score(shot, blocked_by_assets)
@@ -314,17 +317,6 @@ def main() -> None:
             print(f"- {path}")
     else:
         print("No queue files required changes.")
-
-
-def dump_yaml(path: Path, data: dict[str, Any]) -> None:
-    with path.open("w", encoding="utf-8") as handle:
-        yaml.safe_dump(data, handle, allow_unicode=True, sort_keys=False)
-
-
-def render_archive(archive_dir: Path) -> None:
-    render_script = Path(__file__).with_name("render_project_archive.py")
-    subprocess.run([sys.executable, str(render_script), str(archive_dir)], check=True)
-
 
 if __name__ == "__main__":
     main()
