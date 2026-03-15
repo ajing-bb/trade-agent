@@ -73,6 +73,8 @@ For this repository's AI manhua / AI short-drama creation workflow, use the foll
   - `python3 scripts/reset-project-creation.py assets/<项目名> --rebuild-skeleton --yes`
 - To initialize a fresh project archive from the remaining source script, use:
   - `python3 scripts/init-project-archive.py assets/<项目名>`
+- To verify that canonical YAML paths still match the filesystem, use:
+  - `python3 scripts/check-asset-health.py assets/<项目名>`
 - Optional repo automation:
   - install hooks with `sh scripts/install-git-hooks.sh`
   - current `pre-commit` hook auto-renders generated Markdown from YAML before commit

@@ -390,8 +390,8 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
             "",
             "## Shot List",
             "",
-            "| Shot ID | Scene ID | Beat | Camera Intent | Emotion | Required Assets |",
-            "| --- | --- | --- | --- | --- | --- |",
+            "| Shot ID | Scene ID | Characters | Beat | Action Core | Camera Intent | Dialogue | Emotion | Difficulty | Required Assets |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     for shot in data.get("shots", []):
@@ -401,14 +401,70 @@ def render_breakdown(yaml_path: Path, md_path: Path) -> None:
                 [
                     f"`{escape_cell(shot['id'])}`",
                     f"`{escape_cell(shot.get('scene_id', ''))}`",
+                    escape_cell("、".join(shot.get("characters", []))),
                     escape_cell(shot.get("beat", "")),
+                    escape_cell(shot.get("action_core", "")),
                     escape_cell(shot.get("camera_intent", "")),
+                    escape_cell(shot.get("dialogue", "")),
                     escape_cell(shot.get("emotion", "")),
+                    escape_cell(shot.get("difficulty", "")),
                     escape_cell("、".join(shot.get("required_assets", []))),
                 ]
             )
             + " |"
         )
+    character_map = data.get("character_mention_map", [])
+    if character_map:
+        lines.extend(
+            [
+                "",
+                "## Character Mention Map",
+                "",
+                "| Character | First Scene | Recurring Scenes | Dialogue Density | Asset Priority |",
+                "| --- | --- | --- | --- | --- |",
+            ]
+        )
+        for item in character_map:
+            lines.append(
+                "| "
+                + " | ".join(
+                    [
+                        escape_cell(item.get("character", "")),
+                        f"`{escape_cell(item.get('first_scene', ''))}`",
+                        escape_cell("、".join(item.get("recurring_scenes", []))),
+                        escape_cell(item.get("dialogue_density", "")),
+                        escape_cell(item.get("asset_priority", "")),
+                    ]
+                )
+                + " |"
+            )
+    dialogue_notes = data.get("dialogue_and_emotion_notes", [])
+    if dialogue_notes:
+        lines.extend(
+            [
+                "",
+                "## Dialogue and Emotion Notes",
+                "",
+                "| Shot ID | Speaker | Raw Tag | Delivery Mode | Dialogue Purpose | Emotion | Lip-Sync Sensitivity |",
+                "| --- | --- | --- | --- | --- | --- | --- |",
+            ]
+        )
+        for item in dialogue_notes:
+            lines.append(
+                "| "
+                + " | ".join(
+                    [
+                        f"`{escape_cell(item.get('shot_id', ''))}`",
+                        escape_cell(item.get("speaker", "")),
+                        escape_cell(item.get("raw_speaker_tag", "")),
+                        f"`{escape_cell(item.get('delivery_mode', ''))}`",
+                        escape_cell(item.get("dialogue_purpose", "")),
+                        escape_cell(item.get("emotion", "")),
+                        escape_cell(item.get("lip_sync_sensitivity", "")),
+                    ]
+                )
+                + " |"
+            )
     dump_text(md_path, "\n".join(lines))
 
 

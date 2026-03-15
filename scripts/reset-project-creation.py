@@ -382,6 +382,8 @@ def breakdown_data() -> dict[str, Any]:
         "core_continuity_risks": [],
         "scenes": [],
         "shots": [],
+        "character_mention_map": [],
+        "dialogue_and_emotion_notes": [],
     }
 
 
