@@ -17,6 +17,13 @@ echo "$archives" | while IFS= read -r archive; do
   python3 scripts/render-project-archive.py "$archive"
 done
 
+echo "Validating project archive canonical links..."
+
+echo "$archives" | while IFS= read -r archive; do
+  [ -n "$archive" ] || continue
+  python3 scripts/check-asset-health.py "$archive"
+done
+
 git add \
   'assets/*/项目档案/series/series-bible.md' \
   'assets/*/项目档案/series/style-bible.md' \

@@ -1,0 +1,7 @@
+prompt_pack_id: SCENE_ASSET_PROMPT_PACK_V1
+project_id: PROJECT
+rules:
+  midjourney_role: scene_master_only
+  banana_role: derive_reverse_angle_variant_and_repair
+  scene_pipeline: scene_master_then_banana_derived_views
+locations: []

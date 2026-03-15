@@ -1,0 +1,8 @@
+notes:
+- 项目已 fresh reset，当前只保留原始剧本文件。
+- 后续新图落盘后，应先更新本文件，再同步对应 bible。
+assets:
+- id: SRC_SCRIPT_DOCX
+  type: script
+  status: committed
+  path: assets/只有我能抽出东方神明/剧本/只有我能抽出东方神明.docx

@@ -1,0 +1,7 @@
+prompt_pack_id: PROP_VFX_ASSET_PROMPT_PACK_V1
+project_id: PROJECT
+rules:
+  midjourney_role: asset_master_only
+  banana_role: derive_variant_and_repair
+props: []
+vfx: []
