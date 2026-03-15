@@ -136,8 +136,8 @@ queue:
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   execution_mode: character_close_medium
-  queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG，再执行该镜头。
+  queue_status: ready
+  next_action: 按 character_close_medium 先做首帧/静帧，再决定是否进入视频段。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S02-SH01
   purpose: 孟江站在抽卡池旁，右手轻轻放在抽奖按钮上。 / 抽卡池…

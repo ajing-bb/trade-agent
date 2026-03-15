@@ -11,7 +11,7 @@ assets:
 - id: CHAR_MENGJIANG
   name: 孟江
   type: character
-  status: prompted
+  status: committed
   path: assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG
 - id: CHAR_SITUKUNLUN
   name: 司徒昆仑

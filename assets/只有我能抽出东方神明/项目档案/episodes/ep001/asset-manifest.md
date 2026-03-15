@@ -7,7 +7,7 @@
 | 类型 | ID | 状态 | 路径 |
 | --- | --- | --- | --- |
 | 剧本 | `SRC_SCRIPT_DOCX` | committed | `assets/只有我能抽出东方神明/剧本/只有我能抽出东方神明.docx` |
-| 角色 | `CHAR_MENGJIANG` | prompted | `assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG` |
+| 角色 | `CHAR_MENGJIANG` | committed | `assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG` |
 | 角色 | `CHAR_SITUKUNLUN` | prompted | `assets/只有我能抽出东方神明/角色/CHAR_SITUKUNLUN` |
 | 角色 | `CHAR_SITUQINGQING` | prompted | `assets/只有我能抽出东方神明/角色/CHAR_SITUQINGQING` |
 | 角色 | `CHAR_OLD_PROFESSOR` | prompted | `assets/只有我能抽出东方神明/角色/CHAR_OLD_PROFESSOR` |

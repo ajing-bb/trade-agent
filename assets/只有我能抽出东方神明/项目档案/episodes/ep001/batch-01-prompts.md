@@ -1,37 +1,6 @@
 # Batch-01 Prompts
 
 
-## `CHAR_MENGJIANG`
-
-### Midjourney
-
-#### `face_draft`
-
-建议输出：`assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG/face-draft-v001.png`
-
-```text
-one East Asian male academy student protagonist, 18 years old, sharp young East Asian face, calm determined eyes, straight nose bridge, clean jawline, black layered short hair, clean forehead, no accessories, black academy uniform with muted gold trim, white inner shirt, fitted trousers, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, matte school fabric, restrained metallic trim, no glossy leather, restrained underdog aura before awakening, upright posture under public pressure, modern academy silhouette with mythic undertone, not photoreal --ar 3:4 --v 7 --raw
-```
-
-#### `full_body_master`
-
-建议输出：`assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG/full-body-master-v001.png`
-
-```text
-one East Asian male academy student protagonist, 18 years old, same face and same hairstyle as the selected reference, restrained underdog aura before awakening, upright posture under public pressure, modern academy silhouette with mythic undertone, lean athletic young male, long legs, clean upright stance, black academy uniform with muted gold trim, white inner shirt, fitted trousers, matte school fabric, restrained metallic trim, no glossy leather, colors black, charcoal, muted gold, off white, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_MENGJIANG_FACE_DRAFT] --ow 250
-```
-
-### Banana Pro
-
-#### `uniform_fix`
-
-建议输出：`assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG/uniform-fix-v001.png`
-
-```text
-保留孟江的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的black academy uniform with muted gold trim, white inner shirt, fitted trousers。保留人物身份和画风，不要改成通用模板。
-```
-
-
 ## `LOC_KAMIKAZE_ACADEMY_GROUNDS`
 
 ### Midjourney
@@ -153,4 +122,35 @@ one East Asian female academy student, ex-girlfriend, 18 years old, same face an
 
 ```text
 保留林倩倩的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的upgraded academy uniform variant with feminine tailoring。保留人物身份和画风，不要改成通用模板。
+```
+
+
+## `CHAR_ZHANGHE`
+
+### Midjourney
+
+#### `face_draft`
+
+建议输出：`assets/只有我能抽出东方神明/角色/CHAR_ZHANGHE/face-draft-v001.png`
+
+```text
+one East Asian male rich academy student rival, 18 years old, handsome East Asian young male face, arrogant lifted chin, sharp confident eyes, clean rich-kid grooming, styled dark hair, controlled volume, no accessories, premium academy uniform variant with cleaner tailoring and family-status badge, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, crisp uniform cloth, slightly more polished shoes and trim, rich elite academy presence, dismissive body language, visually opposite to Mengjiang's restrained underdog look, not photoreal --ar 3:4 --v 7 --raw
+```
+
+#### `full_body_master`
+
+建议输出：`assets/只有我能抽出东方神明/角色/CHAR_ZHANGHE/full-body-master-v001.png`
+
+```text
+one East Asian male rich academy student rival, 18 years old, same face and same hairstyle as the selected reference, rich elite academy presence, dismissive body language, visually opposite to Mengjiang's restrained underdog look, fit young male, confident shoulder line, slightly aggressive stance, premium academy uniform variant with cleaner tailoring and family-status badge, crisp uniform cloth, slightly more polished shoes and trim, colors black, dark wine red, muted gold, steel gray, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_ZHANGHE_FACE_DRAFT] --ow 250
+```
+
+### Banana Pro
+
+#### `uniform_fix`
+
+建议输出：`assets/只有我能抽出东方神明/角色/CHAR_ZHANGHE/uniform-fix-v001.png`
+
+```text
+保留张贺的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的premium academy uniform variant with cleaner tailoring and family-status badge。保留人物身份和画风，不要改成通用模板。
 ```

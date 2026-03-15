@@ -4,7 +4,7 @@ notes:
 characters:
 - id: CHAR_MENGJIANG
   name: 孟江
-  status: prompted
+  status: committed
   asset_root: assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG
   role: male academy student protagonist
   narrative_function: 穿越者男主，唯一能抽出东方神明卡牌的异类召唤者。
@@ -18,7 +18,8 @@ characters:
   - restrained underdog aura before awakening
   - upright posture under public pressure
   - modern academy silhouette with mythic undertone
-  costume_core: black academy uniform with muted gold trim, white inner shirt, fitted trousers
+  costume_core: black academy uniform with muted gold trim, white inner shirt, fitted
+    trousers
   material_texture: matte school fabric, restrained metallic trim, no glossy leather
   color_anchors:
   - black
@@ -88,7 +89,8 @@ characters:
   - elite academy bearing
   - sharp reaction readability
   - controlled confidence
-  costume_core: fitted elite academy uniform with dark skirt system and subtle gold detailing
+  costume_core: fitted elite academy uniform with dark skirt system and subtle gold
+    detailing
   material_texture: matte uniform cloth, crisp pleats, minimal jewelry
   color_anchors:
   - black
@@ -154,7 +156,8 @@ characters:
   - visible class selection instinct
   - can shift from public disdain to startled reaction
   costume_core: upgraded academy uniform variant with feminine tailoring
-  material_texture: matte cloth with slightly better trim and accessories than standard students
+  material_texture: matte cloth with slightly better trim and accessories than standard
+    students
   color_anchors:
   - black
   - burgundy accent
@@ -186,7 +189,8 @@ characters:
   - rich elite academy presence
   - dismissive body language
   - visually opposite to Mengjiang's restrained underdog look
-  costume_core: premium academy uniform variant with cleaner tailoring and family-status badge
+  costume_core: premium academy uniform variant with cleaner tailoring and family-status
+    badge
   material_texture: crisp uniform cloth, slightly more polished shoes and trim
   color_anchors:
   - black

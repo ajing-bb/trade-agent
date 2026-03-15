@@ -11,7 +11,6 @@
 
 ## Scope
 
-- `CHAR_MENGJIANG`
 - `CHAR_SITUKUNLUN`
 - `CHAR_SITUQINGQING`
 - `CHAR_OLD_PROFESSOR`
@@ -22,7 +21,7 @@
 
 ### Summary
 
-- `status`: prompted
+- `status`: committed
 - `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG`
 - `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
 - `required_outputs`: `face_draft`、`full_body_master`

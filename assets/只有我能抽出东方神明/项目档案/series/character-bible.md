@@ -4,7 +4,7 @@
 
 | ID | 角色 | 叙事角色 | 当前状态 | 视觉锚点 | 资产根路径 |
 | --- | --- | --- | --- | --- | --- |
-| `CHAR_MENGJIANG` | 孟江 | male academy student protagonist | 已出 prompt，待落盘 | restrained underdog aura before awakening、upright posture under public pressure、modern academy silhouette with mythic undertone | `assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG/` |
+| `CHAR_MENGJIANG` | 孟江 | male academy student protagonist | 已落盘 | restrained underdog aura before awakening、upright posture under public pressure、modern academy silhouette with mythic undertone | `assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG/` |
 | `CHAR_SITUKUNLUN` | 司徒昆仑 | male academy principal, around 50 | 已出 prompt，待落盘 | principal authority silhouette、composed under pressure、traditional discipline mixed with modern academy leadership | `assets/只有我能抽出东方神明/角色/CHAR_SITUKUNLUN/` |
 | `CHAR_SITUQINGQING` | 司徒青青 | female academy elite student | 已出 prompt，待落盘 | elite academy bearing、sharp reaction readability、controlled confidence | `assets/只有我能抽出东方神明/角色/CHAR_SITUQINGQING/` |
 | `CHAR_OLD_PROFESSOR` | 老教授 | male senior ceremony professor, late 50s | 已出 prompt，待落盘 | ceremonial academic authority、readable shock reaction、old-school scholar silhouette | `assets/只有我能抽出东方神明/角色/CHAR_OLD_PROFESSOR/` |

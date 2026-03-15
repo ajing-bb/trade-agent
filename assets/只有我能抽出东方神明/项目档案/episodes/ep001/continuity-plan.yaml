@@ -7,9 +7,9 @@ high_priority_locks:
 - LOC_PUBLIC_DRAW_POOL_NIGHT
 - VFX_RED_SKY_ANOMALY
 - VFX_NEZHA_AVATAR
-canonical_character_assets: []
-pending_character_assets:
+canonical_character_assets:
 - CHAR_MENGJIANG
+pending_character_assets:
 - CHAR_SITUKUNLUN
 - CHAR_SITUQINGQING
 - CHAR_OLD_PROFESSOR
