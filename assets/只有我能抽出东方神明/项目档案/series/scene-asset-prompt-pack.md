@@ -8,59 +8,7 @@
 - `banana_role`: derive_reverse_angle_variant_and_repair
 - `scene_pipeline`: scene_master_then_banana_derived_views
 
-## `LOC_KAMIKAZE_ACADEMY_GROUNDS`
-
-### Summary
-
-- `status`: prompted
-- `required_outputs`: `scene_master`、`reverse_seed`
-
-### Midjourney
-
-#### scene_master
-
-```text
-神风学院操场, 学院公开抽卡仪式、群像嘲讽与男主首次东方神明显圣的白天主场景。, academy courtyard ceremonial draw arena, central draw pool pedestal, surrounding west myth statues, academy facade and open sports ground, crowd ring zone for students, readable hero center lane toward draw pool, PROP_DRAW_POOL_MAIN, CARD_SUMMON_CARD_BASE, PROP_WESTERN_STATUE_SET, VFX_GOLDEN_SKY_ANOMALY, VFX_RAINBOW_LIGHT_PILLAR, day, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: front wide master, low-angle hero push-in, crowd-side three-quarter angle, statue-line cutaway, not photoreal --ar 16:9 --v 7 --raw
-```
-
-#### reverse_seed
-
-```text
-same 神风学院操场, reverse-side view of the same space, preserve central draw pool pedestal, surrounding west myth statues, academy facade and open sports ground, crowd ring zone for students, readable hero center lane toward draw pool, preserve layout logic, same day, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [KAMIKAZE_ACADEMY_GROUNDS_MASTER] --ow 200
-```
-
-### Banana Pro
-
-#### layout_cleanup
-
-```text
-保留神风学院操场的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
-```
-
-## `LOC_PRINCIPAL_OFFICE`
-
-### Summary
-
-- `status`: prompted
-- `required_outputs`: `scene_master`
-
-### Midjourney
-
-#### scene_master
-
-```text
-校长办公室, 学院权威视角观察异象的室内反应场景。, formal academy office interior, large observation window toward campus, heavy desk and academy crest, dark wood and stone authority materials, readable standing reaction zone near window, VFX_GOLDEN_SKY_ANOMALY, day, indoor, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: office medium two-shot, principal reaction by window, over-shoulder to campus anomaly, not photoreal --ar 16:9 --v 7 --raw
-```
-
-### Banana Pro
-
-#### layout_cleanup
-
-```text
-保留校长办公室的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
-```
-
-## `LOC_ACADEMY_CAFETERIA`
+## `LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY`
 
 ### Summary
 
@@ -72,13 +20,71 @@ same 神风学院操场, reverse-side view of the same space, preserve central d
 #### scene_master
 
 ```text
-食堂, 第2集分手羞辱戏的高人流校园室内场景。, academy cafeteria interior, long table rows, noisy student background layer, corner seat isolation zone for Mengjiang, serving counter depth, , day, indoor, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: corner isolation medium shot, confrontation two-shot, crowd reaction cutaway, not photoreal --ar 16:9 --v 7 --raw
+神风学院操场, 开场世界建立、围观抽卡、日间金色异象降临, 西式学院广场, 抽卡池位于操场中央, 学院主体建筑在远景可见, 跑道与铺地分区明确, 西方神魔雕像围绕抽卡区域, 抽卡池, 西方神魔雕像, 金色天空, 七彩光柱, day, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: front wide, pool-side medium, high angle overview, low-angle anomaly reveal, not photoreal --ar 16:9 --v 7 --raw
 ```
 
 #### reverse_seed
 
 ```text
-same 食堂, reverse-side view of the same space, preserve long table rows, noisy student background layer, corner seat isolation zone for Mengjiang, serving counter depth, preserve layout logic, same day, indoor, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ACADEMY_CAFETERIA_MASTER] --ow 200
+same 神风学院操场, reverse-side view of the same space, preserve 抽卡池位于操场中央, 学院主体建筑在远景可见, 跑道与铺地分区明确, 西方神魔雕像围绕抽卡区域, preserve layout logic, same day, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [KAMIKAZE_ACADEMY_GROUNDS_DAY_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留神风学院操场的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_PRINCIPAL_OFFICE_DAY`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+校长办公室, 校长父女对白、对异象做权威反应, 学院办公空间, 大窗户可看到金色天空, 书柜或陈列柜, 办公桌与立式装饰, 深色权威配色, 金色天光映入室内, day, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: dialogue two-shot, over-shoulder window reaction, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 校长办公室, reverse-side view of the same space, preserve 大窗户可看到金色天空, 书柜或陈列柜, 办公桌与立式装饰, 深色权威配色, preserve layout logic, same day, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [PRINCIPAL_OFFICE_DAY_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留校长办公室的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_ACADEMY_CAFETERIA_DAY`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+食堂, 孟江被羞辱、前女友与张贺登场, 学院食堂, 长桌排布, 取餐窗口, 立柱或吊灯, 角落座位区, 餐盘与座位区, day, indoor, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: seated medium, confrontation two-shot, corridor side view, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 食堂, reverse-side view of the same space, preserve 长桌排布, 取餐窗口, 立柱或吊灯, 角落座位区, preserve layout logic, same day, indoor, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ACADEMY_CAFETERIA_DAY_MASTER] --ow 200
 ```
 
 ### Banana Pro
@@ -93,35 +99,6 @@ same 食堂, reverse-side view of the same space, preserve long table rows, nois
 
 ### Summary
 
-- `status`: prompted
-- `required_outputs`: `scene_master`、`reverse_seed`
-
-### Midjourney
-
-#### scene_master
-
-```text
-夜间公共抽卡广场, 第3集夜间哪吒异象与第二个压力测试样片主场景。, public draw pool plaza at night, isolated draw pool pedestal, dark open plaza, distant city glow, readable empty space for hero solo shot, PROP_DRAW_POOL_MAIN, CARD_SUMMON_CARD_BASE, VFX_RED_SKY_ANOMALY, VFX_RED_LIGHT_PILLAR, VFX_NEZHA_AVATAR, VFX_NEZHA_WEAPON_SUITE, night, clear night, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: front night master, low-angle ignition shot, overhead anomaly reveal, not photoreal --ar 16:9 --v 7 --raw
-```
-
-#### reverse_seed
-
-```text
-same 夜间公共抽卡广场, reverse-side view of the same space, preserve isolated draw pool pedestal, dark open plaza, distant city glow, readable empty space for hero solo shot, preserve layout logic, same night, clear night, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [PUBLIC_DRAW_POOL_NIGHT_MASTER] --ow 200
-```
-
-### Banana Pro
-
-#### layout_cleanup
-
-```text
-保留夜间公共抽卡广场的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
-```
-
-## `LOC_CITY_REACTION_MONTAGE_NIGHT`
-
-### Summary
-
 - `status`: planned
 - `required_outputs`: `scene_master`
 
@@ -130,7 +107,7 @@ same 夜间公共抽卡广场, reverse-side view of the same space, preserve iso
 #### scene_master
 
 ```text
-各处夜景反应蒙太奇, 第3集各方势力抬头观测赤红异象时的拼接场景母板。, city reaction montage night, multiple city reaction windows, skyline under red anomaly, split coverage logic for authority, dorm, and family reactions, VFX_RED_SKY_ANOMALY, night, anomaly-lit night, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: montage establishing plate, city skyline reaction cutaway, not photoreal --ar 16:9 --v 7 --raw
+公共抽卡池, 夜间抽卡、哪吒异象、法器显形, 城市公共抽卡广场, 抽卡池位于夜间广场中心, 背后可见城市天际线, 地面有光柱映射, 天空被赤红异象染亮, 抽卡池, 红色光柱, 火轮, 长枪, 红绫, night, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: front wide, hero medium, low-angle weapon reveal, sky reaction plate, not photoreal --ar 16:9 --v 7 --raw
 ```
 
 ### Banana Pro
@@ -138,7 +115,7 @@ same 夜间公共抽卡广场, reverse-side view of the same space, preserve iso
 #### layout_cleanup
 
 ```text
-保留各处夜景反应蒙太奇的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+保留公共抽卡池的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
 ```
 
 ## `LOC_DORM_WINDOW_NIGHT`
@@ -153,7 +130,7 @@ same 夜间公共抽卡广场, reverse-side view of the same space, preserve iso
 #### scene_master
 
 ```text
-宿舍窗景, 林倩倩夜间望向异象的高层宿舍窗景。, academy dorm window interior, tall dorm window, female silhouette reaction zone, visible distant red anomaly outside, VFX_RED_SKY_ANOMALY, night, anomaly-lit night, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: window profile reaction, interior to exterior over-shoulder, not photoreal --ar 16:9 --v 7 --raw
+高级宿舍窗前, 林倩倩夜间远望异象, 宿舍内景 + 窗边, 窗边站位, 远处红色天幕, 室内暗部前景, 反光落在人物侧脸, 红色天空映窗, night, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: profile window reaction, not photoreal --ar 16:9 --v 7 --raw
 ```
 
 ### Banana Pro
@@ -161,10 +138,39 @@ same 夜间公共抽卡广场, reverse-side view of the same space, preserve iso
 #### layout_cleanup
 
 ```text
-保留宿舍窗景的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+保留高级宿舍窗前的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
 ```
 
-## `LOC_ZHANG_RESIDENCE_TERRACE`
+## `LOC_ZHANG_RESIDENCE_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+张家夜景室内, 张贺与张强夜间反应镜头, 家族宅邸室内, 大窗或露台可见赤红天空, 权势感装饰, 深色室内陈设, 父子站位关系, 赤红天幕, night, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: father-son dialogue, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 张家夜景室内, reverse-side view of the same space, preserve 大窗或露台可见赤红天空, 权势感装饰, 深色室内陈设, 父子站位关系, preserve layout logic, same night, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ZHANG_RESIDENCE_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留张家夜景室内的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_CITY_REACTION_MONTAGE_NIGHT`
 
 ### Summary
 
@@ -176,7 +182,7 @@ same 夜间公共抽卡广场, reverse-side view of the same space, preserve iso
 #### scene_master
 
 ```text
-张家露台, 张贺与张强观测夜间异象的家族露台或外窗场景。, elite residence terrace night, elite residence exterior edge, elevated view toward city sky, father-son reaction position, VFX_RED_SKY_ANOMALY, night, anomaly-lit night, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: terrace medium two-shot, skyline reaction side view, not photoreal --ar 16:9 --v 7 --raw
+城市夜景反应蒙太奇, 城市众人抬头、宏观世界回应哪吒异象, 城市反应 plate, 城市天际线, 被火光照亮的云层, 路人抬头姿态, 红色整体反射, 红色天空, night, clear, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, readable wide composition, camera coverage seeds: skyline plate, crowd reaction insert, not photoreal --ar 16:9 --v 7 --raw
 ```
 
 ### Banana Pro
@@ -184,5 +190,5 @@ same 夜间公共抽卡广场, reverse-side view of the same space, preserve iso
 #### layout_cleanup
 
 ```text
-保留张家露台的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+保留城市夜景反应蒙太奇的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
 ```

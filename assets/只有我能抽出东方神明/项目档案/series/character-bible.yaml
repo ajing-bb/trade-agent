@@ -1,209 +1,304 @@
 notes:
-- 首轮先锁孟江，再补齐学院公开抽卡仪式相关 speaking cast。
-- status 约定：planned=已入 canon 未进入当前轮主攻，prompted=已纳入当前轮提示词，committed=已有仓库落盘母资产。
+- 项目已 fresh reset，角色 canonical 资产待重新建立。
+- 新角色标准角色包默认应有：脸部定稿 / 全身 / 三视图 / 表情 / 角度。
 characters:
 - id: CHAR_MENGJIANG
   name: 孟江
-  status: committed
+  role: 男主
+  status: planned
   asset_root: assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG
-  role: male academy student protagonist
-  narrative_function: 穿越者男主，唯一能抽出东方神明卡牌的异类召唤者。
-  face_anchors:
-  - sharp young East Asian face
-  - calm determined eyes
-  - straight nose bridge
-  - clean jawline
-  hair_headwear: black layered short hair, clean forehead, no accessories
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml
   visual_anchors:
-  - restrained underdog aura before awakening
-  - upright posture under public pressure
-  - modern academy silhouette with mythic undertone
-  costume_core: black academy uniform with muted gold trim, white inner shirt, fitted
-    trousers
-  material_texture: matte school fabric, restrained metallic trim, no glossy leather
+  - 清瘦但挺拔的学院少年
+  - 被压抑很久的隐忍感
+  - 爆发时有东方神性压迫感
+  face_anchors:
+  - 细长眼型
+  - 直鼻梁
+  - 下颌线清楚
+  body_silhouette: 偏瘦修长，肩线利落，站姿克制
+  hair_headwear: 黑色短发，额前碎发略乱
+  costume_core: 深色学院制服，后期可叠加东方神性细节
+  material_texture: 制服布料哑光，金属配件少量点缀
   color_anchors:
-  - black
-  - charcoal
-  - muted gold
-  - off white
-  body_silhouette: lean athletic young male, long legs, clean upright stance
+  - 深蓝黑
+  - 白
+  - 暗金
+  signature_props:
+  - CARD_TONGTIAN_JIAOZHU
+  - CARD_NEZHA
+  emotion_range:
+  - 隐忍
+  - 坚定
+  - 震惊
+  - 激动
+  motion_traits:
+  - 起手克制
+  - 爆发时动作有停顿蓄力
+  voice_delivery: 青年男声，平时压着情绪，异象时转强
   required_angles:
-  - front hero full body
-  - left-facing pure side
-  - pure back
-  - waist-up intense reaction
-  first_story_units:
-  - opening
-  - episode_1
-  - episode_2
-  - episode_3
-  continuity_warnings:
-  - 不能从普通校园男主漂成偶像美型或成熟总裁。
-  - 异象前后只允许气场变化，不允许角色本体换脸换发型。
+  - front
+  - 3/4
+  - side
+  - low-angle hero
+  must_not_drift:
+  - 额前碎发轮廓
+  - 清瘦学院少年比例
+  - 制服领口结构
+  acceptable_variation:
+  - 光位变化
+  - 轻微褶皱变化
+  high_risk_shots:
+  - EP001-S01-SH03
+  - EP001-S02-SH17
+  - EP001-S06-SH03
 - id: CHAR_SITUKUNLUN
   name: 司徒昆仑
-  status: prompted
+  role: 校长 / 权威长辈
+  status: planned
   asset_root: assets/只有我能抽出东方神明/角色/CHAR_SITUKUNLUN
-  role: male academy principal, around 50
-  narrative_function: 学院权威者，负责从制度视角感知异常。
-  face_anchors:
-  - stern mature East Asian face
-  - deep-set observant eyes
-  - pronounced brow line
-  - calm authority
-  hair_headwear: neatly combed dark hair with slight gray, no hat
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml
   visual_anchors:
-  - principal authority silhouette
-  - composed under pressure
-  - traditional discipline mixed with modern academy leadership
-  costume_core: dark principal suit with academy insignia and structured collar
-  material_texture: matte formal fabric, restrained metallic badge detail
+  - 中年院长气场
+  - 克制威严
+  - 面相沉稳
+  face_anchors:
+  - 深眼窝
+  - 眉骨清楚
+  - 法令纹轻微
+  body_silhouette: 中年男性，肩背厚实，站姿笔直
+  hair_headwear: 深色短发，梳理整齐
+  costume_core: 学院高层正装或院长制服
+  material_texture: 深色厚布料，少量权威金属徽章
   color_anchors:
-  - black
-  - dark navy
-  - steel gray
-  - muted gold
-  body_silhouette: tall middle-aged male, broad shoulders, restrained movement
+  - 炭黑
+  - 深灰蓝
+  - 暗金
+  signature_props: []
+  emotion_range:
+  - 惊诧
+  - 审视
+  - 凝重
+  motion_traits:
+  - 动作克制
+  - 起身和远眺动作简洁
+  voice_delivery: 中年男声，权威、压低音量
   required_angles:
-  - front standing portrait
-  - office medium shot
-  - three-quarter reaction
-  first_story_units:
-  - episode_1
-  - episode_3
-  continuity_warnings:
-  - 不要画成反派家主或黑帮大佬，要保留学院校长气质。
+  - front
+  - 3/4
+  - medium close
+  must_not_drift:
+  - 中年院长年龄感
+  - 发型和眉眼压迫感
+  - 制服上半身结构
+  acceptable_variation:
+  - 光线
+  high_risk_shots:
+  - EP001-S02-SH08
 - id: CHAR_SITUQINGQING
   name: 司徒青青
-  status: prompted
+  role: 校长之女 / 学院核心观察者
+  status: planned
   asset_root: assets/只有我能抽出东方神明/角色/CHAR_SITUQINGQING
-  role: female academy elite student
-  narrative_function: 校长之女，作为上层学生视角承接“世界规则被撬动”的第一反应。
-  face_anchors:
-  - clean pretty East Asian face
-  - alert intelligent eyes
-  - refined nose and chin
-  - restrained elegance
-  hair_headwear: long dark hair, tidy academy styling, no oversized ornaments
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml
   visual_anchors:
-  - elite academy bearing
-  - sharp reaction readability
-  - controlled confidence
-  costume_core: fitted elite academy uniform with dark skirt system and subtle gold
-    detailing
-  material_texture: matte uniform cloth, crisp pleats, minimal jewelry
-  color_anchors:
-  - black
-  - deep navy
-  - muted gold
-  - ivory
-  body_silhouette: slim young female, upright posture, clean shoulder line
-  required_angles:
-  - front full body
-  - office reaction medium shot
-  - side profile dialogue shot
-  first_story_units:
-  - episode_1
-  - episode_3
-  continuity_warnings:
-  - 不要跑成甜妹偶像风或现代都市白领风。
-- id: CHAR_OLD_PROFESSOR
-  name: 老教授
-  status: prompted
-  asset_root: assets/只有我能抽出东方神明/角色/CHAR_OLD_PROFESSOR
-  role: male senior ceremony professor, late 50s
-  narrative_function: 公开抽卡仪式主持者，负责把异象抬升到“上古神魔级”的认知震动。
+  - 学院精英少女
+  - 清冷利落
+  - 对异象反应敏锐
   face_anchors:
-  - elderly scholarly East Asian face
-  - widened curious eyes
-  - thin lips
-  - academic seriousness
-  hair_headwear: gray sparse hair, slightly receded hairline, thin professor spectacles
-  visual_anchors:
-  - ceremonial academic authority
-  - readable shock reaction
-  - old-school scholar silhouette
-  costume_core: formal professor robe layered over academy attire
-  material_texture: matte cloth, old ceremonial trim, no luxury shine
+  - 杏眼偏锐
+  - 五官精致但不甜
+  - 下巴收紧
+  body_silhouette: 少女体型，站姿利落
+  hair_headwear: 深色长发或高马尾，发丝整洁
+  costume_core: 改良学院制服，精英感更强
+  material_texture: 制服布料偏挺，饰边精致
   color_anchors:
-  - dark brown
-  - charcoal
-  - faded gold
-  - ivory
-  body_silhouette: slender elderly male, slightly forward posture, hands often gathered
+  - 深蓝
+  - 白
+  - 银灰
+  signature_props: []
+  emotion_range:
+  - 惊讶
+  - 警觉
+  - 冷静
+  motion_traits:
+  - 反应快
+  - 以观察和侧脸反应为主
+  voice_delivery: 年轻女声，清晰、冷静
   required_angles:
-  - front standing portrait
-  - medium reaction shot
-  - side dialogue shot
-  first_story_units:
-  - episode_1
-  continuity_warnings:
-  - 不要画成年轻导师或搞笑老头，保持仪式主持教授的庄重感。
+  - front
+  - 3/4
+  - side
+  must_not_drift:
+  - 发型轮廓
+  - 学院精英制服结构
+  - 清冷眼神
+  acceptable_variation:
+  - 发尾细节
+  high_risk_shots:
+  - EP001-S02-SH08
 - id: CHAR_LINQIANQIAN
   name: 林倩倩
+  role: 前女友 / 现实势利对照组
   status: planned
   asset_root: assets/只有我能抽出东方神明/角色/CHAR_LINQIANQIAN
-  role: female academy student, ex-girlfriend
-  narrative_function: 男主前期情感羞辱线的代表人物，也是第三集夜景反应中的对照角色。
-  face_anchors:
-  - attractive East Asian student face
-  - slightly arrogant eyes
-  - delicate lips
-  - fashionable campus styling
-  hair_headwear: long styled dark hair, polished academy grooming
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml
   visual_anchors:
-  - beauty with superiority
-  - visible class selection instinct
-  - can shift from public disdain to startled reaction
-  costume_core: upgraded academy uniform variant with feminine tailoring
-  material_texture: matte cloth with slightly better trim and accessories than standard
-    students
+  - 校园美女
+  - 外表精致
+  - 眼神带轻蔑
+  face_anchors:
+  - 大眼但不萌
+  - 唇形清晰
+  - 面部轮廓流畅
+  body_silhouette: 少女体型，姿态外放
+  hair_headwear: 长发顺直，打理精致
+  costume_core: 学院制服但更贴身精致
+  material_texture: 服装更利落，饰品可少量增加
   color_anchors:
-  - black
-  - burgundy accent
-  - muted gold
-  - ivory
-  body_silhouette: slim young female, graceful but slightly aggressive body language
+  - 深蓝
+  - 白
+  - 冷粉少量点缀
+  signature_props: []
+  emotion_range:
+  - 轻蔑
+  - 傲慢
+  - 冷笑
+  motion_traits:
+  - 喜欢挽人手臂
+  - 站姿更主动
+  voice_delivery: 年轻女声，语气轻蔑
   required_angles:
-  - front full body
-  - cafeteria medium shot
-  - dorm window reaction shot
-  first_story_units:
-  - episode_2
-  - episode_3
-  continuity_warnings:
-  - 不要画成成熟御姐或网红写真风。
+  - front
+  - 3/4
+  - dialogue side
+  must_not_drift:
+  - 发型长度与顺滑轮廓
+  - 精致但不网红的脸
+  - 校服版型
+  acceptable_variation:
+  - 饰品轻微变化
+  high_risk_shots:
+  - EP001-S03-SH02
 - id: CHAR_ZHANGHE
   name: 张贺
+  role: 校园强势反派
   status: planned
   asset_root: assets/只有我能抽出东方神明/角色/CHAR_ZHANGHE
-  role: male rich academy student rival
-  narrative_function: 男主前期校园压制者，也是第三集夜景反应中的轻蔑对照。
-  face_anchors:
-  - handsome East Asian young male face
-  - arrogant lifted chin
-  - sharp confident eyes
-  - clean rich-kid grooming
-  hair_headwear: styled dark hair, controlled volume, no accessories
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml
   visual_anchors:
-  - rich elite academy presence
-  - dismissive body language
-  - visually opposite to Mengjiang's restrained underdog look
-  costume_core: premium academy uniform variant with cleaner tailoring and family-status
-    badge
-  material_texture: crisp uniform cloth, slightly more polished shoes and trim
+  - 高富帅压迫感
+  - 学院风云人物
+  - 带侵略性
+  face_anchors:
+  - 眉眼上挑
+  - 鼻梁挺
+  - 下颌偏锋利
+  body_silhouette: 高挑结实，站姿外扩
+  hair_headwear: 深色短发，发型精致
+  costume_core: 学院制服强化版，带家族贵气
+  material_texture: 制服更挺阔，少量硬质配件
   color_anchors:
-  - black
-  - dark wine red
-  - muted gold
-  - steel gray
-  body_silhouette: fit young male, confident shoulder line, slightly aggressive stance
+  - 黑
+  - 深蓝
+  - 金
+  signature_props: []
+  emotion_range:
+  - 傲慢
+  - 狞笑
+  - 不屑
+  motion_traits:
+  - 抬下巴
+  - 喜欢压近别人
+  voice_delivery: 青年男声，张扬、带压人感
   required_angles:
-  - front full body
-  - cafeteria confrontation shot
-  - rooftop or terrace reaction shot
-  first_story_units:
-  - episode_2
-  - episode_3
-  continuity_warnings:
-  - 不要画成社会青年或反派打手，仍然是学院体系内的风云学生。
+  - front
+  - 3/4
+  - low-angle
+  must_not_drift:
+  - 高挑比例
+  - 眉眼攻击性
+  - 制服贵气版型
+  acceptable_variation:
+  - 光影
+  high_risk_shots:
+  - EP001-S03-SH08
+- id: CHAR_OLD_PROFESSOR
+  name: 老教授
+  role: 抽奖仪式主持者
+  status: planned
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_OLD_PROFESSOR
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml
+  visual_anchors:
+  - 年迈学者
+  - 仪式主持者
+  - 神情夸张
+  face_anchors:
+  - 老年皱纹
+  - 眼眶深
+  - 胡须或唇周岁月感明显
+  body_silhouette: 瘦削年长男性
+  hair_headwear: 稀疏白发或灰白短发
+  costume_core: 学院仪式教授袍
+  material_texture: 布料厚重，边缘旧感
+  color_anchors:
+  - 深灰
+  - 棕灰
+  - 暗金
+  signature_props: []
+  emotion_range:
+  - 惊诧
+  - 失态
+  motion_traits:
+  - 反应型表演
+  voice_delivery: 老年男声，惊呼感强
+  required_angles:
+  - front
+  - medium close
+  must_not_drift:
+  - 年龄感
+  - 教授袍轮廓
+  acceptable_variation:
+  - 胡须细节
+  high_risk_shots:
+  - EP001-S02-SH10
+- id: CHAR_ZHANGQIANG
+  name: 张强
+  role: 张家家主 / 父辈强者
+  status: planned
+  asset_root: assets/只有我能抽出东方神明/角色/CHAR_ZHANGQIANG
+  prompt_pack: assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml
+  visual_anchors:
+  - 家族长辈
+  - 中年强者
+  - 冷硬
+  face_anchors:
+  - 眉峰硬
+  - 鼻梁厚重
+  - 法令纹明确
+  body_silhouette: 中年偏壮，姿态沉稳
+  hair_headwear: 深色短发，整理严谨
+  costume_core: 家族权势感正装或高阶制服
+  material_texture: 厚重布料，少量硬质配件
+  color_anchors:
+  - 黑
+  - 深灰
+  - 暗红
+  signature_props: []
+  emotion_range:
+  - 审视
+  - 冷静
+  motion_traits:
+  - 以站姿和抬头反应为主
+  voice_delivery: 中年男声，压得住场
+  required_angles:
+  - front
+  - 3/4
+  must_not_drift:
+  - 中年家主轮廓
+  - 冷硬气质
+  acceptable_variation:
+  - 光位
+  high_risk_shots:
+  - EP001-S05-SH05

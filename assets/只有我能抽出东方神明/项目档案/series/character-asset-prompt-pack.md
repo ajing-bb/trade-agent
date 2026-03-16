@@ -11,34 +11,36 @@
 
 ## Scope
 
+- `CHAR_MENGJIANG`
 - `CHAR_SITUKUNLUN`
 - `CHAR_SITUQINGQING`
-- `CHAR_OLD_PROFESSOR`
 - `CHAR_LINQIANQIAN`
 - `CHAR_ZHANGHE`
+- `CHAR_OLD_PROFESSOR`
+- `CHAR_ZHANGQIANG`
 
 ## `CHAR_MENGJIANG`｜孟江
 
 ### Summary
 
-- `status`: committed
+- `status`: planned
 - `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_MENGJIANG`
 - `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
 - `required_outputs`: `face_draft`、`full_body_master`
-- `visual_anchors`: restrained underdog aura before awakening、upright posture under public pressure、modern academy silhouette with mythic undertone
+- `visual_anchors`: 清瘦但挺拔的学院少年、被压抑很久的隐忍感、爆发时有东方神性压迫感
 
 ### Midjourney
 
 #### face_draft
 
 ```text
-one East Asian male academy student protagonist, 18 years old, sharp young East Asian face, calm determined eyes, straight nose bridge, clean jawline, black layered short hair, clean forehead, no accessories, black academy uniform with muted gold trim, white inner shirt, fitted trousers, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, matte school fabric, restrained metallic trim, no glossy leather, restrained underdog aura before awakening, upright posture under public pressure, modern academy silhouette with mythic undertone, not photoreal --ar 3:4 --v 7 --raw
+one East Asian 男主, 18 years old, 细长眼型, 直鼻梁, 下颌线清楚, 黑色短发，额前碎发略乱, 深色学院制服，后期可叠加东方神性细节, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 制服布料哑光，金属配件少量点缀, 清瘦但挺拔的学院少年, 被压抑很久的隐忍感, 爆发时有东方神性压迫感, not photoreal --ar 3:4 --v 7 --raw
 ```
 
 #### full_body_master
 
 ```text
-one East Asian male academy student protagonist, 18 years old, same face and same hairstyle as the selected reference, restrained underdog aura before awakening, upright posture under public pressure, modern academy silhouette with mythic undertone, lean athletic young male, long legs, clean upright stance, black academy uniform with muted gold trim, white inner shirt, fitted trousers, matte school fabric, restrained metallic trim, no glossy leather, colors black, charcoal, muted gold, off white, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_MENGJIANG_FACE_DRAFT] --ow 250
+one East Asian 男主, 18 years old, same face and same hairstyle as the selected reference, 清瘦但挺拔的学院少年, 被压抑很久的隐忍感, 爆发时有东方神性压迫感, 偏瘦修长，肩线利落，站姿克制, 深色学院制服，后期可叠加东方神性细节, 制服布料哑光，金属配件少量点缀, colors 深蓝黑, 白, 暗金, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_MENGJIANG_FACE_DRAFT] --ow 250
 ```
 
 ### Banana Pro
@@ -46,7 +48,7 @@ one East Asian male academy student protagonist, 18 years old, same face and sam
 #### uniform_fix
 
 ```text
-保留孟江的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的black academy uniform with muted gold trim, white inner shirt, fitted trousers。保留人物身份和画风，不要改成通用模板。
+保留孟江的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的深色学院制服，后期可叠加东方神性细节。保留人物身份和画风，不要改成通用模板。
 ```
 
 ### Archive Updates
@@ -59,24 +61,24 @@ one East Asian male academy student protagonist, 18 years old, same face and sam
 
 ### Summary
 
-- `status`: prompted
+- `status`: planned
 - `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_SITUKUNLUN`
 - `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
 - `required_outputs`: `face_draft`、`full_body_master`
-- `visual_anchors`: principal authority silhouette、composed under pressure、traditional discipline mixed with modern academy leadership
+- `visual_anchors`: 中年院长气场、克制威严、面相沉稳
 
 ### Midjourney
 
 #### face_draft
 
 ```text
-one East Asian male academy principal, around 50, early 50s, stern mature East Asian face, deep-set observant eyes, pronounced brow line, calm authority, neatly combed dark hair with slight gray, no hat, dark principal suit with academy insignia and structured collar, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, matte formal fabric, restrained metallic badge detail, principal authority silhouette, composed under pressure, traditional discipline mixed with modern academy leadership, not photoreal --ar 3:4 --v 7 --raw
+one East Asian 校长 / 权威长辈, early 50s, 深眼窝, 眉骨清楚, 法令纹轻微, 深色短发，梳理整齐, 学院高层正装或院长制服, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 深色厚布料，少量权威金属徽章, 中年院长气场, 克制威严, 面相沉稳, not photoreal --ar 3:4 --v 7 --raw
 ```
 
 #### full_body_master
 
 ```text
-one East Asian male academy principal, around 50, early 50s, same face and same hairstyle as the selected reference, principal authority silhouette, composed under pressure, traditional discipline mixed with modern academy leadership, tall middle-aged male, broad shoulders, restrained movement, dark principal suit with academy insignia and structured collar, matte formal fabric, restrained metallic badge detail, colors black, dark navy, steel gray, muted gold, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_SITUKUNLUN_FACE_DRAFT] --ow 250
+one East Asian 校长 / 权威长辈, early 50s, same face and same hairstyle as the selected reference, 中年院长气场, 克制威严, 面相沉稳, 中年男性，肩背厚实，站姿笔直, 学院高层正装或院长制服, 深色厚布料，少量权威金属徽章, colors 炭黑, 深灰蓝, 暗金, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_SITUKUNLUN_FACE_DRAFT] --ow 250
 ```
 
 ### Banana Pro
@@ -84,7 +86,7 @@ one East Asian male academy principal, around 50, early 50s, same face and same 
 #### uniform_fix
 
 ```text
-保留司徒昆仑的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的dark principal suit with academy insignia and structured collar。保留人物身份和画风，不要改成通用模板。
+保留司徒昆仑的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的学院高层正装或院长制服。保留人物身份和画风，不要改成通用模板。
 ```
 
 ### Archive Updates
@@ -97,24 +99,24 @@ one East Asian male academy principal, around 50, early 50s, same face and same 
 
 ### Summary
 
-- `status`: prompted
+- `status`: planned
 - `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_SITUQINGQING`
 - `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
 - `required_outputs`: `face_draft`、`full_body_master`
-- `visual_anchors`: elite academy bearing、sharp reaction readability、controlled confidence
+- `visual_anchors`: 学院精英少女、清冷利落、对异象反应敏锐
 
 ### Midjourney
 
 #### face_draft
 
 ```text
-one East Asian female academy elite student, 18 years old, clean pretty East Asian face, alert intelligent eyes, refined nose and chin, restrained elegance, long dark hair, tidy academy styling, no oversized ornaments, fitted elite academy uniform with dark skirt system and subtle gold detailing, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, matte uniform cloth, crisp pleats, minimal jewelry, elite academy bearing, sharp reaction readability, controlled confidence, not photoreal --ar 3:4 --v 7 --raw
+one East Asian 校长之女 / 学院核心观察者, 18 years old, 杏眼偏锐, 五官精致但不甜, 下巴收紧, 深色长发或高马尾，发丝整洁, 改良学院制服，精英感更强, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 制服布料偏挺，饰边精致, 学院精英少女, 清冷利落, 对异象反应敏锐, not photoreal --ar 3:4 --v 7 --raw
 ```
 
 #### full_body_master
 
 ```text
-one East Asian female academy elite student, 18 years old, same face and same hairstyle as the selected reference, elite academy bearing, sharp reaction readability, controlled confidence, slim young female, upright posture, clean shoulder line, fitted elite academy uniform with dark skirt system and subtle gold detailing, matte uniform cloth, crisp pleats, minimal jewelry, colors black, deep navy, muted gold, ivory, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_SITUQINGQING_FACE_DRAFT] --ow 250
+one East Asian 校长之女 / 学院核心观察者, 18 years old, same face and same hairstyle as the selected reference, 学院精英少女, 清冷利落, 对异象反应敏锐, 少女体型，站姿利落, 改良学院制服，精英感更强, 制服布料偏挺，饰边精致, colors 深蓝, 白, 银灰, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_SITUQINGQING_FACE_DRAFT] --ow 250
 ```
 
 ### Banana Pro
@@ -122,45 +124,7 @@ one East Asian female academy elite student, 18 years old, same face and same ha
 #### uniform_fix
 
 ```text
-保留司徒青青的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的fitted elite academy uniform with dark skirt system and subtle gold detailing。保留人物身份和画风，不要改成通用模板。
-```
-
-### Archive Updates
-
-- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml`
-- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
-- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml`
-
-## `CHAR_OLD_PROFESSOR`｜老教授
-
-### Summary
-
-- `status`: prompted
-- `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_OLD_PROFESSOR`
-- `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
-- `required_outputs`: `face_draft`、`full_body_master`
-- `visual_anchors`: ceremonial academic authority、readable shock reaction、old-school scholar silhouette
-
-### Midjourney
-
-#### face_draft
-
-```text
-one East Asian male senior ceremony professor, late 50s, early 50s, elderly scholarly East Asian face, widened curious eyes, thin lips, academic seriousness, gray sparse hair, slightly receded hairline, thin professor spectacles, formal professor robe layered over academy attire, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, matte cloth, old ceremonial trim, no luxury shine, ceremonial academic authority, readable shock reaction, old-school scholar silhouette, not photoreal --ar 3:4 --v 7 --raw
-```
-
-#### full_body_master
-
-```text
-one East Asian male senior ceremony professor, late 50s, early 50s, same face and same hairstyle as the selected reference, ceremonial academic authority, readable shock reaction, old-school scholar silhouette, slender elderly male, slightly forward posture, hands often gathered, formal professor robe layered over academy attire, matte cloth, old ceremonial trim, no luxury shine, colors dark brown, charcoal, faded gold, ivory, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_OLD_PROFESSOR_FACE_DRAFT] --ow 250
-```
-
-### Banana Pro
-
-#### uniform_fix
-
-```text
-保留老教授的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的formal professor robe layered over academy attire。保留人物身份和画风，不要改成通用模板。
+保留司徒青青的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的改良学院制服，精英感更强。保留人物身份和画风，不要改成通用模板。
 ```
 
 ### Archive Updates
@@ -177,20 +141,20 @@ one East Asian male senior ceremony professor, late 50s, early 50s, same face an
 - `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_LINQIANQIAN`
 - `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
 - `required_outputs`: `face_draft`、`full_body_master`
-- `visual_anchors`: beauty with superiority、visible class selection instinct、can shift from public disdain to startled reaction
+- `visual_anchors`: 校园美女、外表精致、眼神带轻蔑
 
 ### Midjourney
 
 #### face_draft
 
 ```text
-one East Asian female academy student, ex-girlfriend, 18 years old, attractive East Asian student face, slightly arrogant eyes, delicate lips, fashionable campus styling, long styled dark hair, polished academy grooming, upgraded academy uniform variant with feminine tailoring, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, matte cloth with slightly better trim and accessories than standard students, beauty with superiority, visible class selection instinct, can shift from public disdain to startled reaction, not photoreal --ar 3:4 --v 7 --raw
+one East Asian 前女友 / 现实势利对照组, 18 years old, 大眼但不萌, 唇形清晰, 面部轮廓流畅, 长发顺直，打理精致, 学院制服但更贴身精致, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 服装更利落，饰品可少量增加, 校园美女, 外表精致, 眼神带轻蔑, not photoreal --ar 3:4 --v 7 --raw
 ```
 
 #### full_body_master
 
 ```text
-one East Asian female academy student, ex-girlfriend, 18 years old, same face and same hairstyle as the selected reference, beauty with superiority, visible class selection instinct, can shift from public disdain to startled reaction, slim young female, graceful but slightly aggressive body language, upgraded academy uniform variant with feminine tailoring, matte cloth with slightly better trim and accessories than standard students, colors black, burgundy accent, muted gold, ivory, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_LINQIANQIAN_FACE_DRAFT] --ow 250
+one East Asian 前女友 / 现实势利对照组, 18 years old, same face and same hairstyle as the selected reference, 校园美女, 外表精致, 眼神带轻蔑, 少女体型，姿态外放, 学院制服但更贴身精致, 服装更利落，饰品可少量增加, colors 深蓝, 白, 冷粉少量点缀, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_LINQIANQIAN_FACE_DRAFT] --ow 250
 ```
 
 ### Banana Pro
@@ -198,7 +162,7 @@ one East Asian female academy student, ex-girlfriend, 18 years old, same face an
 #### uniform_fix
 
 ```text
-保留林倩倩的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的upgraded academy uniform variant with feminine tailoring。保留人物身份和画风，不要改成通用模板。
+保留林倩倩的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的学院制服但更贴身精致。保留人物身份和画风，不要改成通用模板。
 ```
 
 ### Archive Updates
@@ -215,20 +179,20 @@ one East Asian female academy student, ex-girlfriend, 18 years old, same face an
 - `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_ZHANGHE`
 - `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
 - `required_outputs`: `face_draft`、`full_body_master`
-- `visual_anchors`: rich elite academy presence、dismissive body language、visually opposite to Mengjiang's restrained underdog look
+- `visual_anchors`: 高富帅压迫感、学院风云人物、带侵略性
 
 ### Midjourney
 
 #### face_draft
 
 ```text
-one East Asian male rich academy student rival, 18 years old, handsome East Asian young male face, arrogant lifted chin, sharp confident eyes, clean rich-kid grooming, styled dark hair, controlled volume, no accessories, premium academy uniform variant with cleaner tailoring and family-status badge, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, crisp uniform cloth, slightly more polished shoes and trim, rich elite academy presence, dismissive body language, visually opposite to Mengjiang's restrained underdog look, not photoreal --ar 3:4 --v 7 --raw
+one East Asian 校园强势反派, 18 years old, 眉眼上挑, 鼻梁挺, 下颌偏锋利, 深色短发，发型精致, 学院制服强化版，带家族贵气, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 制服更挺阔，少量硬质配件, 高富帅压迫感, 学院风云人物, 带侵略性, not photoreal --ar 3:4 --v 7 --raw
 ```
 
 #### full_body_master
 
 ```text
-one East Asian male rich academy student rival, 18 years old, same face and same hairstyle as the selected reference, rich elite academy presence, dismissive body language, visually opposite to Mengjiang's restrained underdog look, fit young male, confident shoulder line, slightly aggressive stance, premium academy uniform variant with cleaner tailoring and family-status badge, crisp uniform cloth, slightly more polished shoes and trim, colors black, dark wine red, muted gold, steel gray, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_ZHANGHE_FACE_DRAFT] --ow 250
+one East Asian 校园强势反派, 18 years old, same face and same hairstyle as the selected reference, 高富帅压迫感, 学院风云人物, 带侵略性, 高挑结实，站姿外扩, 学院制服强化版，带家族贵气, 制服更挺阔，少量硬质配件, colors 黑, 深蓝, 金, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_ZHANGHE_FACE_DRAFT] --ow 250
 ```
 
 ### Banana Pro
@@ -236,7 +200,83 @@ one East Asian male rich academy student rival, 18 years old, same face and same
 #### uniform_fix
 
 ```text
-保留张贺的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的premium academy uniform variant with cleaner tailoring and family-status badge。保留人物身份和画风，不要改成通用模板。
+保留张贺的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的学院制服强化版，带家族贵气。保留人物身份和画风，不要改成通用模板。
+```
+
+### Archive Updates
+
+- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml`
+- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
+- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml`
+
+## `CHAR_OLD_PROFESSOR`｜老教授
+
+### Summary
+
+- `status`: planned
+- `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_OLD_PROFESSOR`
+- `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
+- `required_outputs`: `face_draft`、`full_body_master`
+- `visual_anchors`: 年迈学者、仪式主持者、神情夸张
+
+### Midjourney
+
+#### face_draft
+
+```text
+one East Asian 抽奖仪式主持者, 18 years old, 老年皱纹, 眼眶深, 胡须或唇周岁月感明显, 稀疏白发或灰白短发, 学院仪式教授袍, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 布料厚重，边缘旧感, 年迈学者, 仪式主持者, 神情夸张, not photoreal --ar 3:4 --v 7 --raw
+```
+
+#### full_body_master
+
+```text
+one East Asian 抽奖仪式主持者, 18 years old, same face and same hairstyle as the selected reference, 年迈学者, 仪式主持者, 神情夸张, 瘦削年长男性, 学院仪式教授袍, 布料厚重，边缘旧感, colors 深灰, 棕灰, 暗金, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_OLD_PROFESSOR_FACE_DRAFT] --ow 250
+```
+
+### Banana Pro
+
+#### uniform_fix
+
+```text
+保留老教授的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的学院仪式教授袍。保留人物身份和画风，不要改成通用模板。
+```
+
+### Archive Updates
+
+- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/episodes/ep001/asset-manifest.yaml`
+- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
+- `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-asset-prompt-pack.yaml`
+
+## `CHAR_ZHANGQIANG`｜张强
+
+### Summary
+
+- `status`: planned
+- `target_path`: `assets/只有我能抽出东方神明/角色/CHAR_ZHANGQIANG`
+- `reference_assets`: `/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/style-bible.yaml`、`/Users/fayon/workspace/github/pnpm/trade-agent/assets/只有我能抽出东方神明/项目档案/series/character-bible.yaml`
+- `required_outputs`: `face_draft`、`full_body_master`
+- `visual_anchors`: 家族长辈、中年强者、冷硬
+
+### Midjourney
+
+#### face_draft
+
+```text
+one East Asian 张家家主 / 父辈强者, early 50s, 眉峰硬, 鼻梁厚重, 法令纹明确, 深色短发，整理严谨, 家族权势感正装或高阶制服, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 厚重布料，少量硬质配件, 家族长辈, 中年强者, 冷硬, not photoreal --ar 3:4 --v 7 --raw
+```
+
+#### full_body_master
+
+```text
+one East Asian 张家家主 / 父辈强者, early 50s, same face and same hairstyle as the selected reference, 家族长辈, 中年强者, 冷硬, 中年偏壮，姿态沉稳, 家族权势感正装或高阶制服, 厚重布料，少量硬质配件, colors 黑, 深灰, 暗红, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_ZHANGQIANG_FACE_DRAFT] --ow 250
+```
+
+### Banana Pro
+
+#### uniform_fix
+
+```text
+保留张强的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的家族权势感正装或高阶制服。保留人物身份和画风，不要改成通用模板。
 ```
 
 ### Archive Updates

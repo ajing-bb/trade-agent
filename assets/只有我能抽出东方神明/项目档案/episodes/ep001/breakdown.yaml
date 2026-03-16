@@ -1,11 +1,40 @@
 project_type: AI漫剧
-target_style: 2D manhua / 校园东方神明漫剧
+target_style: ''
 core_theme: 抽卡 / 异象 / 学院
 core_continuity_risks:
 - 高风险镜头已自动标出
 - 强 VFX 与剧情转折并存
 - 多人镜头存在一致性压力
 manual_review_summary:
+- scope: scene
+  target_id: EP001-S01
+  review_flags:
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S02
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S03
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S04
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S05
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
+- scope: scene
+  target_id: EP001-S06
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - scope: shot
   target_id: EP001-S02-SH02
   review_flags:
@@ -130,22 +159,23 @@ manual_review_summary:
 scenes:
 - id: EP001-S01
   unit: opening
-  time_location: 日/外 神风学院操场
-  location_id: LOC_KAMIKAZE_ACADEMY_GROUNDS
-  location_raw: 神风学院操场
+  time_location: ''
+  location_id: ''
+  location_raw: ''
   purpose: 日/外 神风学院操场 / 神风学院。
   characters:
   - 孟江
   key_assets:
-  - 神风学院操场
   - 抽卡池
-  - 通用抽卡卡片
-  - 西方神魔雕像群
-  review_flags: []
+  - 卡片
+  - 雕像
+  - 操场
+  review_flags:
+  - canonical_asset_binding_needed
 - id: EP001-S02
   unit: episode_1
   time_location: 日/外 神风学院操场
-  location_id: LOC_KAMIKAZE_ACADEMY_GROUNDS
+  location_id: ''
   location_raw: 神风学院操场
   purpose: 孟江站在抽卡池旁，右手轻轻放在抽奖按钮上。 / 抽卡池…
   characters:
@@ -160,15 +190,17 @@ scenes:
   key_assets:
   - 神风学院操场
   - 抽卡池
-  - 通用抽卡卡片
-  - 金色天幕
-  - 七彩光柱
-  - 校长办公室
-  review_flags: []
+  - 卡片
+  - 天空
+  - 光柱
+  - 办公室
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S03
   unit: episode_2
   time_location: 日/内 食堂
-  location_id: LOC_ACADEMY_CAFETERIA
+  location_id: ''
   location_raw: 食堂
   purpose: 食堂，人声鼎沸。 / 孟江端着碗，坐在偏僻角落，满脸疲…
   characters:
@@ -182,28 +214,34 @@ scenes:
   - 跟班2
   key_assets:
   - 食堂
-  - 通用抽卡卡片
-  review_flags: []
+  - 卡片
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S04
   unit: episode_3
   time_location: 夜/外 公共抽卡池
-  location_id: LOC_PUBLIC_DRAW_POOL_NIGHT
+  location_id: ''
   location_raw: 公共抽卡池
   purpose: 深夜。 / 孟江独自站在抽卡池前。
   characters:
   - 孟江
   key_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   - 抽卡池
-  - 赤红天幕
-  - 赤红光柱
-  - 火轮长枪红绫套件
-  review_flags: []
+  - 天空
+  - 光柱
+  - 火轮
+  - 长枪
+  - 红绫
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S05
   unit: episode_3
   time_location: 夜/内 各处
-  location_id: LOC_CITY_REACTION_MONTAGE_NIGHT
-  location_raw: 各处夜景反应蒙太奇
+  location_id: ''
+  location_raw: 各处
   purpose: 司徒昆仑（震惊）：白天学校学生刚闹出巨大动静，现在又来…
   characters:
   - 司徒昆仑
@@ -213,24 +251,27 @@ scenes:
   - 张贺
   - 张强
   key_assets:
-  - 校长办公室
-  - 宿舍窗景
-  - 张家露台
-  - 赤红天幕
-  review_flags: []
+  - 各处
+  - 天空
+  - 宿舍
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 - id: EP001-S06
   unit: episode_3
   time_location: 夜/内 公共抽卡池
-  location_id: LOC_PUBLIC_DRAW_POOL_NIGHT
+  location_id: ''
   location_raw: 公共抽卡池
   purpose: 映衬着哪吒的卡片，出现在出奖口。 / 孟江神情激动，双…
   characters:
   - 孟江
   key_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   - 抽卡池
-  - 哪吒卡面
-  review_flags: []
+  - 卡片
+  review_flags:
+  - location_binding_needed
+  - canonical_asset_binding_needed
 shots:
 - id: EP001-S01-SH01
   scene_id: EP001-S01
@@ -470,7 +511,7 @@ shots:
   emotion: ''
   required_assets:
   - 神风学院操场
-  - 金色天幕
+  - 天空
   difficulty: low
   source_lines:
   - △天空忽然变色。
@@ -493,7 +534,7 @@ shots:
   emotion: ''
   required_assets:
   - 神风学院操场
-  - 金色天幕
+  - 天空
   difficulty: low
   source_lines:
   - △整片天空，凭空办成金色。
@@ -566,8 +607,9 @@ shots:
   - vfx
   emotion: 惊诧
   required_assets:
-  - 金色天幕
-  - 校长办公室
+  - 神风学院操场
+  - 天空
+  - 办公室
   difficulty: low
   source_lines:
   - △校长办公室，司徒昆仑猛地起身，惊诧的看向金色天空。
@@ -600,7 +642,7 @@ shots:
   action_types: []
   emotion: 震惊
   required_assets:
-  - 校长办公室
+  - 神风学院操场
   difficulty: high
   source_lines:
   - 司徒青青（震惊）：爸，天地为何发生这样的变化？
@@ -626,8 +668,8 @@ shots:
   required_assets:
   - 神风学院操场
   - 抽卡池
-  - 金色天幕
-  - 七彩光柱
+  - 天空
+  - 光柱
   difficulty: high
   source_lines:
   - △抽卡池上空，金色天空，一道七彩光柱从天而降，将整个抽卡池笼罩。
@@ -1152,8 +1194,8 @@ shots:
   scene_id: EP001-S03
   characters:
   - 张贺
-  - 孟江
   - 林倩倩
+  - 孟江
   beat: 听着学生们的议论，张贺很是满意。 / 孟江冷冷的看着林…
   action_core: 听着学生们的议论，张贺很是满意。 / 孟江冷冷…
   camera_intent: story beat coverage
@@ -1450,7 +1492,7 @@ shots:
   - blocking
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   - 抽卡池
   difficulty: medium
   source_lines:
@@ -1484,7 +1526,7 @@ shots:
   action_types: []
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   difficulty: low
   source_lines:
   - 孟江OS：好不容易积攒足够积分抽卡，是骡子是马，就靠这一哆嗦了。
@@ -1507,7 +1549,7 @@ shots:
   - blocking
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   difficulty: low
   source_lines:
   - △右手放在按钮上，缓缓按下。
@@ -1529,7 +1571,7 @@ shots:
   - action
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   difficulty: low
   source_lines:
   - △轰！
@@ -1551,8 +1593,8 @@ shots:
   - vfx
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
-  - 赤红天幕
+  - 公共抽卡池
+  - 天空
   difficulty: high
   source_lines:
   - △大地巨震，漆黑的天空，仿佛被大火瞬间点燃，整个城市，被火光照亮。
@@ -1576,9 +1618,9 @@ shots:
   - vfx
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   - 抽卡池
-  - 赤红光柱
+  - 光柱
   difficulty: high
   source_lines:
   - △随着按钮彻底按下，红色光柱从抽卡池冲天而起。
@@ -1605,7 +1647,7 @@ shots:
   action_types: []
   emotion: 惊喜
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   difficulty: low
   source_lines:
   - 孟江（惊喜）：成了？
@@ -1631,9 +1673,9 @@ shots:
   - action
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   - 抽卡池
-  - 赤红天幕
+  - 天空
   - 火轮
   - 长枪
   - 红绫
@@ -1670,7 +1712,7 @@ shots:
   action_types: []
   emotion: 震惊
   required_assets:
-  - 校长办公室
+  - 各处
   difficulty: medium
   source_lines:
   - 司徒昆仑（震惊）：白天学校学生刚闹出巨大动静，现在又来！
@@ -1699,9 +1741,8 @@ shots:
   - blocking
   emotion: ''
   required_assets:
-  - 校长办公室
+  - 各处
   - 宿舍
-  - 赤红天幕
   difficulty: high
   source_lines:
   - △司徒昆仑脸色凝重，远眺异象中心。
@@ -1736,7 +1777,7 @@ shots:
   action_types: []
   emotion: 冷笑
   required_assets:
-  - 宿舍
+  - 各处
   difficulty: medium
   source_lines:
   - 林倩倩：这动静……S级以上？
@@ -1760,8 +1801,8 @@ shots:
   - vfx
   emotion: ''
   required_assets:
-  - 张家露台
-  - 赤红天幕
+  - 各处
+  - 天空
   difficulty: low
   source_lines:
   - △张家，张贺抬头看着赤红天空，脸上带着不屑。
@@ -1800,7 +1841,7 @@ shots:
   action_types: []
   emotion: ''
   required_assets:
-  - 张家露台
+  - 各处
   difficulty: high
   source_lines:
   - 张强：贺儿，看异象，至少S级，你为何这种反应？
@@ -1825,7 +1866,7 @@ shots:
   - action
   emotion: ''
   required_assets:
-  - 各处夜景反应蒙太奇
+  - 各处
   difficulty: low
   source_lines:
   - △整个城市，数不清的人们抬头望天，纷纷惊叹。
@@ -1852,7 +1893,7 @@ shots:
   - blocking
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   - 卡片
   difficulty: medium
   source_lines:
@@ -1880,7 +1921,7 @@ shots:
   - blocking
   emotion: ''
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   - 抽卡池
   difficulty: medium
   source_lines:
@@ -1907,7 +1948,7 @@ shots:
   action_types: []
   emotion: 激动
   required_assets:
-  - 夜间公共抽卡广场
+  - 公共抽卡池
   difficulty: low
   source_lines:
   - 孟江OS（激动）：三坛海会大神，您的力量，我体会到了！

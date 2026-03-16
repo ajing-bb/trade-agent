@@ -4,130 +4,135 @@ queue_rules:
   in_progress: 镜头正在制作
   done: 镜头已完成并通过当前轮验收
 status_notes:
-- opening 与 episode_1 是本轮正式排产范围。
-- episode_3 夜间公共抽卡池样片保留为第二个压力测试，不默认进入全量 production。
-- 多人对白、群像反应与强 VFX 镜头优先拆成静帧、首尾帧和分层执行。
+- 项目已 fresh reset，当前没有镜头排产。
 - 本轮 queue 由 generate-director-queue.py 根据 breakdown / manifest / continuity 自动生成。
+- 有 1 条镜头因当前 manifest 中缺少可绑定资产而未进入 queue，仍需先补 canonical 资产或清单。
 queue:
 - shot_id: EP001-S02-SH03
   purpose: 孟江深吸一口气，眼神陡然变得坚定，眼中仿佛浮现出一道伟…
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S02-SH12
   purpose: 主持抽奖仪式的老教授，瞪大了眼珠子。
   blocked_by_assets:
   - CHAR_OLD_PROFESSOR
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_OLD_PROFESSOR face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_OLD_PROFESSOR, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 CHAR_OLD_PROFESSOR, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S02-SH20
   purpose: 孟江：为什么不能用，为什么？ / 孟江OS：可我明明能…
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S03-SH08
   purpose: 孟江：说完了吗？说完可以滚了。
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S03-SH11
   purpose: 张贺狞笑着，做出了一个抹脖子的手势。
   blocked_by_assets:
   - CHAR_ZHANGHE
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_ZHANGHE face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S03-SH13
   purpose: 张贺身边的两个跟班冷笑。
   blocked_by_assets:
   - CHAR_ZHANGHE
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_ZHANGHE face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S03-SH16
   purpose: 孟江OS：的确不是一个世界的人，过了今晚，一切都将分明。
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S04-SH02
   purpose: 孟江OS：好不容易积攒足够积分抽卡，是骡子是马，就靠这…
   blocked_by_assets:
   - CHAR_MENGJIANG
   - LOC_PUBLIC_DRAW_POOL_NIGHT
+  - PROP_DRAW_POOL_MAIN
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
+  - PROP_DRAW_POOL_MAIN master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S04-SH07
   purpose: 孟江（惊喜）：成了？
   blocked_by_assets:
   - CHAR_MENGJIANG
   - LOC_PUBLIC_DRAW_POOL_NIGHT
+  - PROP_DRAW_POOL_MAIN
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
+  - PROP_DRAW_POOL_MAIN master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S06-SH03
   purpose: 孟江OS（激动）：三坛海会大神，您的力量，我体会到了！
   blocked_by_assets:
   - CHAR_MENGJIANG
   - LOC_PUBLIC_DRAW_POOL_NIGHT
+  - PROP_DRAW_POOL_MAIN
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
+  - PROP_DRAW_POOL_MAIN master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S01-SH03
   purpose: 下一刻，镜头定格在男主身上，他身后，隐约可见诸多东方神…
@@ -136,203 +141,200 @@ queue:
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   execution_mode: character_close_medium
-  queue_status: ready
-  next_action: 按 character_close_medium 先做首帧/静帧，再决定是否进入视频段。
+  queue_status: blocked
+  next_action: 先补齐 CHAR_MENGJIANG，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S02-SH01
   purpose: 孟江站在抽卡池旁，右手轻轻放在抽奖按钮上。 / 抽卡池…
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
+  - LOC_PUBLIC_DRAW_POOL_NIGHT
   - PROP_DRAW_POOL_MAIN
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
+  - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
   - PROP_DRAW_POOL_MAIN master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS, PROP_DRAW_POOL_MAIN，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY, LOC_PUBLIC_DRAW_POOL_NIGHT,
+    PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S02-SH04
   purpose: 天空忽然变色。
   blocked_by_assets:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
-  - VFX_GOLDEN_SKY_ANOMALY
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
-  - VFX_GOLDEN_SKY_ANOMALY keyframe
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: scene_master_first
   queue_status: blocked
-  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS, VFX_GOLDEN_SKY_ANOMALY，再执行该镜头。
+  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S02-SH06
   purpose: 学生4：这……这什么情况？
   blocked_by_assets:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S02-SH08
   purpose: 校长办公室，司徒昆仑猛地起身，惊诧的看向金色天空。
   blocked_by_assets:
   - CHAR_SITUKUNLUN
-  - VFX_GOLDEN_SKY_ANOMALY
-  - LOC_PRINCIPAL_OFFICE
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
+  - LOC_PRINCIPAL_OFFICE_DAY
   primary_refs:
   - CHAR_SITUKUNLUN face/full body master
-  - VFX_GOLDEN_SKY_ANOMALY keyframe
-  - LOC_PRINCIPAL_OFFICE scene master
-  execution_mode: scene_plate + vfx_pass
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
+  - LOC_PRINCIPAL_OFFICE_DAY scene master
+  execution_mode: scene_plate + effect_overlay
   queue_status: blocked
-  next_action: 先补齐 CHAR_SITUKUNLUN, VFX_GOLDEN_SKY_ANOMALY, LOC_PRINCIPAL_OFFICE，再执行该镜头。
+  next_action: 先补齐 CHAR_SITUKUNLUN, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY, LOC_PRINCIPAL_OFFICE_DAY，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S02-SH11
   purpose: 学生1：孟江前九次没中，第十次这是憋了个大的吗？
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S02-SH14
   purpose: 一张周身散发着古朴气息的卡片从出奖口滑出。 / 孟江死…
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
-  - CARD_SUMMON_CARD_BASE
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
-  - CARD_SUMMON_CARD_BASE master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS, CARD_SUMMON_CARD_BASE，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S02-SH16
   purpose: 孟江抬手将卡片贴在额前。
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
-  - CARD_SUMMON_CARD_BASE
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
-  - CARD_SUMMON_CARD_BASE master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS, CARD_SUMMON_CARD_BASE，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S02-SH19
   purpose: 孟江脸色苍白，低头看着卡片走下抽卡池，嘴里喃喃自语。
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
+  - LOC_PUBLIC_DRAW_POOL_NIGHT
   - PROP_DRAW_POOL_MAIN
-  - CARD_SUMMON_CARD_BASE
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
+  - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
   - PROP_DRAW_POOL_MAIN master
-  - CARD_SUMMON_CARD_BASE master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS, PROP_DRAW_POOL_MAIN,
-    CARD_SUMMON_CARD_BASE，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY, LOC_PUBLIC_DRAW_POOL_NIGHT,
+    PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S03-SH02
   purpose: 孟江（皱眉）：林倩倩，你这是什么意思？
   blocked_by_assets:
   - CHAR_MENGJIANG
   - CHAR_LINQIANQIAN
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   - CHAR_LINQIANQIAN face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, CHAR_LINQIANQIAN, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, CHAR_LINQIANQIAN, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S03-SH03
   purpose: 林倩倩紧了紧手臂，让自己更贴紧张贺。 / 张贺很享受林…
   blocked_by_assets:
   - CHAR_ZHANGHE
   - CHAR_LINQIANQIAN
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_ZHANGHE face/full body master
   - CHAR_LINQIANQIAN face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, CHAR_LINQIANQIAN, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_ZHANGHE, CHAR_LINQIANQIAN, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S03-SH04
   purpose: 林倩倩（傲慢）：孟江，我们分手吧。
   blocked_by_assets:
   - CHAR_LINQIANQIAN
   - CHAR_MENGJIANG
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_LINQIANQIAN face/full body master
   - CHAR_MENGJIANG face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S03-SH05
   purpose: 周边，吃饭的学生纷纷看过来，一副看好戏的模样。
   blocked_by_assets:
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master_first
   queue_status: blocked
-  next_action: 先补齐 LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S03-SH09
   purpose: 四周，学生们惊呆了。
   blocked_by_assets:
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master_first
   queue_status: blocked
-  next_action: 先补齐 LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S03-SH10
   purpose: 学生1：这家伙不会是魔怔了吧？ / 张贺（怒极而笑）：…
   blocked_by_assets:
   - CHAR_ZHANGHE
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_ZHANGHE face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S03-SH12
   purpose: 林倩倩（轻蔑）：孟江，你这辈子就这样了，你我不是同一个…
   blocked_by_assets:
   - CHAR_LINQIANQIAN
   - CHAR_MENGJIANG
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_LINQIANQIAN face/full body master
   - CHAR_MENGJIANG face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S04-SH01
   purpose: 深夜。 / 孟江独自站在抽卡池前。
@@ -352,135 +354,119 @@ queue:
   purpose: 右手放在按钮上，缓缓按下。
   blocked_by_assets:
   - LOC_PUBLIC_DRAW_POOL_NIGHT
+  - PROP_DRAW_POOL_MAIN
   primary_refs:
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
-  execution_mode: scene_master_first
+  - PROP_DRAW_POOL_MAIN master
+  execution_mode: prop_insert_close_up
   queue_status: blocked
-  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT，再执行该镜头。
+  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S04-SH04
   purpose: 轰！
   blocked_by_assets:
   - LOC_PUBLIC_DRAW_POOL_NIGHT
+  - PROP_DRAW_POOL_MAIN
   primary_refs:
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
-  execution_mode: scene_master_first
+  - PROP_DRAW_POOL_MAIN master
+  execution_mode: prop_insert_close_up
   queue_status: blocked
-  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT，再执行该镜头。
-  fallback: 先做更稳的中景版本，再回补复杂机位。
-- shot_id: EP001-S05-SH01
-  purpose: 司徒昆仑（震惊）：白天学校学生刚闹出巨大动静，现在又来…
-  blocked_by_assets:
-  - CHAR_SITUKUNLUN
-  - CHAR_SITUQINGQING
-  - LOC_PRINCIPAL_OFFICE
-  primary_refs:
-  - CHAR_SITUKUNLUN face/full body master
-  - CHAR_SITUQINGQING face/full body master
-  - LOC_PRINCIPAL_OFFICE scene master
-  execution_mode: dialogue_two_shot
-  queue_status: blocked
-  next_action: 先补齐 CHAR_SITUKUNLUN, CHAR_SITUQINGQING, LOC_PRINCIPAL_OFFICE，再执行该镜头。
-  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
-- shot_id: EP001-S05-SH03
-  purpose: 林倩倩：这动静……S级以上？ / 林倩倩（冷笑）：别又…
-  blocked_by_assets:
-  - CHAR_LINQIANQIAN
-  - CHAR_MENGJIANG
-  - LOC_DORM_WINDOW_NIGHT
-  primary_refs:
-  - CHAR_LINQIANQIAN face/full body master
-  - CHAR_MENGJIANG face/full body master
-  - LOC_DORM_WINDOW_NIGHT scene master
-  execution_mode: dialogue_two_shot
-  queue_status: blocked
-  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_DORM_WINDOW_NIGHT，再执行该镜头。
-  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
-- shot_id: EP001-S05-SH04
-  purpose: 张家，张贺抬头看着赤红天空，脸上带着不屑。
-  blocked_by_assets:
-  - CHAR_ZHANGHE
-  - LOC_ZHANG_RESIDENCE_TERRACE
-  - VFX_RED_SKY_ANOMALY
-  primary_refs:
-  - CHAR_ZHANGHE face/full body master
-  - LOC_ZHANG_RESIDENCE_TERRACE scene master
-  - VFX_RED_SKY_ANOMALY keyframe
-  execution_mode: scene_plate + vfx_pass
-  queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, LOC_ZHANG_RESIDENCE_TERRACE, VFX_RED_SKY_ANOMALY，再执行该镜头。
-  fallback: 先做无特效稳定 plate，后续分层补特效。
-- shot_id: EP001-S05-SH06
-  purpose: 整个城市，数不清的人们抬头望天，纷纷惊叹。
-  blocked_by_assets:
-  - LOC_CITY_REACTION_MONTAGE_NIGHT
-  primary_refs:
-  - LOC_CITY_REACTION_MONTAGE_NIGHT scene master
-  execution_mode: scene_master_first
-  queue_status: blocked
-  next_action: 先补齐 LOC_CITY_REACTION_MONTAGE_NIGHT，再执行该镜头。
+  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
 - shot_id: EP001-S06-SH01
   purpose: 映衬着哪吒的卡片，出现在出奖口。 / 孟江神情激动，双…
   blocked_by_assets:
   - CHAR_MENGJIANG
   - LOC_PUBLIC_DRAW_POOL_NIGHT
-  - CARD_SUMMON_CARD_BASE
+  - PROP_DRAW_POOL_MAIN
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
-  - CARD_SUMMON_CARD_BASE master
+  - PROP_DRAW_POOL_MAIN master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT, CARD_SUMMON_CARD_BASE，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S05-SH01
+  purpose: 司徒昆仑（震惊）：白天学校学生刚闹出巨大动静，现在又来…
+  blocked_by_assets:
+  - CHAR_SITUKUNLUN
+  - CHAR_SITUQINGQING
+  primary_refs:
+  - CHAR_SITUKUNLUN face/full body master
+  - CHAR_SITUQINGQING face/full body master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_SITUKUNLUN, CHAR_SITUQINGQING，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S05-SH03
+  purpose: 林倩倩：这动静……S级以上？ / 林倩倩（冷笑）：别又…
+  blocked_by_assets:
+  - CHAR_LINQIANQIAN
+  - CHAR_MENGJIANG
+  primary_refs:
+  - CHAR_LINQIANQIAN face/full body master
+  - CHAR_MENGJIANG face/full body master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_MENGJIANG，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S05-SH04
+  purpose: 张家，张贺抬头看着赤红天空，脸上带着不屑。
+  blocked_by_assets:
+  - CHAR_ZHANGHE
+  primary_refs:
+  - CHAR_ZHANGHE face/full body master
+  execution_mode: scene_plate + effect_overlay
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHANGHE，再执行该镜头。
+  fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S01-SH01
   purpose: 日/外 神风学院操场 / 神风学院。
   blocked_by_assets:
+  - LOC_PUBLIC_DRAW_POOL_NIGHT
   - PROP_DRAW_POOL_MAIN
-  - CARD_SUMMON_CARD_BASE
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
+  - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
   - PROP_DRAW_POOL_MAIN master
-  - CARD_SUMMON_CARD_BASE master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: prop_insert_close_up
   queue_status: blocked
-  next_action: 先补齐 PROP_DRAW_POOL_MAIN, CARD_SUMMON_CARD_BASE, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S01-SH02
   purpose: 镜头切换，操场周围，到处都是西方神魔雕像。 / VO（…
   blocked_by_assets:
   - PROP_WESTERN_STATUE_SET
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - PROP_WESTERN_STATUE_SET master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: prop_insert_close_up
   queue_status: blocked
-  next_action: 先补齐 PROP_WESTERN_STATUE_SET, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 PROP_WESTERN_STATUE_SET, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S02-SH05
   purpose: 整片天空，凭空办成金色。
   blocked_by_assets:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
-  - VFX_GOLDEN_SKY_ANOMALY
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
-  - VFX_GOLDEN_SKY_ANOMALY keyframe
-  execution_mode: scene_plate + vfx_pass
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
+  execution_mode: scene_plate + effect_overlay
   queue_status: blocked
-  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS, VFX_GOLDEN_SKY_ANOMALY，再执行该镜头。
+  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S02-SH07
   purpose: 金色的天空，将大地也渲染成一片金色。
   blocked_by_assets:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: scene_plate + effect_overlay
   queue_status: blocked
-  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S06-SH02
   purpose: 轰隆隆！ / 抽卡池上空，哪吒身影彻底凝实，三头六臂凭…
@@ -499,93 +485,89 @@ queue:
   blocked_by_assets:
   - CHAR_SITUQINGQING
   - CHAR_SITUKUNLUN
-  - LOC_PRINCIPAL_OFFICE
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_SITUQINGQING face/full body master
   - CHAR_SITUKUNLUN face/full body master
-  - LOC_PRINCIPAL_OFFICE scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_SITUQINGQING, CHAR_SITUKUNLUN, LOC_PRINCIPAL_OFFICE，再执行该镜头。
+  next_action: 先补齐 CHAR_SITUQINGQING, CHAR_SITUKUNLUN, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S02-SH13
   purpose: 老教授：这个异象，难道是上古神魔？
   blocked_by_assets:
   - CHAR_OLD_PROFESSOR
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_OLD_PROFESSOR face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: character_close_medium
   queue_status: blocked
-  next_action: 先补齐 CHAR_OLD_PROFESSOR, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 CHAR_OLD_PROFESSOR, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S03-SH14
   purpose: 跟班1：林小姐前两天抽出了A级阿佛诺狄忒卡片，你这种不…
   blocked_by_assets:
-  - LOC_ACADEMY_CAFETERIA
-  - CARD_SUMMON_CARD_BASE
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
-  - LOC_ACADEMY_CAFETERIA scene master
-  - CARD_SUMMON_CARD_BASE master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 LOC_ACADEMY_CAFETERIA, CARD_SUMMON_CARD_BASE，再执行该镜头。
-  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
-- shot_id: EP001-S05-SH05
-  purpose: 张强：贺儿，看异象，至少S级，你为何这种反应？ / 张…
-  blocked_by_assets:
-  - CHAR_ZHANGHE
-  - LOC_ZHANG_RESIDENCE_TERRACE
-  primary_refs:
-  - CHAR_ZHANGHE face/full body master
-  - LOC_ZHANG_RESIDENCE_TERRACE scene master
-  execution_mode: dialogue_two_shot
-  queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, LOC_ZHANG_RESIDENCE_TERRACE，再执行该镜头。
+  next_action: 先补齐 LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S04-SH08
   purpose: 大地不断震动，天空通红一片，抽卡池上空，凭空凝聚出两个…
   blocked_by_assets:
   - LOC_PUBLIC_DRAW_POOL_NIGHT
   - PROP_DRAW_POOL_MAIN
-  - VFX_RED_SKY_ANOMALY
-  - VFX_NEZHA_WEAPON_SUITE
   primary_refs:
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
   - PROP_DRAW_POOL_MAIN master
-  - VFX_RED_SKY_ANOMALY keyframe
-  - VFX_NEZHA_WEAPON_SUITE keyframe
-  execution_mode: scene_plate + vfx_pass
+  execution_mode: scene_plate + effect_overlay
   queue_status: blocked
-  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN, VFX_RED_SKY_ANOMALY,
-    VFX_NEZHA_WEAPON_SUITE，再执行该镜头。
+  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
+- shot_id: EP001-S05-SH05
+  purpose: 张强：贺儿，看异象，至少S级，你为何这种反应？ / 张…
+  blocked_by_assets:
+  - CHAR_ZHANGQIANG
+  - CHAR_ZHANGHE
+  primary_refs:
+  - CHAR_ZHANGQIANG face/full body master
+  - CHAR_ZHANGHE face/full body master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHANGQIANG, CHAR_ZHANGHE，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
 - shot_id: EP001-S02-SH15
   purpose: 孟江：通天教主！ / 学生1：通天教主是什么？为何从未…
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
 - shot_id: EP001-S02-SH17
   purpose: 忽然，天地异象消失，就像是从未出现过一样。 / 孟江愣…
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
+  - LOC_PUBLIC_DRAW_POOL_NIGHT
   - PROP_DRAW_POOL_MAIN
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
+  - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
   - PROP_DRAW_POOL_MAIN master
   execution_mode: scene_plate + effect_overlay
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS, PROP_DRAW_POOL_MAIN，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY, LOC_PUBLIC_DRAW_POOL_NIGHT,
+    PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S03-SH01
   purpose: 食堂，人声鼎沸。 / 孟江端着碗，坐在偏僻角落，满脸疲…
@@ -593,47 +575,45 @@ queue:
   - CHAR_MENGJIANG
   - CHAR_ZHANGHE
   - CHAR_LINQIANQIAN
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
   - CHAR_ZHANGHE face/full body master
   - CHAR_LINQIANQIAN face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, CHAR_ZHANGHE, CHAR_LINQIANQIAN, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, CHAR_ZHANGHE, CHAR_LINQIANQIAN, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
 - shot_id: EP001-S03-SH06
   purpose: 学生1：早就该分手了，林倩倩这么漂亮，和一个废物谈恋爱…
   blocked_by_assets:
   - CHAR_LINQIANQIAN
   - CHAR_ZHANGHE
-  - LOC_ACADEMY_CAFETERIA
-  - CARD_SUMMON_CARD_BASE
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_LINQIANQIAN face/full body master
   - CHAR_ZHANGHE face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
-  - CARD_SUMMON_CARD_BASE master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA, CARD_SUMMON_CARD_BASE，再执行该镜头。
+  next_action: 先补齐 CHAR_LINQIANQIAN, CHAR_ZHANGHE, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
 - shot_id: EP001-S03-SH07
   purpose: 听着学生们的议论，张贺很是满意。 / 孟江冷冷的看着林…
   blocked_by_assets:
   - CHAR_ZHANGHE
-  - CHAR_MENGJIANG
   - CHAR_LINQIANQIAN
-  - LOC_ACADEMY_CAFETERIA
+  - CHAR_MENGJIANG
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_ZHANGHE face/full body master
-  - CHAR_MENGJIANG face/full body master
   - CHAR_LINQIANQIAN face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - CHAR_MENGJIANG face/full body master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, CHAR_MENGJIANG, CHAR_LINQIANQIAN, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_ZHANGHE, CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
 - shot_id: EP001-S03-SH15
   purpose: 张贺嚣张搂着林倩倩小蛮腰，大笑着离开了食堂。 / 孟江…
@@ -641,97 +621,97 @@ queue:
   - CHAR_ZHANGHE
   - CHAR_LINQIANQIAN
   - CHAR_MENGJIANG
-  - LOC_ACADEMY_CAFETERIA
+  - LOC_ACADEMY_CAFETERIA_DAY
   primary_refs:
   - CHAR_ZHANGHE face/full body master
   - CHAR_LINQIANQIAN face/full body master
   - CHAR_MENGJIANG face/full body master
-  - LOC_ACADEMY_CAFETERIA scene master
+  - LOC_ACADEMY_CAFETERIA_DAY scene master
   execution_mode: scene_master + character_composite
   queue_status: blocked
-  next_action: 先补齐 CHAR_ZHANGHE, CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA，再执行该镜头。
+  next_action: 先补齐 CHAR_ZHANGHE, CHAR_LINQIANQIAN, CHAR_MENGJIANG, LOC_ACADEMY_CAFETERIA_DAY，再执行该镜头。
   fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
 - shot_id: EP001-S05-SH02
   purpose: 司徒昆仑脸色凝重，远眺异象中心。 / 同一时间，学校高…
   blocked_by_assets:
   - CHAR_SITUKUNLUN
   - CHAR_LINQIANQIAN
-  - LOC_PRINCIPAL_OFFICE
   - LOC_DORM_WINDOW_NIGHT
-  - VFX_RED_SKY_ANOMALY
   primary_refs:
   - CHAR_SITUKUNLUN face/full body master
   - CHAR_LINQIANQIAN face/full body master
-  - LOC_PRINCIPAL_OFFICE scene master
   - LOC_DORM_WINDOW_NIGHT scene master
-  - VFX_RED_SKY_ANOMALY keyframe
-  execution_mode: scene_plate + vfx_pass
+  execution_mode: scene_plate + effect_overlay
   queue_status: blocked
-  next_action: 先补齐 CHAR_SITUKUNLUN, CHAR_LINQIANQIAN, LOC_PRINCIPAL_OFFICE, LOC_DORM_WINDOW_NIGHT,
-    VFX_RED_SKY_ANOMALY，再执行该镜头。
+  next_action: 先补齐 CHAR_SITUKUNLUN, CHAR_LINQIANQIAN, LOC_DORM_WINDOW_NIGHT，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S02-SH02
   purpose: 学生1：你们看，又是孟江！ / 学生2：哈哈哈，笑死，…
   blocked_by_assets:
   - CHAR_MENGJIANG
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
   - CHAR_MENGJIANG face/full body master
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 CHAR_MENGJIANG, LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
 - shot_id: EP001-S02-SH10
   purpose: 抽卡池上空，金色天空，一道七彩光柱从天而降，将整个抽卡…
   blocked_by_assets:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
+  - LOC_PUBLIC_DRAW_POOL_NIGHT
   - PROP_DRAW_POOL_MAIN
-  - VFX_GOLDEN_SKY_ANOMALY
   - VFX_RAINBOW_LIGHT_PILLAR
+  - VFX_RED_LIGHT_PILLAR
   primary_refs:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
+  - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
   - PROP_DRAW_POOL_MAIN master
-  - VFX_GOLDEN_SKY_ANOMALY keyframe
   - VFX_RAINBOW_LIGHT_PILLAR keyframe
+  - VFX_RED_LIGHT_PILLAR keyframe
   execution_mode: scene_plate + vfx_pass
   queue_status: blocked
-  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS, PROP_DRAW_POOL_MAIN, VFX_GOLDEN_SKY_ANOMALY,
-    VFX_RAINBOW_LIGHT_PILLAR，再执行该镜头。
+  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY, LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN,
+    VFX_RAINBOW_LIGHT_PILLAR, VFX_RED_LIGHT_PILLAR，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S02-SH18
   purpose: 学生1：哈哈哈，就这！ / 学生2：笑死老子了，刚出场…
   blocked_by_assets:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY
   primary_refs:
-  - LOC_KAMIKAZE_ACADEMY_GROUNDS scene master
+  - LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY scene master
   execution_mode: dialogue_two_shot
   queue_status: blocked
-  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS，再执行该镜头。
+  next_action: 先补齐 LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY，再执行该镜头。
   fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
 - shot_id: EP001-S04-SH05
   purpose: 大地巨震，漆黑的天空，仿佛被大火瞬间点燃，整个城市，被…
   blocked_by_assets:
   - LOC_PUBLIC_DRAW_POOL_NIGHT
-  - VFX_RED_SKY_ANOMALY
+  - PROP_DRAW_POOL_MAIN
   primary_refs:
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
-  - VFX_RED_SKY_ANOMALY keyframe
-  execution_mode: scene_plate + vfx_pass
+  - PROP_DRAW_POOL_MAIN master
+  execution_mode: scene_plate + effect_overlay
   queue_status: blocked
-  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, VFX_RED_SKY_ANOMALY，再执行该镜头。
+  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。
 - shot_id: EP001-S04-SH06
   purpose: 随着按钮彻底按下，红色光柱从抽卡池冲天而起。
   blocked_by_assets:
   - LOC_PUBLIC_DRAW_POOL_NIGHT
   - PROP_DRAW_POOL_MAIN
+  - VFX_RAINBOW_LIGHT_PILLAR
   - VFX_RED_LIGHT_PILLAR
   primary_refs:
   - LOC_PUBLIC_DRAW_POOL_NIGHT scene master
   - PROP_DRAW_POOL_MAIN master
+  - VFX_RAINBOW_LIGHT_PILLAR keyframe
   - VFX_RED_LIGHT_PILLAR keyframe
   execution_mode: scene_plate + vfx_pass
   queue_status: blocked
-  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN, VFX_RED_LIGHT_PILLAR，再执行该镜头。
+  next_action: 先补齐 LOC_PUBLIC_DRAW_POOL_NIGHT, PROP_DRAW_POOL_MAIN, VFX_RAINBOW_LIGHT_PILLAR,
+    VFX_RED_LIGHT_PILLAR，再执行该镜头。
   fallback: 先做无特效稳定 plate，后续分层补特效。

@@ -69,6 +69,88 @@ The creator does not use one tool for everything.
 - Jimeng: steadier general execution
 - Veo: often more useful for environment or support layers than as the sole actor-performance engine
 
+## SD2 / S2 Continuity Tactics
+
+Source note:
+- title: `用 SD2 制作AI动画，痛并快乐着～`
+- url: `https://www.xiaohongshu.com/explore/69b7c79b000000001b002e69`
+- extracted from the creator's post body on 2026-03-16
+
+The creator frames SD2's main value in three areas:
+- keep state continuity more stable across cuts
+- stitch space more plausibly when multiple scene angles are provided
+- allow multi-modal reference use for more original shot design
+
+### Midpoint-Frame Method
+
+Use one relatively static midpoint frame for a sequence when the user needs both continuity and shot freedom.
+
+The frame should usually carry:
+- full scene geography
+- character blocking
+- pose state
+- lighting state
+
+Prompting logic:
+- describe what happens before that midpoint near the start of the prompt
+- describe what happens after that midpoint near the end of the prompt
+- bind different reference elements around the shared midpoint state
+
+This is not a claim that the midpoint must become a literal storyboard shot. It is a continuity anchor.
+
+### Hidden Continuity Card
+
+The creator explicitly notes that the midpoint frame can be a helper card instead of a visible shot.
+
+To reduce the chance that the helper frame leaks into the final clip:
+- call it with a very different shot size
+- call it with a different camera angle
+- call it with a different composition
+
+This makes the model more likely to use the image for continuity guidance instead of copying it as the visible first frame.
+
+### Tail-Frame Planning
+
+When extension is likely, the creator prefers building a dedicated tail frame.
+
+Preferred rule:
+- create a planned end-state frame instead of relying on extracted video frames
+
+Why:
+- extracted frames tend to be low quality
+- regenerating from them can introduce color shift or deformation
+
+### Shot Bridging
+
+For clip-to-clip continuity, the creator suggests feeding the previous-shot state.
+
+Preferred order:
+- use a panoramic state frame from the previous shot if available
+- otherwise extract a frame only as a fallback
+- explicitly restate pose, action, and blocking in the prompt
+
+If the handoff still fails:
+- rebuild the linking shot manually
+- or insert a cutaway so the edit stops demanding a perfect direct continuation
+
+### Lock Scene, Not Person
+
+When the character is already in continuous motion, the creator warns against over-constraining later shots with literal first/last character frames.
+
+Preferred pattern:
+- reference the scene or background for the next shot
+- describe framing, angle, and shot size for the new shot
+- explicitly tell the model to continue the previous shot's character action when needed
+
+This keeps motion more fluid when the scene changes but the action should continue.
+
+### One Image Still Beats Many Words
+
+The creator's conclusion remains asset-first:
+- precise continuity still benefits from image anchors
+- text alone does not replace visual structure
+- multi-reference image-driven expansion stays more reliable than pure free prompting
+
 ## Motion Control View
 
 The creator's practical rule:

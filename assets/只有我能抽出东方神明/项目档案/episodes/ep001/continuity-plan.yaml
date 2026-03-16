@@ -1,20 +1,17 @@
 high_priority_locks:
-- CHAR_MENGJIANG
-- LOC_KAMIKAZE_ACADEMY_GROUNDS
-- PROP_DRAW_POOL_MAIN
-- VFX_GOLDEN_SKY_ANOMALY
-- VFX_RAINBOW_LIGHT_PILLAR
-- LOC_PUBLIC_DRAW_POOL_NIGHT
-- VFX_RED_SKY_ANOMALY
-- VFX_NEZHA_AVATAR
-canonical_character_assets:
-- CHAR_MENGJIANG
+- 先锁 CHAR_MENGJIANG 的 face draft 与 full body master，再开始任何涉及主角的 SD2 视频段
+- 先锁 LOC_KAMIKAZE_ACADEMY_GROUNDS_DAY 与 PROP_DRAW_POOL_MAIN，保证开场到第1集的空间连续性
+- 第1集金色异象与第3集赤红异象必须拆成两套独立 VFX 语言，不得混用
+- EP001-S02 和 EP001-S04 默认先做中间帧与尾帧，不直接长段视频裸跑
+canonical_character_assets: []
 pending_character_assets:
+- CHAR_MENGJIANG
 - CHAR_SITUKUNLUN
 - CHAR_SITUQINGQING
-- CHAR_OLD_PROFESSOR
 - CHAR_LINQIANQIAN
 - CHAR_ZHANGHE
+- CHAR_OLD_PROFESSOR
+- CHAR_ZHANGQIANG
 shot_build_policy:
 - shot_id: EP001-S02-SH03
   build_method: scene_master + character_composite
@@ -59,7 +56,7 @@ shot_build_policy:
   build_method: character_close_medium
   why: 学生4：这……这什么情况？
 - shot_id: EP001-S02-SH08
-  build_method: scene_plate + vfx_pass
+  build_method: scene_plate + effect_overlay
   why: 校长办公室，司徒昆仑猛地起身，惊诧的看向金色天…
 - shot_id: EP001-S02-SH11
   build_method: dialogue_two_shot
@@ -98,11 +95,14 @@ shot_build_policy:
   build_method: scene_master + character_composite
   why: 深夜。 / 孟江独自站在抽卡池前。
 - shot_id: EP001-S04-SH03
-  build_method: scene_master_first
+  build_method: prop_insert_close_up
   why: 右手放在按钮上，缓缓按下。
 - shot_id: EP001-S04-SH04
-  build_method: scene_master_first
+  build_method: prop_insert_close_up
   why: 轰！
+- shot_id: EP001-S06-SH01
+  build_method: scene_master + character_composite
+  why: 映衬着哪吒的卡片，出现在出奖口。 / 孟江神情…
 - shot_id: EP001-S05-SH01
   build_method: dialogue_two_shot
   why: 司徒昆仑（震惊）：白天学校学生刚闹出巨大动静，现在又来…
@@ -110,14 +110,8 @@ shot_build_policy:
   build_method: dialogue_two_shot
   why: 林倩倩：这动静……S级以上？ / 林倩倩（冷笑）：别又…
 - shot_id: EP001-S05-SH04
-  build_method: scene_plate + vfx_pass
+  build_method: scene_plate + effect_overlay
   why: 张家，张贺抬头看着赤红天空，脸上带着不屑。
-- shot_id: EP001-S05-SH06
-  build_method: scene_master_first
-  why: 整个城市，数不清的人们抬头望天，纷纷惊叹。
-- shot_id: EP001-S06-SH01
-  build_method: scene_master + character_composite
-  why: 映衬着哪吒的卡片，出现在出奖口。 / 孟江神情…
 - shot_id: EP001-S01-SH01
   build_method: prop_insert_close_up
   why: 日/外 神风学院操场 / 神风学院。
@@ -125,7 +119,7 @@ shot_build_policy:
   build_method: prop_insert_close_up
   why: 镜头切换，操场周围，到处都是西方神魔雕像。
 - shot_id: EP001-S02-SH05
-  build_method: scene_plate + vfx_pass
+  build_method: scene_plate + effect_overlay
   why: 整片天空，凭空办成金色。
 - shot_id: EP001-S02-SH07
   build_method: scene_plate + effect_overlay
@@ -142,12 +136,12 @@ shot_build_policy:
 - shot_id: EP001-S03-SH14
   build_method: dialogue_two_shot
   why: 跟班1：林小姐前两天抽出了A级阿佛诺狄忒卡片，你这种不…
+- shot_id: EP001-S04-SH08
+  build_method: scene_plate + effect_overlay
+  why: 大地不断震动，天空通红一片，抽卡池上空，凭空凝…
 - shot_id: EP001-S05-SH05
   build_method: dialogue_two_shot
   why: 张强：贺儿，看异象，至少S级，你为何这种反应？ / 张…
-- shot_id: EP001-S04-SH08
-  build_method: scene_plate + vfx_pass
-  why: 大地不断震动，天空通红一片，抽卡池上空，凭空凝…
 - shot_id: EP001-S02-SH15
   build_method: dialogue_two_shot
   why: 孟江：通天教主！ / 学生1：通天教主是什么？为何从未…
@@ -167,7 +161,7 @@ shot_build_policy:
   build_method: scene_master + character_composite
   why: 张贺嚣张搂着林倩倩小蛮腰，大笑着离开了食堂。…
 - shot_id: EP001-S05-SH02
-  build_method: scene_plate + vfx_pass
+  build_method: scene_plate + effect_overlay
   why: 司徒昆仑脸色凝重，远眺异象中心。 / 同一时间…
 - shot_id: EP001-S02-SH02
   build_method: dialogue_two_shot
@@ -179,18 +173,21 @@ shot_build_policy:
   build_method: dialogue_two_shot
   why: 学生1：哈哈哈，就这！ / 学生2：笑死老子了，刚出场…
 - shot_id: EP001-S04-SH05
-  build_method: scene_plate + vfx_pass
+  build_method: scene_plate + effect_overlay
   why: 大地巨震，漆黑的天空，仿佛被大火瞬间点燃，整个…
 - shot_id: EP001-S04-SH06
   build_method: scene_plate + vfx_pass
   why: 随着按钮彻底按下，红色光柱从抽卡池冲天而起。
 risks:
-- name: 多人对白镜头过载
-  description: opening 与 episode_1 的群嘲对白镜头人数多、台词密，直接上长镜头容易跑脸和跑口型。
-  mitigation: 先拆成 wide master、单人 reaction 和短对白覆盖，不直接做长段多人 lip-sync。
-- name: 白天异象层级过多
-  description: 金色天幕、七彩光柱和通天教主卡面 reveal 同时出现，单次生成容易糊成一层。
-  mitigation: 先稳住神风学院操场 plate，再分层叠加金色天幕、光柱和卡面近景。
-- name: 夜间样片范围外溢
-  description: 第3集夜间样片如果同时推进公共抽卡池、宿舍、张家和全城反应，会拉高首轮成本。
-  mitigation: 首轮只验证公共抽卡池 + 哪吒异象链路，其他夜景反应场景先保留为 planned。
+- name: 日间异象空间漂移
+  description: 操场、抽卡池、人群、雕像如果不先锁 master shot，金色异象段会越切越不像同一地点
+  mitigation: 先做操场 master shot，再做中间帧 helper 卡和 anomaly 派生机位
+- name: 多人对白口型失控
+  description: 食堂与操场群嘲镜头存在多人同时说话，直接长视频容易口型和脸同时漂移
+  mitigation: 先拆对白覆盖和反应镜头，只给核心人物做明确口型
+- name: 夜间强特效吞脸
+  description: 哪吒夜间段红天、红柱、法器、虚像叠加后容易让主角脸失真
+  mitigation: 先做 scene plate 与法器/VFX keyframe，再分层合成主角
+- name: 相邻段接不上
+  description: 白天抽卡高潮和夜间抽卡高潮都包含连续状态变化，SD2 直接续跑容易断态
+  mitigation: 每个高潮段都预设 midpoint frame、previous-shot state 与 tail frame

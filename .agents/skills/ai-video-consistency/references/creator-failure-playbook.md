@@ -151,6 +151,36 @@ Preferred fix:
 - keep the material language in the asset stage, not only in shot prompts
 - accept that some hero shots will need stronger post repair
 
+## 11. Adjacent Clips Do Not Connect
+
+Problem:
+- each clip looks usable alone but the cut between them feels false
+- pose, blocking, or energy resets between segments
+
+Likely cause:
+- no shared state frame or midpoint continuity anchor exists
+- each segment is being generated as if it were independent
+
+Preferred fix:
+- build one shared midpoint or state frame that carries pose, blocking, and light
+- describe what happens before and after that frame in the prompt
+- feed the previous-shot state when bridging the next clip
+- if direct continuation still fails, insert a cutaway or rebuild the bridge shot manually
+
+## 12. The Helper Reference Frame Shows Up In The Final Shot
+
+Problem:
+- the continuity card becomes the literal visible shot instead of staying a hidden support frame
+
+Likely cause:
+- the model treated the helper image like a first-frame instruction
+- the helper frame was too close to the requested final composition
+
+Preferred fix:
+- keep the helper card but request a very different shot size
+- request a different angle or composition from the helper frame
+- use the image as a continuity anchor, not as the final storyboard panel
+
 ## Minimal Output Shape
 
 When the user asks for debugging help, prefer:
