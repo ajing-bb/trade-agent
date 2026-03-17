@@ -1,0 +1,197 @@
+notes:
+- 周沉和林夏是第一优先级 canonical 主角，必须先锁脸部和全身母图。
+- 支持角色只做够用型 canonical 资产，不追求和主角同等级别的角度包。
+- 新角色标准角色包默认应有：脸部定稿 / 全身 / 三视图 / 表情 / 角度。
+characters:
+- id: CHAR_ZHOUCHEN
+  name: 周沉
+  role: 男主 / 后端程序员
+  age_hint: late 20s
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_ZHOUCHEN
+  visual_anchors:
+  - 普通但顺眼的年轻东亚男性
+  - 长期加班后的轻疲惫感
+  - 干净克制，不油腻不邋遢
+  - 细框眼镜可有可无，但工牌和双肩包常在
+  face_anchors:
+  - 窄长内双眼型
+  - 鼻梁直但不过分立体
+  - 下颌线清楚，嘴唇偏薄
+  - 黑眼圈轻微但真实
+  body_silhouette: 偏瘦、肩窄、轻微含胸的久坐程序员体态
+  hair_headwear: 黑色短发，额前碎发略乱，发量正常但有熬夜后的轻塌感
+  costume_core: 深灰卫衣或格子衬衫外搭基础外套，工牌，深色长裤，普通运动鞋
+  material_texture: 棉质卫衣、旧牛仔、磨损双肩包，整体偏哑光
+  color_anchors:
+  - charcoal gray
+  - washed navy
+  - muted black
+  signature_props:
+  - 工牌
+  - 双肩包
+  - 笔记本电脑
+  - 冰美式纸杯
+  emotion_range:
+  - 疲惫
+  - 克制
+  - 慢热心动
+  - 被偏爱时的不知所措
+  motion_traits: 说话前会停顿，低头多，走路偏快，坐姿长期前倾，情绪紧张时下意识摸工牌或握纸杯
+  voice_delivery: 青年男声，声音低一点，语速不快，逻辑感强，情绪外露很少
+  required_angles:
+  - front full body
+  - three-quarter front
+  - left side
+  - seated desk medium shot
+  - phone-camera close-up
+  must_not_drift:
+  - 脸型不能变成圆润偶像脸
+  - 发型不能做成精致韩系烫发
+  - 服装不能升级成潮流男装博主风
+  - 身材不能突然变壮或肌肉化
+  acceptable_variation:
+  - 外套可在灰黑蓝之间变化
+  - 眼镜可在部分镜头摘掉
+  - 疲惫程度可随剧情轻微变化
+  high_risk_shots:
+  - 便利店暖光近景
+  - 电梯狭小空间双人对话
+  - 天台夜风中的近景对视
+- id: CHAR_LINXIA
+  name: 林夏
+  role: 女主 / 直播公司内容编导
+  age_hint: mid 20s
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_LINXIA
+  visual_anchors:
+  - 明显高一档镜头吸引力的年轻东亚女性
+  - 精致但不过度网红化
+  - 气质轻松，边界感清晰
+  - 在现实办公室里依然很亮眼
+  face_anchors:
+  - 杏仁眼偏长，眼神直接
+  - 鼻尖小巧但自然
+  - 面中平整，嘴角线条利落
+  - 妆容轻透，不厚重
+  body_silhouette: 修长、站姿稳定、肩颈舒展，都市年轻女性的轻盈感
+  hair_headwear: 深棕或黑棕长发，顺直微弯，常披发或简单别到耳后
+  costume_core: 干净利落的浅色针织上衣或衬衫，长裤或半裙，简洁首饰，小包
+  material_texture: 细针织、柔软衬衫、轻微光泽耳饰，整体偏干净高级但不奢华
+  color_anchors:
+  - ivory
+  - camel beige
+  - dusty rose
+  - soft brown
+  signature_props:
+  - 热拿铁纸杯
+  - 直播物料夹板
+  - 手机
+  emotion_range:
+  - 观察
+  - 轻松逗弄
+  - 温柔偏向
+  - 认真确认
+  motion_traits: 眼神先到、动作后到，喜欢站在男主半步之外，靠近时很自然，不做夸张撒娇动作
+  voice_delivery: 青年女声，清晰，语速略快但稳，吐槽时轻，不尖锐
+  required_angles:
+  - front full body
+  - three-quarter front
+  - side profile
+  - seated casual medium shot
+  - over-shoulder dialogue angle
+  must_not_drift:
+  - 脸不能变成低幼二次元萌妹
+  - 不能做成浓妆性感主播封面脸
+  - 服装不能过度暴露或夜店化
+  - 气质不能从松弛清醒漂移成甜腻讨好
+  acceptable_variation:
+  - 妆发细节可根据昼夜和工位状态微调
+  - 上衣可在奶白、浅咖、浅灰之间变化
+  - 饰品存在与否可随镜头简化
+  high_risk_shots:
+  - 便利店暖光特写
+  - 电梯里近距离压迫式对话
+  - 天台出口逆风披外套镜头
+- id: CHAR_PRODUCT_MANAGER
+  name: 产品经理
+  role: 对抗型职场配角
+  age_hint: mid 30s
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_PRODUCT_MANAGER
+  visual_anchors:
+  - 三十多岁都市职场男性
+  - 打理体面但显得急躁
+  - 说话带压迫感
+  face_anchors:
+  - 眼神偏挑剔
+  - 法令纹轻微
+  - 脸部轮廓略硬
+  body_silhouette: 中等身材，坐站都偏前倾，压人感强
+  hair_headwear: 短发整齐，发胶感轻微
+  costume_core: 衬衫加西裤或商务休闲装，工牌，手里常有电脑或会议资料
+  material_texture: 商务衬衫和笔记本电脑的冷硬办公质感
+  color_anchors:
+  - white
+  - slate blue
+  - business gray
+  signature_props:
+  - 会议笔记本
+  - 电脑
+  emotion_range:
+  - 阴阳
+  - 焦躁
+  - 强硬
+  motion_traits: 喜欢边说边往前压，抬下巴，不给人完整说话时间
+  voice_delivery: 青年到中年男声，偏快，带控制欲
+  required_angles:
+  - front medium
+  - three-quarter seated
+  - hallway confrontation
+  must_not_drift:
+  - 不要做成夸张反派脸
+  - 不要做成喜剧丑角
+  acceptable_variation:
+  - 衬衫颜色可微调
+  high_risk_shots:
+  - 会议室外多人对峙
+- id: CHAR_MALE_HOST_COLLEAGUE
+  name: 阿曜
+  role: 制造男主轻度吃醋的参照角色
+  age_hint: mid 20s
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_MALE_HOST_COLLEAGUE
+  visual_anchors:
+  - 精致会打扮的年轻男性
+  - 镜头感比普通办公室同事更强
+  - 但不抢主角戏
+  face_anchors:
+  - 五官利落
+  - 发型精心打理
+  - 笑容职业化
+  body_silhouette: 匀称、肩线平直，站姿更有表现感
+  hair_headwear: 造型感短发
+  costume_core: 干净时髦的主播或内容团队男生穿搭
+  material_texture: 更利落的面料和轻配饰
+  color_anchors:
+  - black
+  - cream
+  - silver
+  signature_props:
+  - 手机
+  - 耳返或录制小配件
+  emotion_range:
+  - 轻松
+  - 职业社交
+  motion_traits: 说话自然带笑，手势比程序员群体更开
+  voice_delivery: 明亮男声，社交感强
+  required_angles:
+  - front medium
+  - three-quarter standing
+  must_not_drift:
+  - 不要做成男团舞台风
+  - 不要做成痞气花哨富二代
+  acceptable_variation:
+  - 发型和外套可以轻微变化
+  high_risk_shots:
+  - 电梯口擦肩镜头

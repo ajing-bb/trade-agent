@@ -1,0 +1,38 @@
+project_id: BUG
+title: BUG修不好但她偏偏喜欢我
+source_script: assets/BUG修不好但她偏偏喜欢我/剧本/BUG修不好但她偏偏喜欢我.docx
+archive_version: v1
+ingested_units:
+- episode_1
+current_ingested_range: ep001 / 第1集 / 01-1 至 01-10
+story_form: AI漫剧
+story_hook: 同楼层高颜值内容女生，慢慢偏爱一个总在深夜修线上故障的普通程序员。
+genre:
+- 都市恋爱
+- 职场轻喜剧
+- 程序员反差短剧
+world_rules:
+- 故事发生在当代一线城市写字楼体系内，不出现奇幻、古风、赛博朋克或超现实设定。
+- 男女主关系推进遵循 观察 -> 记住细节 -> 明显偏向 -> 暧昧未确认 的节奏，不靠一见钟情硬转。
+- 男主必须保持普通、疲惫、干净、可靠的现实程序员气质，不能被写成猥琐、脏乱或病态笑料。
+- 女主可以明显比男主更有镜头吸引力，但她的偏爱必须建立在真实观察与情绪理解上，而不是金钱、打赏或私联诱导。
+production_rules:
+- 先角色后场景再道具和VFX
+- 角色资产优先走 Face Draft -> Full Body Master -> Banana Derived Pack
+- Midjourney 只做各类资产的第一个 canonical base / master asset，不负责后续派生包
+- Banana Pro 统一基于定稿做后续派生，例如角色三视图、表情、角度，场景反打与机位变体，道具变体，VFX look-dev 变体
+- Banana Pro 派生提示词默认显式写 请参考当前资产定稿 或 请参考当前人物全身照
+canonical_rules:
+- 本目录与 episodes 中已确认的档案文件，构成本项目的 canonical memory
+- 后续续集、资产补画、Seedance prompt、角色返修，默认先读 canonical 档案，再参考聊天记录
+- 如果聊天结论与仓库档案冲突，以仓库中最新确认版本为准
+- 临时探索图、未落盘图片、未写回档案的 prompt 结论，不视为 canonical
+current_import_notes:
+- ep001 已从单个源剧本导入为 10 个夜景职场恋爱场景。
+- 当前 canonical 主轴是 周沉 / 林夏 的同楼层职场暧昧关系，先锁主CP，再扩展同事与场景资产。
+stable_id_prefixes:
+  character: CHAR_
+  location: LOC_
+  prop: PROP_
+  vfx: VFX_
+  shot: EP001-

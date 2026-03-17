@@ -145,9 +145,11 @@ def build_character_prompt_pack(
         body = item.get("body_silhouette", "")
         hair = item.get("hair_headwear", "")
         role = item.get("role", "")
-        age_hint = "18 years old"
-        if "中年" in body or "50" in role or "中年" in role:
-            age_hint = "early 50s"
+        age_hint = str(item.get("age_hint", "")).strip()
+        if not age_hint:
+            age_hint = "18 years old"
+            if "中年" in body or "50" in role or "中年" in role:
+                age_hint = "early 50s"
 
         face_prompt = (
             f"one East Asian {role or 'character'}, {age_hint}, {face_anchors}, {hair}, "

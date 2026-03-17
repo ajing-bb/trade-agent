@@ -1,0 +1,607 @@
+queue_rules:
+  blocked: 关键资产还未正式落盘，镜头不能进入生成阶段
+  ready: 关键资产已齐，可进入静帧或首尾帧生成
+  in_progress: 镜头正在制作
+  done: 镜头已完成并通过当前轮验收
+status_notes:
+- ep001 已根据 breakdown / manifest 建立首轮排产，当前所有镜头仍受 planned 资产阻塞。
+- 本轮 queue 由 generate-director-queue.py 根据 breakdown / manifest / continuity 自动生成。
+queue:
+- shot_id: EP001-S01-SH01
+  purpose: 周沉刚处理完线上故障，眼睛发红，拿着关东煮和冰美式在收…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_CONVENIENCE_STORE_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_CONVENIENCE_STORE_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_CONVENIENCE_STORE_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S01-SH05
+  purpose: 林夏低头看了一眼那份没人拿的关东煮，第一次记住这个总是…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - LOC_CONVENIENCE_STORE_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - LOC_CONVENIENCE_STORE_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, LOC_CONVENIENCE_STORE_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S02-SH03
+  purpose: 电梯门关上前，林夏看着他发愣的表情，像是忽然觉得这个人…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - LOC_ELEVATOR_LOBBY_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - LOC_ELEVATOR_LOBBY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, LOC_ELEVATOR_LOBBY_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S03-SH03
+  purpose: 周沉握着那杯热拿铁，耳朵慢慢红了，第一次不敢正眼看她。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_REST_AREA_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_REST_AREA_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_REST_AREA_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S05-SH02
+  purpose: 产品经理：你们技术是不是都这样，不会沟通，只会甩术语？
+  blocked_by_assets:
+  - CHAR_PRODUCT_MANAGER
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_PRODUCT_MANAGER face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: character_close_medium
+  queue_status: blocked
+  next_action: 先补齐 CHAR_PRODUCT_MANAGER, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S05-SH04
+  purpose: 林夏：那也总比只会改需求、不会负责强吧。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: character_close_medium
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S05-SH05
+  purpose: 走廊一下安静，产品经理脸色变了。
+  blocked_by_assets:
+  - CHAR_PRODUCT_MANAGER
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_PRODUCT_MANAGER face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_PRODUCT_MANAGER, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S06-SH03
+  purpose: 两个人并排往前走，周沉偷偷把步子放慢，想让这段路更长一…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_BUILDING_ENTRANCE_STEPS_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_BUILDING_ENTRANCE_STEPS_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_BUILDING_ENTRANCE_STEPS_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S07-SH01
+  purpose: 周沉难得一次说很多话，一边吃晚饭，一边吐槽今天的线上事…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_STORE_OUTDOOR_TABLE_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S07-SH03
+  purpose: 周沉安静了两秒，像是第一次有人把他的疲惫翻译成人话。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_STORE_OUTDOOR_TABLE_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S07-SH04
+  purpose: 周沉：这句话比你懂代码有用。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT scene master
+  execution_mode: character_close_medium
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_STORE_OUTDOOR_TABLE_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S07-SH05
+  purpose: 林夏把自己没动过的卤牛肉推给他，示意他继续吃。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, LOC_STORE_OUTDOOR_TABLE_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S08-SH03
+  purpose: 周沉沉默，没有承认，也没有否认。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_ELEVATOR_INTERIOR_DUSK
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ELEVATOR_INTERIOR_DUSK scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_ELEVATOR_INTERIOR_DUSK，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S08-SH05
+  purpose: 电梯门打开，林夏先走出去，回头丢下一句，说他吃醋的时候…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - LOC_ELEVATOR_INTERIOR_DUSK
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - LOC_ELEVATOR_INTERIOR_DUSK scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, LOC_ELEVATOR_INTERIOR_DUSK，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S09-SH03
+  purpose: 周沉没说话，风把他的外套吹得很乱。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_ROOFTOP_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S09-SH05
+  purpose: 周沉抬头看着她，第一次没有躲开视线。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_ROOFTOP_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S10-SH03
+  purpose: 周沉刚想开口，手机忽然震动，项目群消息疯狂弹出来。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_EXIT_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_EXIT_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_ROOFTOP_EXIT_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S01-SH02
+  purpose: 同事（电话）：哥，老板问你修好了没有。 / 周沉：刚回…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - LOC_CONVENIENCE_STORE_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_CONVENIENCE_STORE_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, LOC_CONVENIENCE_STORE_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S01-SH03
+  purpose: 周沉停了一秒，把刚付完的钱的关东煮放回柜台，拎着咖啡转…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_LINXIA
+  - LOC_CONVENIENCE_STORE_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_CONVENIENCE_STORE_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_LINXIA, LOC_CONVENIENCE_STORE_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S01-SH04
+  purpose: 林夏：你都付完了，不吃啊？ / 周沉：线上炸了。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_CONVENIENCE_STORE_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_CONVENIENCE_STORE_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_CONVENIENCE_STORE_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S02-SH02
+  purpose: 林夏：周沉。 / 周沉：啊？
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ELEVATOR_LOBBY_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ELEVATOR_LOBBY_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ELEVATOR_LOBBY_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S03-SH01
+  purpose: 三天后，周沉处理完一堆报错，独自坐在休息区发呆，林夏从…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_REST_AREA_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_REST_AREA_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_REST_AREA_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S03-SH02
+  purpose: 周沉：给我的？ / 林夏：嗯。你胃不好，别老喝冰的。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_LINXIA
+  - LOC_REST_AREA_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_REST_AREA_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_LINXIA, LOC_REST_AREA_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S04-SH03
+  purpose: 周沉直接卡住，不知道怎么接。 / 林夏替他把面拌开，神…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_LINXIA
+  - LOC_PANTRY_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_PANTRY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_LINXIA, LOC_PANTRY_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S05-SH01
+  purpose: 周沉刚被产品经理阴阳，说他除了写代码什么都不会，收起电…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_PRODUCT_MANAGER
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_PRODUCT_MANAGER face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_PRODUCT_MANAGER, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S05-SH03
+  purpose: 周沉没回，林夏正好从走廊另一侧经过，把这句听得清清楚楚。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S05-SH06
+  purpose: 产品经理：你什么意思？ / 林夏：字面意思。你们昨天半…
+  blocked_by_assets:
+  - CHAR_PRODUCT_MANAGER
+  - CHAR_LINXIA
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_PRODUCT_MANAGER face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_PRODUCT_MANAGER, CHAR_LINXIA, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S05-SH08
+  purpose: 林夏：你怎么连吵架都不会？ / 周沉：第一次有人替我吵。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S06-SH01
+  purpose: 凌晨十二点二十，周沉终于下班，推门出来时，看见林夏坐在…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_BUILDING_ENTRANCE_STEPS_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_BUILDING_ENTRANCE_STEPS_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_BUILDING_ENTRANCE_STEPS_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S06-SH02
+  purpose: 周沉：你怎么还没走？ / 林夏：等你。
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_LINXIA
+  - LOC_BUILDING_ENTRANCE_STEPS_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_BUILDING_ENTRANCE_STEPS_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_LINXIA, LOC_BUILDING_ENTRANCE_STEPS_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S07-SH02
+  purpose: 周沉：我们那个老系统，order 文件八万行，里面两万…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_LINXIA
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_STORE_OUTDOOR_TABLE_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_LINXIA, LOC_STORE_OUTDOOR_TABLE_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S08-SH02
+  purpose: 林夏：你怎么不说话？ / 周沉：没什么。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ELEVATOR_INTERIOR_DUSK
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ELEVATOR_INTERIOR_DUSK scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ELEVATOR_INTERIOR_DUSK，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S08-SH04
+  purpose: 林夏：可我最近比较在意一个写代码很慢热的人。 / 周沉…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ELEVATOR_INTERIOR_DUSK
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ELEVATOR_INTERIOR_DUSK scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ELEVATOR_INTERIOR_DUSK，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S09-SH01
+  purpose: 周沉因为项目延期，被家里催相亲，一个人站在露台吹风。林…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ROOFTOP_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S09-SH02
+  purpose: 林夏：你今天怎么这么安静？ / 周沉：我平时也不吵。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ROOFTOP_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S09-SH04
+  purpose: 林夏：周沉，被认真喜欢这件事，没你想的那么离谱。
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ROOFTOP_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S10-SH01
+  purpose: 周日晚，林夏刚结束活动复盘，周沉刚修完最后一个 bug…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_EXIT_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_EXIT_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ROOFTOP_EXIT_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S10-SH02
+  purpose: 林夏：你最近是不是对我太好了点？ / 周沉：你不是也一…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_EXIT_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_EXIT_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ROOFTOP_EXIT_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S10-SH04
+  purpose: 周沉：线上又报警了。 / 林夏：你们这个班，谈恋爱都得…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_LINXIA
+  - LOC_ROOFTOP_EXIT_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_ROOFTOP_EXIT_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_LINXIA, LOC_ROOFTOP_EXIT_NIGHT，再执行该镜头。
+  fallback: 先做静帧对白 keyframe，不直接上长对白视频。
+- shot_id: EP001-S10-SH05
+  purpose: 周沉转身往里跑，跑了两步又回头。林夏还站在原地看着他，…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ROOFTOP_EXIT_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ROOFTOP_EXIT_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ROOFTOP_EXIT_NIGHT，再执行该镜头。
+  fallback: 先做更稳的中景版本，再回补复杂机位。
+- shot_id: EP001-S02-SH01
+  purpose: 第二天晚上，周沉刚开完会，被产品经理当众甩锅，整个人发…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_PRODUCT_MANAGER
+  - CHAR_LINXIA
+  - LOC_ELEVATOR_LOBBY_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_PRODUCT_MANAGER face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_ELEVATOR_LOBBY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_PRODUCT_MANAGER, CHAR_LINXIA, LOC_ELEVATOR_LOBBY_NIGHT，再执行该镜头。
+  fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
+- shot_id: EP001-S04-SH01
+  purpose: 周沉边泡面边回项目群消息，林夏顺手把自己那份卤蛋放进了…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_PANTRY_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_PANTRY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_PANTRY_NIGHT，再执行该镜头。
+  fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
+- shot_id: EP001-S04-SH02
+  purpose: 同事A：不是吧，这俩什么时候的事？ / 同事B：我就说…
+  blocked_by_assets:
+  - CHAR_ZHOUCHEN
+  - CHAR_LINXIA
+  - LOC_PANTRY_NIGHT
+  primary_refs:
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_LINXIA face/full body master
+  - LOC_PANTRY_NIGHT scene master
+  execution_mode: dialogue_two_shot
+  queue_status: blocked
+  next_action: 先补齐 CHAR_ZHOUCHEN, CHAR_LINXIA, LOC_PANTRY_NIGHT，再执行该镜头。
+  fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
+- shot_id: EP001-S05-SH07
+  purpose: 产品经理转身走了，周沉抬头看着林夏，明显没想到会有人替…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - CHAR_PRODUCT_MANAGER
+  - LOC_MEETING_HALLWAY_NIGHT
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - CHAR_PRODUCT_MANAGER face/full body master
+  - LOC_MEETING_HALLWAY_NIGHT scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, CHAR_PRODUCT_MANAGER, LOC_MEETING_HALLWAY_NIGHT，再执行该镜头。
+  fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。
+- shot_id: EP001-S08-SH01
+  purpose: 林夏刚和一个穿得很精致的男主播同事说完话，还笑得很开心…
+  blocked_by_assets:
+  - CHAR_LINXIA
+  - CHAR_ZHOUCHEN
+  - LOC_ELEVATOR_INTERIOR_DUSK
+  primary_refs:
+  - CHAR_LINXIA face/full body master
+  - CHAR_ZHOUCHEN face/full body master
+  - LOC_ELEVATOR_INTERIOR_DUSK scene master
+  execution_mode: scene_master + character_composite
+  queue_status: blocked
+  next_action: 先补齐 CHAR_LINXIA, CHAR_ZHOUCHEN, LOC_ELEVATOR_INTERIOR_DUSK，再执行该镜头。
+  fallback: 先缩小景别或拆成单人/双人镜头，再回补群像。

@@ -1,0 +1,144 @@
+prompt_pack_id: CHARACTER_ASSET_PROMPT_PACK_V1
+project_id: BUG
+scope:
+- CHAR_ZHOUCHEN
+- CHAR_LINXIA
+- CHAR_PRODUCT_MANAGER
+- CHAR_MALE_HOST_COLLEAGUE
+rules:
+  midjourney_role: base_generation_only
+  banana_role: derive_turnaround_expression_angle_and_repair
+  canonical_note: generated_from_character_bible
+  character_pipeline: face_draft_then_full_body_then_banana_derived_pack
+characters:
+- id: CHAR_ZHOUCHEN
+  name: 周沉
+  status: planned
+  target_path: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_ZHOUCHEN
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  required_outputs:
+  - face_draft
+  - full_body_master
+  visual_anchors:
+  - 普通但顺眼的年轻东亚男性
+  - 长期加班后的轻疲惫感
+  - 干净克制，不油腻不邋遢
+  - 细框眼镜可有可无，但工牌和双肩包常在
+  midjourney:
+    face_draft: one East Asian 男主 / 后端程序员, late 20s, 窄长内双眼型, 鼻梁直但不过分立体, 下颌线清楚，嘴唇偏薄,
+      黑眼圈轻微但真实, 黑色短发，额前碎发略乱，发量正常但有熬夜后的轻塌感, 深灰卫衣或格子衬衫外搭基础外套，工牌，深色长裤，普通运动鞋, waist-up
+      portrait, plain light gray background, clean comic linework, 2D Chinese manhua
+      still, 棉质卫衣、旧牛仔、磨损双肩包，整体偏哑光, 普通但顺眼的年轻东亚男性, 长期加班后的轻疲惫感, 干净克制，不油腻不邋遢, 细框眼镜可有可无，但工牌和双肩包常在,
+      not photoreal --ar 3:4 --v 7 --raw
+    full_body_master: one East Asian 男主 / 后端程序员, late 20s, same face and same hairstyle
+      as the selected reference, 普通但顺眼的年轻东亚男性, 长期加班后的轻疲惫感, 干净克制，不油腻不邋遢, 细框眼镜可有可无，但工牌和双肩包常在,
+      偏瘦、肩窄、轻微含胸的久坐程序员体态, 深灰卫衣或格子衬衫外搭基础外套，工牌，深色长裤，普通运动鞋, 棉质卫衣、旧牛仔、磨损双肩包，整体偏哑光, colors
+      charcoal gray, washed navy, muted black, standing straight, solo character,
+      full body, centered composition, plain light gray background, clean comic linework,
+      2-step soft realism, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7
+      --raw --oref [CHAR_ZHOUCHEN_FACE_DRAFT] --ow 250
+  banana:
+    uniform_fix: 保留周沉的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的深灰卫衣或格子衬衫外搭基础外套，工牌，深色长裤，普通运动鞋。保留人物身份和画风，不要改成通用模板。
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-asset-prompt-pack.yaml
+- id: CHAR_LINXIA
+  name: 林夏
+  status: planned
+  target_path: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_LINXIA
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  required_outputs:
+  - face_draft
+  - full_body_master
+  visual_anchors:
+  - 明显高一档镜头吸引力的年轻东亚女性
+  - 精致但不过度网红化
+  - 气质轻松，边界感清晰
+  - 在现实办公室里依然很亮眼
+  midjourney:
+    face_draft: one East Asian 女主 / 直播公司内容编导, mid 20s, 杏仁眼偏长，眼神直接, 鼻尖小巧但自然, 面中平整，嘴角线条利落,
+      妆容轻透，不厚重, 深棕或黑棕长发，顺直微弯，常披发或简单别到耳后, 干净利落的浅色针织上衣或衬衫，长裤或半裙，简洁首饰，小包, waist-up portrait,
+      plain light gray background, clean comic linework, 2D Chinese manhua still,
+      细针织、柔软衬衫、轻微光泽耳饰，整体偏干净高级但不奢华, 明显高一档镜头吸引力的年轻东亚女性, 精致但不过度网红化, 气质轻松，边界感清晰, 在现实办公室里依然很亮眼,
+      not photoreal --ar 3:4 --v 7 --raw
+    full_body_master: one East Asian 女主 / 直播公司内容编导, mid 20s, same face and same hairstyle
+      as the selected reference, 明显高一档镜头吸引力的年轻东亚女性, 精致但不过度网红化, 气质轻松，边界感清晰, 在现实办公室里依然很亮眼,
+      修长、站姿稳定、肩颈舒展，都市年轻女性的轻盈感, 干净利落的浅色针织上衣或衬衫，长裤或半裙，简洁首饰，小包, 细针织、柔软衬衫、轻微光泽耳饰，整体偏干净高级但不奢华,
+      colors ivory, camel beige, dusty rose, soft brown, standing straight, solo character,
+      full body, centered composition, plain light gray background, clean comic linework,
+      2-step soft realism, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7
+      --raw --oref [CHAR_LINXIA_FACE_DRAFT] --ow 250
+  banana:
+    uniform_fix: 保留林夏的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的干净利落的浅色针织上衣或衬衫，长裤或半裙，简洁首饰，小包。保留人物身份和画风，不要改成通用模板。
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-asset-prompt-pack.yaml
+- id: CHAR_PRODUCT_MANAGER
+  name: 产品经理
+  status: planned
+  target_path: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_PRODUCT_MANAGER
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  required_outputs:
+  - face_draft
+  - full_body_master
+  visual_anchors:
+  - 三十多岁都市职场男性
+  - 打理体面但显得急躁
+  - 说话带压迫感
+  midjourney:
+    face_draft: one East Asian 对抗型职场配角, mid 30s, 眼神偏挑剔, 法令纹轻微, 脸部轮廓略硬, 短发整齐，发胶感轻微,
+      衬衫加西裤或商务休闲装，工牌，手里常有电脑或会议资料, waist-up portrait, plain light gray background,
+      clean comic linework, 2D Chinese manhua still, 商务衬衫和笔记本电脑的冷硬办公质感, 三十多岁都市职场男性,
+      打理体面但显得急躁, 说话带压迫感, not photoreal --ar 3:4 --v 7 --raw
+    full_body_master: one East Asian 对抗型职场配角, mid 30s, same face and same hairstyle
+      as the selected reference, 三十多岁都市职场男性, 打理体面但显得急躁, 说话带压迫感, 中等身材，坐站都偏前倾，压人感强,
+      衬衫加西裤或商务休闲装，工牌，手里常有电脑或会议资料, 商务衬衫和笔记本电脑的冷硬办公质感, colors white, slate blue, business
+      gray, standing straight, solo character, full body, centered composition, plain
+      light gray background, clean comic linework, 2-step soft realism, 2D Chinese
+      manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_PRODUCT_MANAGER_FACE_DRAFT]
+      --ow 250
+  banana:
+    uniform_fix: 保留产品经理的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的衬衫加西裤或商务休闲装，工牌，手里常有电脑或会议资料。保留人物身份和画风，不要改成通用模板。
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-asset-prompt-pack.yaml
+- id: CHAR_MALE_HOST_COLLEAGUE
+  name: 阿曜
+  status: planned
+  target_path: assets/BUG修不好但她偏偏喜欢我/角色/CHAR_MALE_HOST_COLLEAGUE
+  reference_assets:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/style-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  required_outputs:
+  - face_draft
+  - full_body_master
+  visual_anchors:
+  - 精致会打扮的年轻男性
+  - 镜头感比普通办公室同事更强
+  - 但不抢主角戏
+  midjourney:
+    face_draft: one East Asian 制造男主轻度吃醋的参照角色, mid 20s, 五官利落, 发型精心打理, 笑容职业化, 造型感短发,
+      干净时髦的主播或内容团队男生穿搭, waist-up portrait, plain light gray background, clean comic
+      linework, 2D Chinese manhua still, 更利落的面料和轻配饰, 精致会打扮的年轻男性, 镜头感比普通办公室同事更强, 但不抢主角戏,
+      not photoreal --ar 3:4 --v 7 --raw
+    full_body_master: one East Asian 制造男主轻度吃醋的参照角色, mid 20s, same face and same hairstyle
+      as the selected reference, 精致会打扮的年轻男性, 镜头感比普通办公室同事更强, 但不抢主角戏, 匀称、肩线平直，站姿更有表现感,
+      干净时髦的主播或内容团队男生穿搭, 更利落的面料和轻配饰, colors black, cream, silver, standing straight,
+      solo character, full body, centered composition, plain light gray background,
+      clean comic linework, 2-step soft realism, 2D Chinese manhua still, not photoreal
+      --ar 9:16 --v 7 --raw --oref [CHAR_MALE_HOST_COLLEAGUE_FACE_DRAFT] --ow 250
+  banana:
+    uniform_fix: 保留阿曜的脸、发型、年龄感和身材比例不变，只统一服装系统为当前项目设定中的干净时髦的主播或内容团队男生穿搭。保留人物身份和画风，不要改成通用模板。
+  archive_updates:
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/episodes/ep001/asset-manifest.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-bible.yaml
+  - /Users/fayon/workspace/github/pnpm/trade-agent/assets/BUG修不好但她偏偏喜欢我/项目档案/series/character-asset-prompt-pack.yaml

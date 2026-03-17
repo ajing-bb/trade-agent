@@ -1,0 +1,299 @@
+# Scene Asset Prompt Pack
+
+> Generated from `scene-asset-prompt-pack.yaml`. Do not edit this Markdown manually.
+
+## Rules
+
+- `midjourney_role`: scene_master_only
+- `banana_role`: derive_reverse_angle_variant_and_repair
+- `scene_pipeline`: scene_master_then_banana_derived_views
+
+## `LOC_CONVENIENCE_STORE_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+写字楼一层便利店, 男女主夜间偶遇、观察和第一次建立印象的核心内景场, corporate tower convenience store, 便利店白色灯箱门头, 玻璃门与收银台, 关东煮机和热食区, 背后写字楼电梯厅方向的通道, 收银台, 关东煮机, 冷藏柜灯光, night, dry, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: front wide, counter medium, reverse / over-shoulder, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 写字楼一层便利店, reverse-side view of the same space, preserve 便利店白色灯箱门头, 玻璃门与收银台, 关东煮机和热食区, 背后写字楼电梯厅方向的通道, preserve layout logic, same night, dry, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [CONVENIENCE_STORE_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留写字楼一层便利店的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_STORE_OUTDOOR_TABLE_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+便利店门口小桌, 男女主夜间坐下聊天、程序员吐槽和轻暧昧加深的核心外摆场, convenience store outdoor seating, 两张小桌和塑料椅, 便利店玻璃外立面, 室内灯光外溢, 路边台阶或栏杆, 背后写字楼夜色, 外摆小桌, 塑料椅, 便利店玻璃, night, dry, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: outdoor table two-shot, side profile conversation, reverse / over-shoulder, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 便利店门口小桌, reverse-side view of the same space, preserve 两张小桌和塑料椅, 便利店玻璃外立面, 室内灯光外溢, 路边台阶或栏杆, 背后写字楼夜色, preserve layout logic, same night, dry, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [STORE_OUTDOOR_TABLE_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留便利店门口小桌的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_ELEVATOR_LOBBY_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+写字楼电梯口, 掉工牌、等电梯、暧昧停顿和短促对话, office elevator lobby, 银灰色电梯门, 楼层显示屏, 大理石地面, 墙侧消防箱或公告板, 等候区灯带, 电梯门, 楼层数字灯, 工牌落点区域, night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: front medium, side waiting shot, floor pick-up close-up, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 写字楼电梯口, reverse-side view of the same space, preserve 银灰色电梯门, 楼层显示屏, 大理石地面, 墙侧消防箱或公告板, 等候区灯带, preserve layout logic, same night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ELEVATOR_LOBBY_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留写字楼电梯口的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_REST_AREA_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+公司楼下休息区, 女主递热拿铁、关系从观察升级到被记住, office tower shared rest area, 长椅或卡座, 共享桌面, 自动售卖机或饮水机, 顶部冷白灯, 背后玻璃或公司门禁, 长椅, 热饮纸杯, 售卖机灯箱, night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: seated two-shot, side close-up, profile over-shoulder, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 公司楼下休息区, reverse-side view of the same space, preserve 长椅或卡座, 共享桌面, 自动售卖机或饮水机, 顶部冷白灯, 背后玻璃或公司门禁, preserve layout logic, same night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [REST_AREA_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留公司楼下休息区的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_PANTRY_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+办公区公共茶水间, 同事误会、关系第一次被公开投射, corporate pantry, 热水机或咖啡机, 微波炉, 长台面, 垃圾分类桶, 透明玻璃隔断, 泡面, 卤蛋, 台面, night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: pantry wide, side two-shot, reaction insert, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 办公区公共茶水间, reverse-side view of the same space, preserve 热水机或咖啡机, 微波炉, 长台面, 垃圾分类桶, 透明玻璃隔断, preserve layout logic, same night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [PANTRY_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留办公区公共茶水间的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_MEETING_HALLWAY_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+联合会议室外走廊, 产品经理压人、女主替男主出头, office meeting hallway, 会议室玻璃门, 门牌或预订屏, 走廊灯带, 墙边长凳或绿植, 地面导向线, 会议室玻璃门, 预订屏, night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: hallway medium, confrontation two-shot, side entry reveal, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 联合会议室外走廊, reverse-side view of the same space, preserve 会议室玻璃门, 门牌或预订屏, 走廊灯带, 墙边长凳或绿植, 地面导向线, preserve layout logic, same night, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [MEETING_HALLWAY_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留联合会议室外走廊的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_BUILDING_ENTRANCE_STEPS_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+写字楼门口台阶, 女主等男主下班，建立被等待的情绪价值, office tower entrance, 玻璃自动门, 门外台阶, 公司门头灯, 路边打车点, 夜色反光地面, 自动门, 台阶, 门头灯, night, dry, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: entrance wide, seated waiting shot, back-follow two-shot, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 写字楼门口台阶, reverse-side view of the same space, preserve 玻璃自动门, 门外台阶, 公司门头灯, 路边打车点, 夜色反光地面, preserve layout logic, same night, dry, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [BUILDING_ENTRANCE_STEPS_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留写字楼门口台阶的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_ELEVATOR_INTERIOR_DUSK`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+电梯里, 窄空间对话、吃醋与暧昧压迫感, elevator interior, 金属轿厢内壁, 楼层按钮面板, 顶部均匀灯光, 镜面反射边框, 按钮面板, 金属门缝, dusk, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: front tight two-shot, mirrored side angle, button panel insert, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 电梯里, reverse-side view of the same space, preserve 金属轿厢内壁, 楼层按钮面板, 顶部均匀灯光, 镜面反射边框, preserve layout logic, same dusk, indoor, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ELEVATOR_INTERIOR_DUSK_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留电梯里的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_ROOFTOP_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+公司露台, 情绪确认、认真喜欢与长对视的高价值外景场, office rooftop, 金属栏杆, 远处城市天际线, 地面防水层或水泥纹理, 风口与设备箱, 顶部应急灯远照, 栏杆, 城市夜景, night, windy, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: rooftop medium, skyline over-shoulder, doorway two-shot, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 公司露台, reverse-side view of the same space, preserve 金属栏杆, 远处城市天际线, 地面防水层或水泥纹理, 风口与设备箱, 顶部应急灯远照, preserve layout logic, same night, windy, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ROOFTOP_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留公司露台的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```
+
+## `LOC_ROOFTOP_EXIT_NIGHT`
+
+### Summary
+
+- `status`: planned
+- `required_outputs`: `scene_master`、`reverse_seed`
+
+### Midjourney
+
+#### scene_master
+
+```text
+写字楼天台出口, 差一点说破、被项目群消息打断的门口停顿场, rooftop doorway, 天台出口门, 门框应急灯, 一小段平台地面, 通向露台的门槛线, 背后可见城市夜景一角, 天台出口门, 应急灯, 门槛线, night, windy, clean comic linework, 2-step soft realism, 2D Chinese manhua still, readable wide composition, camera coverage seeds: doorway two-shot, over-shoulder at exit, turn-back medium shot, not photoreal --ar 16:9 --v 7 --raw
+```
+
+#### reverse_seed
+
+```text
+same 写字楼天台出口, reverse-side view of the same space, preserve 天台出口门, 门框应急灯, 一小段平台地面, 通向露台的门槛线, 背后可见城市夜景一角, preserve layout logic, same night, windy, clean comic linework, 2-step soft realism, 2D Chinese manhua still --ar 16:9 --v 7 --raw --oref [ROOFTOP_EXIT_NIGHT_MASTER] --ow 200
+```
+
+### Banana Pro
+
+#### layout_cleanup
+
+```text
+保留写字楼天台出口的空间布局、透视、锚点和光照不变，只清理错误结构与不稳定细节，使它成为后续镜头可复用的稳定母图。
+```

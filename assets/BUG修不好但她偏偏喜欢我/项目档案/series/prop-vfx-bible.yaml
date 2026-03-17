@@ -1,0 +1,57 @@
+rules:
+- 本项目无超自然 VFX，优先锁真实职场道具，不要过早做花哨特效设计。
+- 道具优先支持角色识别与场景复用，例如工牌、纸杯、电脑报错界面和手机通知UI。
+- 若后续出现屏幕消息镜头，优先走道具/UI 设计，不要误归类到 VFX。
+props:
+- id: PROP_EMPLOYEE_BADGE
+  name: 工牌
+  function: 周沉与办公楼身份识别道具，支撑掉工牌与摸工牌动作
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/道具/PROP_EMPLOYEE_BADGE
+  visual_anchors:
+  - 白底员工卡
+  - 蓝灰色挂绳
+  - 简洁公司logo区
+  - 常规磨损感
+- id: PROP_HOT_LATTE_CUP
+  name: 热拿铁纸杯
+  function: 林夏对周沉表达观察和偏爱的关键递送道具
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/道具/PROP_HOT_LATTE_CUP
+  visual_anchors:
+  - 奶白色纸杯
+  - 简洁杯盖
+  - 便利店热饮标签
+  - 手握时易识别
+- id: PROP_LATE_NIGHT_MEAL_SET
+  name: 便利店晚餐组合
+  function: 关东煮与冰美式组合，强化加班和来不及吃饭的生活状态
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/道具/PROP_LATE_NIGHT_MEAL_SET
+  visual_anchors:
+  - 透明关东煮盒
+  - 冰美式塑料杯
+  - 便利店收银台小票
+  - 深夜办公楼食物感
+- id: PROP_DEBUG_LAPTOP
+  name: 报错日志笔记本电脑
+  function: 周沉的工作状态识别道具，用于线上故障和加班镜头
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/道具/PROP_DEBUG_LAPTOP
+  visual_anchors:
+  - 深色商务笔记本
+  - 终端或日志界面
+  - 冷色屏幕光
+  - 键盘磨损使用痕迹
+- id: PROP_PROJECT_ALERT_PHONE_UI
+  name: 项目群报警手机界面
+  function: 收尾报警和项目消息打断关系推进的手机UI道具
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/道具/PROP_PROJECT_ALERT_PHONE_UI
+  visual_anchors:
+  - 中文项目群界面
+  - 红点提示
+  - 紧急报警文案
+  - 现代办公APP样式
+vfx: []
+vfx: []

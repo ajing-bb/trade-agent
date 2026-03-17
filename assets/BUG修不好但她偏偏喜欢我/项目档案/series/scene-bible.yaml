@@ -1,0 +1,358 @@
+rules:
+- 同一栋写字楼是本项目最重要的连续性容器，便利店、电梯口、茶水间、天台都必须保持在同一建筑体系内。
+- 夜景为主，但不走霓虹赛博风，必须保留真实办公楼荧光灯、玻璃反射和便利店暖光的日常感。
+- 便利店、电梯口、天台出口属于高复用场景，必须先做可反打的母图。
+locations:
+- id: LOC_CONVENIENCE_STORE_NIGHT
+  name: 写字楼一层便利店
+  function: 男女主夜间偶遇、观察和第一次建立印象的核心内景场
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_CONVENIENCE_STORE_NIGHT
+  environment_type: corporate tower convenience store
+  time: night
+  weather: dry
+  anchors:
+  - 便利店白色灯箱门头
+  - 玻璃门与收银台
+  - 关东煮机和热食区
+  - 背后写字楼电梯厅方向的通道
+  character_zones:
+  - 收银台前单人站位
+  - 玻璃门内外过渡位
+  camera_seeds:
+  - front wide
+  - counter medium
+  - reverse / over-shoulder
+  reverse_shot_needed: true
+  crowd_policy: 默认只保留软背景店员与下班路人，不建立稳定群众角色。
+  signature_assets:
+  - 收银台
+  - 关东煮机
+  - 冷藏柜灯光
+  must_not_drift:
+  - 便利店不能变成独立街边小卖部
+  - 外摆桌椅数量和位置不能频繁变化
+  - 室内外光比必须稳定
+  acceptable_variation:
+  - 冷柜商品和海报可变化
+  - 路人数量可轻微变化
+  high_risk_angles:
+  - 从门外拍向门内的夜景反打
+- id: LOC_STORE_OUTDOOR_TABLE_NIGHT
+  name: 便利店门口小桌
+  function: 男女主夜间坐下聊天、程序员吐槽和轻暧昧加深的核心外摆场
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_STORE_OUTDOOR_TABLE_NIGHT
+  environment_type: convenience store outdoor seating
+  time: night
+  weather: dry
+  anchors:
+  - 两张小桌和塑料椅
+  - 便利店玻璃外立面
+  - 室内灯光外溢
+  - 路边台阶或栏杆
+  - 背后写字楼夜色
+  character_zones:
+  - 双人对坐位
+  - 单人侧坐位
+  - 桌边递食物位
+  camera_seeds:
+  - outdoor table two-shot
+  - side profile conversation
+  - reverse / over-shoulder
+  reverse_shot_needed: true
+  crowd_policy: 夜间只保留极少量模糊路人，不要变成热闹夜宵摊。
+  signature_assets:
+  - 外摆小桌
+  - 塑料椅
+  - 便利店玻璃
+  must_not_drift:
+  - 外摆区不能变成路边大排档
+  - 背后必须还能感觉到同一栋写字楼便利店体系
+  acceptable_variation:
+  - 桌上食物和纸杯可变化
+  high_risk_angles:
+  - 双人对坐的反打近景
+- id: LOC_ELEVATOR_LOBBY_NIGHT
+  name: 写字楼电梯口
+  function: 掉工牌、等电梯、暧昧停顿和短促对话
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_ELEVATOR_LOBBY_NIGHT
+  environment_type: office elevator lobby
+  time: night
+  weather: indoor
+  anchors:
+  - 银灰色电梯门
+  - 楼层显示屏
+  - 大理石地面
+  - 墙侧消防箱或公告板
+  - 等候区灯带
+  character_zones:
+  - 电梯门正前站位
+  - 侧边等候位
+  - 掉工牌的地面区域
+  camera_seeds:
+  - front medium
+  - side waiting shot
+  - floor pick-up close-up
+  reverse_shot_needed: true
+  crowd_policy: 同事只做走廊穿行背景，不需要高识别建模。
+  signature_assets:
+  - 电梯门
+  - 楼层数字灯
+  - 工牌落点区域
+  must_not_drift:
+  - 电梯门材质和灯带结构不能变
+  - 地面材质不能从石材漂移到木地板
+  acceptable_variation:
+  - 公告内容和广告牌可变化
+  high_risk_angles:
+  - 低角度看工牌落地
+- id: LOC_REST_AREA_NIGHT
+  name: 公司楼下休息区
+  function: 女主递热拿铁、关系从观察升级到被记住
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_REST_AREA_NIGHT
+  environment_type: office tower shared rest area
+  time: night
+  weather: indoor
+  anchors:
+  - 长椅或卡座
+  - 共享桌面
+  - 自动售卖机或饮水机
+  - 顶部冷白灯
+  - 背后玻璃或公司门禁
+  character_zones:
+  - 双人并坐位
+  - 单人发呆位
+  camera_seeds:
+  - seated two-shot
+  - side close-up
+  - profile over-shoulder
+  reverse_shot_needed: true
+  crowd_policy: 背景保持空旷感，体现深夜办公楼的安静。
+  signature_assets:
+  - 长椅
+  - 热饮纸杯
+  - 售卖机灯箱
+  must_not_drift:
+  - 休息区必须有共享办公楼公共空间气质
+  - 夜间冷光不能变成暖黄咖啡馆
+  acceptable_variation:
+  - 桌面小物与海报可变化
+  high_risk_angles:
+  - 双人同框坐姿近景
+- id: LOC_PANTRY_NIGHT
+  name: 办公区公共茶水间
+  function: 同事误会、关系第一次被公开投射
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_PANTRY_NIGHT
+  environment_type: corporate pantry
+  time: night
+  weather: indoor
+  anchors:
+  - 热水机或咖啡机
+  - 微波炉
+  - 长台面
+  - 垃圾分类桶
+  - 透明玻璃隔断
+  character_zones:
+  - 台面泡面区
+  - 路人停步围观区
+  camera_seeds:
+  - pantry wide
+  - side two-shot
+  - reaction insert
+  reverse_shot_needed: true
+  crowd_policy: 同事A/B以半清晰围观位出现，默认不做完整主角级建模。
+  signature_assets:
+  - 泡面
+  - 卤蛋
+  - 台面
+  must_not_drift:
+  - 茶水间不能变成家庭厨房
+  - 透明玻璃隔断和台面关系不能变
+  acceptable_variation:
+  - 小家电品牌和贴纸可变化
+  high_risk_angles:
+  - 三人以上同框围观反应镜头
+- id: LOC_MEETING_HALLWAY_NIGHT
+  name: 联合会议室外走廊
+  function: 产品经理压人、女主替男主出头
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_MEETING_HALLWAY_NIGHT
+  environment_type: office meeting hallway
+  time: night
+  weather: indoor
+  anchors:
+  - 会议室玻璃门
+  - 门牌或预订屏
+  - 走廊灯带
+  - 墙边长凳或绿植
+  - 地面导向线
+  character_zones:
+  - 门口争执位
+  - 走廊拦截位
+  camera_seeds:
+  - hallway medium
+  - confrontation two-shot
+  - side entry reveal
+  reverse_shot_needed: true
+  crowd_policy: 默认空走廊，只保留必要经过的同事影子。
+  signature_assets:
+  - 会议室玻璃门
+  - 预订屏
+  must_not_drift:
+  - 会议室门型和门牌位置不能变
+  acceptable_variation:
+  - 屏幕内容可变化
+  high_risk_angles:
+  - 三方对峙的压缩透视镜头
+- id: LOC_BUILDING_ENTRANCE_STEPS_NIGHT
+  name: 写字楼门口台阶
+  function: 女主等男主下班，建立被等待的情绪价值
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_BUILDING_ENTRANCE_STEPS_NIGHT
+  environment_type: office tower entrance
+  time: night
+  weather: dry
+  anchors:
+  - 玻璃自动门
+  - 门外台阶
+  - 公司门头灯
+  - 路边打车点
+  - 夜色反光地面
+  character_zones:
+  - 台阶等待位
+  - 自动门出入口
+  - 并排离开的起步位
+  camera_seeds:
+  - entrance wide
+  - seated waiting shot
+  - back-follow two-shot
+  reverse_shot_needed: true
+  crowd_policy: 夜深后应偏空，不要做下班高峰人潮。
+  signature_assets:
+  - 自动门
+  - 台阶
+  - 门头灯
+  must_not_drift:
+  - 门口必须属于同一栋大楼
+  - 玻璃门和台阶位置关系不能变
+  acceptable_variation:
+  - 远处车辆与路灯数量可变化
+  high_risk_angles:
+  - 门内向门外的逆光出门镜头
+- id: LOC_ELEVATOR_INTERIOR_DUSK
+  name: 电梯里
+  function: 窄空间对话、吃醋与暧昧压迫感
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_ELEVATOR_INTERIOR_DUSK
+  environment_type: elevator interior
+  time: dusk
+  weather: indoor
+  anchors:
+  - 金属轿厢内壁
+  - 楼层按钮面板
+  - 顶部均匀灯光
+  - 镜面反射边框
+  character_zones:
+  - 并排站位
+  - 对角站位
+  - 门开时回头位
+  camera_seeds:
+  - front tight two-shot
+  - mirrored side angle
+  - button panel insert
+  reverse_shot_needed: true
+  crowd_policy: 该场默认只保留两人，不额外塞路人。
+  signature_assets:
+  - 按钮面板
+  - 金属门缝
+  must_not_drift:
+  - 电梯尺寸和材质不能变化太大
+  acceptable_variation:
+  - 楼层数字可变化
+  high_risk_angles:
+  - 近距离双人压缩透视
+- id: LOC_ROOFTOP_NIGHT
+  name: 公司露台
+  function: 情绪确认、认真喜欢与长对视的高价值外景场
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_ROOFTOP_NIGHT
+  environment_type: office rooftop
+  time: night
+  weather: windy
+  anchors:
+  - 金属栏杆
+  - 远处城市天际线
+  - 地面防水层或水泥纹理
+  - 风口与设备箱
+  - 顶部应急灯远照
+  character_zones:
+  - 栏杆边单人情绪位
+  - 栏杆边双人对视位
+  - 远景并站位
+  camera_seeds:
+  - rooftop medium
+  - skyline over-shoulder
+  - doorway two-shot
+  reverse_shot_needed: true
+  crowd_policy: 全空场，强调深夜和风声，不放无意义路人。
+  signature_assets:
+  - 栏杆
+  - 城市夜景
+  must_not_drift:
+  - 天际线和栏杆高度关系不能乱
+  - 露台外景不能变成咖啡店露台或居民楼天台
+  acceptable_variation:
+  - 远处楼宇灯光可变化
+  - 风力和头发摆动可变化
+  high_risk_angles:
+  - 逆风近景对视
+  - 从栏杆外侧压回来的极近景
+- id: LOC_ROOFTOP_EXIT_NIGHT
+  name: 写字楼天台出口
+  function: 差一点说破、被项目群消息打断的门口停顿场
+  recurring: true
+  status: planned
+  asset_root: assets/BUG修不好但她偏偏喜欢我/场景/LOC_ROOFTOP_EXIT_NIGHT
+  environment_type: rooftop doorway
+  time: night
+  weather: windy
+  anchors:
+  - 天台出口门
+  - 门框应急灯
+  - 一小段平台地面
+  - 通向露台的门槛线
+  - 背后可见城市夜景一角
+  character_zones:
+  - 门口双人停留位
+  - 说破前靠近位
+  - 男主转身离开的起步位
+  camera_seeds:
+  - doorway two-shot
+  - over-shoulder at exit
+  - turn-back medium shot
+  reverse_shot_needed: true
+  crowd_policy: 全空场，只保留风和远景城市灯光。
+  signature_assets:
+  - 天台出口门
+  - 应急灯
+  - 门槛线
+  must_not_drift:
+  - 门口必须与公司露台属于同一空间体系
+  - 出口门不能漂移成居民楼楼梯间
+  acceptable_variation:
+  - 门上标识和细部磨损可变化
+  high_risk_angles:
+  - 门内向门外的逆光反打
