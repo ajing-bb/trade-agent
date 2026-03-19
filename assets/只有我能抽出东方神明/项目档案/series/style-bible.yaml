@@ -7,6 +7,35 @@ reference_warning:
 - 不要跑成韩系写真脸
 - 不要跑成高饱和萌系校园番
 - 不要跑成重写实电影质感
+character_asset_prompting:
+  default_positive_style_anchor:
+  - plain light gray background
+  - clean comic linework
+  - 2D Chinese manhua still
+  - semi-flat rendering
+  - 2-step cel shade with restrained rim light
+  - matte fabric
+  - minimal metal details
+  - centered composition for master assets
+  default_negative_style_anchor:
+  - not photoreal
+  - not glossy otome game art
+  - not Korean photo face
+  - not high-saturation moe anime
+  - not ancient costume
+  - not soft dress silhouette
+  academy_elite_girl_anchor:
+  - sharp almond-shaped eyes
+  - refined facial features but not sweet
+  - slightly tightened chin
+  - cool observant expression
+  - lips held in a subtle straight line
+  - mouth corners slightly tightened
+  - dark long hair with tidy strands
+  - dark academy uniform
+  - high collar structure
+  - subtle cloud motif only in the trim and emblem
+  - colors deep navy black, white, muted silver gray
 line_and_render:
   line_quality: hard-clean with selective weight change
   shadow_depth: 2-step cel shade with restrained rim light
@@ -49,3 +78,5 @@ failure_boundaries:
 - 不要让金色异象和红色异象共用同一套颜色逻辑
 - 不要在一个镜头里同时要求多人对白、强特效、长机位运动
 - 不要把辅助 continuity 卡直接当成正片首帧构图
+- 不要把学院精英少女做成甜妹、软礼服、古风仕女或韩系写真脸
+- 不要把制服做成高光塑料皮或乙游贵族礼服

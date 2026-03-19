@@ -8,6 +8,8 @@
 - `banana_role`: derive_turnaround_expression_angle_and_repair
 - `canonical_note`: generated_from_character_bible
 - `character_pipeline`: face_draft_then_full_body_then_banana_derived_pack
+- `shared_manhua_style_anchor`: plain light gray background, clean comic linework, 2D Chinese manhua still, semi-flat rendering, 2-step cel shade with restrained rim light, matte fabric, minimal metal details
+- `shared_negative_guardrails`: not photoreal, not glossy otome game art, not Korean photo face, not high-saturation moe anime, not ancient costume, not soft dress silhouette
 
 ## Scope
 
@@ -110,13 +112,13 @@ one East Asian 校长 / 权威长辈, early 50s, same face and same hairstyle as
 #### face_draft
 
 ```text
-one East Asian 校长之女 / 学院核心观察者, 18 years old, 杏眼偏锐, 五官精致但不甜, 下巴收紧, 深色长发或高马尾，发丝整洁, 改良学院制服，精英感更强, waist-up portrait, plain light gray background, clean comic linework, 2D Chinese manhua still, 制服布料偏挺，饰边精致, 学院精英少女, 清冷利落, 对异象反应敏锐, not photoreal --ar 3:4 --v 7 --raw
+one East Asian female academy elite protagonist, 18 years old, slim elite academy girl, sharp almond-shaped eyes, refined facial features but not sweet, slightly tightened chin, cool observant expression, lips held in a subtle straight line, mouth corners slightly tightened, dark long hair with tidy strands, dark academy uniform, high collar structure, matte fabric, minimal metal details, subtle cloud motif only in the trim and emblem, colors deep navy black, white, muted silver gray, solo character, waist-up portrait, centered composition, plain light gray background, clean comic linework, 2D Chinese manhua still, semi-flat rendering, 2-step cel shade with restrained rim light, not photoreal, not glossy otome game art, not Korean photo face, not high-saturation moe anime, not ancient costume, not soft dress silhouette --ar 3:4 --v 7 --raw
 ```
 
 #### full_body_master
 
 ```text
-one East Asian 校长之女 / 学院核心观察者, 18 years old, same face and same hairstyle as the selected reference, 学院精英少女, 清冷利落, 对异象反应敏锐, 少女体型，站姿利落, 改良学院制服，精英感更强, 制服布料偏挺，饰边精致, colors 深蓝, 白, 银灰, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, 2-step cel shade with restrained rim light, 2D Chinese manhua still, not photoreal --ar 9:16 --v 7 --raw --oref [CHAR_SITUQINGQING_FACE_DRAFT] --ow 250
+one East Asian female academy elite protagonist, 18 years old, same face and same hairstyle as the selected reference, slim academy girl, sharp almond-shaped eyes, refined facial features but not sweet, slightly tightened chin, cool observant expression, dark long hair with tidy strands, upright posture, dark academy uniform, high collar structure, matte fabric, minimal metal details, subtle cloud motif only in the trim and emblem, colors deep navy black, white, muted silver gray, solo character, full body, centered composition, plain light gray background, clean comic linework, 2D Chinese manhua still, semi-flat rendering, 2-step cel shade with restrained rim light, not photoreal, not glossy otome game art, not Korean photo face, not high-saturation moe anime, not ancient costume, not soft dress silhouette --ar 9:16 --v 7 --raw --oref [CHAR_SITUQINGQING_FACE_DRAFT] --ow 250
 ```
 
 ### Banana Pro

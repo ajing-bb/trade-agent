@@ -4,10 +4,15 @@
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 from typing import Any
 
 import yaml
+
+DM_SCENE_RE = re.compile(r"^(?P<slug>\d{2}-\d+)\s+(?P<heading>.+)$")
+EPISODE_UNIT_RE = re.compile(r"^episode_(?P<number>\d+)$")
+SAFE_FILENAME_RE = re.compile(r'[\\/:*?"<>|]+')
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -68,6 +73,164 @@ def render_bullets(items: list[str]) -> list[str]:
 
 def render_code_block(text: str) -> list[str]:
     return ["```text", text, "```"]
+
+
+def safe_filename(value: str) -> str:
+    cleaned = SAFE_FILENAME_RE.sub("-", value).strip().replace(" ", "")
+    return cleaned or "untitled"
+
+
+def episode_number_from_unit(unit_id: str) -> int | None:
+    match = EPISODE_UNIT_RE.match(unit_id)
+    if not match:
+        return None
+    return int(match.group("number"))
+
+
+def collect_script_sections(episodes_dir: Path) -> list[dict[str, Any]]:
+    sections: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    for script_yaml in sorted(episodes_dir.glob("ep*/script-normalized.yaml")):
+        data = load_yaml(script_yaml)
+        for index, raw_section in enumerate(data.get("sections", []), start=1):
+            if not isinstance(raw_section, dict):
+                continue
+            section = dict(raw_section)
+            section_id = str(section.get("id", "")).strip()
+            dedupe_key = section_id or f"{script_yaml.parent.name}:{index}"
+            if dedupe_key in seen_ids:
+                continue
+            seen_ids.add(dedupe_key)
+            section["_source_file"] = data.get("source_file", "")
+            section["_source_episode"] = script_yaml.parent.name
+            sections.append(section)
+    return sections
+
+
+def split_dm_scene_blocks(beats: list[str]) -> list[dict[str, Any]]:
+    blocks: list[dict[str, Any]] = []
+    current: dict[str, Any] | None = None
+    for beat in beats:
+        text = beat.strip()
+        match = DM_SCENE_RE.match(text)
+        if match:
+            current = {
+                "slug": match.group("slug"),
+                "heading": match.group("heading"),
+                "lines": [],
+            }
+            blocks.append(current)
+            continue
+        if current is None:
+            current = {
+                "slug": "",
+                "heading": "未标注场次",
+                "lines": [],
+            }
+            blocks.append(current)
+        current["lines"].append(text)
+    return [block for block in blocks if block.get("heading") or block.get("lines")]
+
+
+def build_dm_documents(sections: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    opening_sections = [
+        section for section in sections if str(section.get("id", "")).strip() in {"opening", "prologue"}
+    ]
+    episode_sections = [
+        section
+        for section in sections
+        if episode_number_from_unit(str(section.get("id", "")).strip()) is not None
+    ]
+    has_episode_one = any(
+        (episode_number_from_unit(str(section.get("id", "")).strip()) or 0) == 1
+        for section in episode_sections
+    )
+    standalone_sections = [
+        section
+        for section in sections
+        if section not in episode_sections and (section not in opening_sections or not has_episode_one)
+    ]
+
+    documents: list[dict[str, Any]] = []
+    for section in sorted(
+        episode_sections,
+        key=lambda item: episode_number_from_unit(str(item.get("id", "")).strip()) or 0,
+    ):
+        episode_number = episode_number_from_unit(str(section.get("id", "")).strip()) or 0
+        included_sections = [section]
+        if episode_number == 1 and opening_sections:
+            included_sections = opening_sections + included_sections
+        title = f"第{episode_number}集"
+        documents.append(
+            {
+                "title": title,
+                "sort_key": f"EP{episode_number:03d}",
+                "filename": f"DM-EP{episode_number:03d}-{safe_filename(title)}.md",
+                "sections": included_sections,
+            }
+        )
+
+    for index, section in enumerate(standalone_sections, start=1):
+        title = str(section.get("title") or section.get("id") or f"附录{index}")
+        documents.append(
+            {
+                "title": title,
+                "sort_key": f"EXTRA{index:03d}",
+                "filename": f"DM-EXTRA{index:03d}-{safe_filename(title)}.md",
+                "sections": [section],
+            }
+        )
+
+    return documents
+
+
+def render_dm_document(project_title: str, document: dict[str, Any], md_path: Path) -> None:
+    lines = [
+        f"# {document['title']} DM",
+        "",
+        "> Generated from canonical `script-normalized.yaml`. Do not edit this Markdown manually.",
+        "",
+        "## 基本信息",
+        "",
+        f"- 项目：`{project_title}`",
+        f"- 文档标题：`{document['title']}`",
+        f"- 包含单元：" + "、".join(f"`{section.get('id', '')}`" for section in document["sections"]),
+        "",
+    ]
+    for section in document["sections"]:
+        section_title = str(section.get("title") or section.get("id") or "未命名单元")
+        lines.extend([f"## {section_title}", ""])
+        beats = [str(item).strip() for item in section.get("beats", []) if str(item).strip()]
+        if not beats:
+            lines.append("_暂无内容_")
+            lines.append("")
+            continue
+        blocks = split_dm_scene_blocks(beats)
+        if blocks and any(block.get("slug") for block in blocks):
+            for block in blocks:
+                block_title = block.get("heading", "未标注场次")
+                slug = block.get("slug", "")
+                heading = f"### {slug}｜{block_title}" if slug else f"### {block_title}"
+                lines.extend([heading, ""])
+                for item in block.get("lines", []):
+                    lines.append(f"- {item}")
+                lines.append("")
+        else:
+            lines.extend(render_bullets(beats))
+            lines.append("")
+    dump_text(md_path, "\n".join(lines))
+
+
+def render_script_dm_docs(project_dir: Path) -> None:
+    episodes_dir = project_dir / "episodes"
+    sections = collect_script_sections(episodes_dir)
+    documents = build_dm_documents(sections)
+    if not documents:
+        return
+    dm_dir = project_dir.parent / "剧本DM"
+    dm_dir.mkdir(parents=True, exist_ok=True)
+    for document in documents:
+        render_dm_document(project_dir.parent.name, document, dm_dir / document["filename"])
 
 
 def render_character_bible(yaml_path: Path, md_path: Path) -> None:
@@ -736,6 +899,7 @@ def render_project_archive(project_dir: Path) -> None:
             render_asset_manifest(asset_yaml, episode_dir / "asset-manifest.md")
         if director_yaml.exists():
             render_director_queue(director_yaml, episode_dir / "director-queue.md")
+    render_script_dm_docs(project_dir)
 
 
 def main() -> None:

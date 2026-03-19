@@ -106,17 +106,18 @@ characters:
   - 清冷利落
   - 对异象反应敏锐
   face_anchors:
-  - 杏眼偏锐
+  - 杏眼偏锐，接近 sharp almond-shaped eyes
   - 五官精致但不甜
   - 下巴收紧
+  - 唇线偏平，嘴角微收
   body_silhouette: 少女体型，站姿利落
-  hair_headwear: 深色长发或高马尾，发丝整洁
-  costume_core: 改良学院制服，精英感更强
-  material_texture: 制服布料偏挺，饰边精致
+  hair_headwear: 深黑长发，发丝整洁，额前刘海利落，不做蓬松甜妹卷度
+  costume_core: 深色高领学院制服，精英感更强，云纹只允许出现在饰边和徽记
+  material_texture: 制服布料哑光偏挺，少量克制银色细节，不做塑料高光
   color_anchors:
-  - 深蓝
+  - 深蓝黑
   - 白
-  - 银灰
+  - 低饱和银灰
   signature_props: []
   emotion_range:
   - 惊讶
@@ -131,9 +132,10 @@ characters:
   - 3/4
   - side
   must_not_drift:
-  - 发型轮廓
-  - 学院精英制服结构
-  - 清冷眼神
+  - 发型轮廓与整洁发丝
+  - 高领学院制服结构
+  - 清冷观察型眼神
+  - 云纹只放在饰边和徽记
   acceptable_variation:
   - 发尾细节
   high_risk_shots:
