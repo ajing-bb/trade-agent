@@ -17,6 +17,7 @@ Do not mix the two prompt styles.
 1. `Midjourney only for base images`
    - Use it for first-pass face drafts, full-body base sheets, turnaround sheets, expression sheets, angle packs, and rough outfit exploration.
    - Midjourney prompts may include model parameters such as `--ar`, `--v 7`, `--raw`, `--oref`, and `--ow`.
+   - Treat internet tutorial suffixes as optional modules, not as a fixed block to paste blindly.
 
 2. `Banana Pro only for edits`
    - Use it to fix clothing systems, unify characters into the same school/world, correct front/side/back pose errors, extract one view from a sheet, or merge a repaired view back into a sheet.
@@ -108,6 +109,47 @@ This skill covers the still-image assets normally needed before video:
 - For props and VFX, lead with silhouette and material or energy logic.
 - Include parameters at the end.
 - For reference-driven generations, use `--oref` and `--ow` when identity matters.
+- Add quality/color/lighting words as a final enhancement layer, after the subject block is already stable.
+- Do not stack photo-real camera jargon onto every asset type. Character sheets and turnaround sheets need cleaner engineering language than scene moodboards do.
+
+### Midjourney V7 Parameter Safety
+
+- Prefer `--v 7` unless the user explicitly wants an older model or `Niji 6`.
+- Prefer `--oref` for V7 identity carry. `--cref` is the older character-reference path for V6 / Niji 6, not the primary V7 path.
+- Safe current ranges to remember:
+  - `--q 1|2|4` for V7 quality passes
+  - `--s 0-1000` for stylize
+  - `--c 0-100` for chaos
+  - `--iw 0-3` for image prompt weight
+  - `--ow 1-1000` for omni reference weight
+- Compatibility notes:
+  - `--q 4` is not compatible with `--oref`
+  - `--draft` is not compatible with `--oref`
+  - `--oref` is V7-only
+  - `--tile` is for seamless pattern generation and usually should not be upscaled
+- Treat these as legacy tutorial parameters unless the user explicitly targets legacy models:
+  - `--hd`
+  - `--test`
+  - `--testp`
+  - `--creative`
+  - `--upbeta`
+
+### Midjourney Enhancement Layer
+
+Use this order when the user wants a stronger MJ prompt rather than a bare production prompt:
+
+1. `Subject block`
+2. `Look block`
+3. `Color block`
+4. `Detail / lighting block`
+5. `Reference block`
+6. `Parameter suffix`
+
+Practical rule:
+
+- For `character face drafts`, `full-body bases`, `turnaround sheets`, `expression sheets`, and `angle packs`, keep the enhancement layer restrained. Prefer color words and clean-detail words over camera or photoreal words.
+- For `scene masters`, `prop sheets`, and `VFX concept frames`, stronger lighting / material / lens language is acceptable if the user wants a richer base image.
+- If the user references a social-media prompt tutorial, normalize it into this layer system instead of copying the whole word list.
 
 ### Banana Pro Rules
 
@@ -218,6 +260,22 @@ Use [references/prompt-patterns.md](references/prompt-patterns.md) when you need
 - removing extra views
 - extracting one sheet panel
 - reintegrating a repaired panel into a turnaround sheet
+
+Use [references/mj-v7-prompt-modules.md](references/mj-v7-prompt-modules.md) when you need:
+
+- a V7-safe parameter quick map
+- quality/detail enhancement words
+- curated color vocabulary modules
+- asset-type guidance for when to avoid photoreal camera jargon
+- ready-made suffix blocks for character, scene, prop, and VFX prompts
+
+Use [references/asset-decision-tree.md](references/asset-decision-tree.md) when you need:
+
+- a fast decision tree from user intent to asset type
+- a default suffix block per asset type
+- parameter defaults by task intent
+- a do-not-use list for character sheets vs scenes
+- a Chinese-first workflow for selecting MJ vs Banana prompts
 
 ## Common Trigger Cases
 

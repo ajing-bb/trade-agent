@@ -2,6 +2,16 @@
 
 Use these as short reusable templates. Replace bracketed fields.
 
+For `Midjourney`, treat each template as:
+
+`base skeleton + optional color block + optional detail block + parameter suffix`
+
+Do not blindly append every enhancement word. Prefer:
+
+- `1 color block`
+- `1 detail block`
+- `1 lighting or camera block`
+
 ## Midjourney Base Prompt Patterns
 
 ### Face Draft
@@ -10,10 +20,22 @@ Use these as short reusable templates. Replace bracketed fields.
 one [character type], [age], [face anchors], [expression], [hair anchors], [outfit anchors], plain light gray background, waist-up portrait, clean comic linework, soft cel shading, Chinese webtoon animation still --ar 3:4 --v 7 --raw
 ```
 
+Optional enhancer block:
+
+```text
+[optional color block], controlled palette, high resolution, crisp facial features, detailed but clean
+```
+
 ### Full-Body Base
 
 ```text
 one [character type], [age], same face and same hairstyle as the selected reference, [identity anchors], [body build], [outfit anchors], standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, soft cel shading, Chinese webtoon animation still --ar 9:16 --v 7 --raw --oref [reference] --ow [weight]
+```
+
+Optional enhancer block:
+
+```text
+[optional color block], controlled palette, readable silhouette, refined fabric folds, precise costume seams
 ```
 
 ### Scene Master
@@ -22,10 +44,28 @@ one [character type], [age], same face and same hairstyle as the selected refere
 [location], [clear spatial layout], [major anchors], [time/weather], [project world style], readable wide composition, clean comic linework, soft cel shading, Chinese webtoon animation still --ar 16:9 --v 7 --raw
 ```
 
+Optional enhancer block:
+
+```text
+[optional color block], high resolution, intricate details, atmospheric depth, readable foreground midground background
+```
+
+Optional cinematic block:
+
+```text
+cinematic lighting, [35mm lens / 50mm lens]
+```
+
 ### Reverse-Side Scene View
 
 ```text
 [same location], reverse-side view of the same space, preserve [major anchors], preserve layout logic, same time and mood, readable shot coverage, clean comic linework, soft cel shading, Chinese webtoon animation still --ar 16:9 --v 7 --raw --oref [reference] --ow [weight]
+```
+
+Optional enhancer block:
+
+```text
+[optional color block], high resolution, intricate details, atmospheric depth
 ```
 
 ### Prop Sheet
@@ -34,10 +74,22 @@ one [character type], [age], same face and same hairstyle as the selected refere
 one [prop], [material], [shape], [ornament], readable front or 3/4 view, clean background, clean comic linework, soft cel shading, Chinese webtoon animation still --ar 1:1 --v 7 --raw
 ```
 
+Optional enhancer block:
+
+```text
+[optional color block], high detail surface, material contrast, readable silhouette, sharp edge highlights
+```
+
 ### VFX Keyframe
 
 ```text
 [effect], [color logic], [energy texture], [clear context], readable silhouette, clean comic linework, soft cel shading, Chinese webtoon animation still --ar 16:9 --v 7 --raw
+```
+
+Optional enhancer block:
+
+```text
+[optional color block], layered emissive color, glow falloff, energy filaments, clean negative space
 ```
 
 ### Turnaround Sheet
@@ -46,16 +98,111 @@ one [prop], [material], [shape], [ornament], readable front or 3/4 view, clean b
 one [character type], [age], same face and same hairstyle as the selected reference, [outfit anchors], strict character turnaround sheet, exactly three views only, left pure front view, center left-facing pure side view, right pure back view, in the side view the head body and feet all face left, nose points left, shoe tips point left, full body, plain white background, clean comic linework, soft cel shading, Chinese webtoon animation style --ar 16:9 --v 7 --raw --oref [reference] --ow [weight]
 ```
 
+Optional safe enhancer block:
+
+```text
+[optional color block], detailed but clean, precise costume seams
+```
+
+Avoid on turnaround sheets:
+
+- `photorealistic`
+- `HDR`
+- `35mm`
+- `50mm`
+- `leica lens`
+
 ### Expression Sheet
 
 ```text
 one [character type], [age], same face and same hairstyle as the selected reference, [outfit anchors], expression sheet, [emotion 1], [emotion 2], [emotion 3], [emotion 4], plain white background, clean comic linework, soft cel shading, Chinese webtoon animation style --ar 16:9 --v 7 --raw --oref [reference] --ow [weight]
 ```
 
+Optional safe enhancer block:
+
+```text
+[optional color block], controlled palette, crisp facial features, detailed but clean
+```
+
 ### Angle Pack
 
 ```text
 one [character type], [age], same face and same hairstyle as the selected reference, [outfit anchors], full body angle sheet, front view, 3/4 view, side view, slight low angle portrait, plain white background, clean comic linework, soft cel shading, Chinese webtoon animation style --ar 16:9 --v 7 --raw --oref [reference] --ow [weight]
+```
+
+Optional safe enhancer block:
+
+```text
+[optional color block], readable silhouette, refined fabric folds, detailed but clean
+```
+
+## Midjourney Prompt Modules
+
+### Safe Character Color Blocks
+
+Pick one when helpful:
+
+```text
+jade green, controlled palette
+ruby red, controlled palette
+ivory and coal black, controlled palette
+```
+
+### Safe Scene Color Blocks
+
+Pick one when helpful:
+
+```text
+emerald green accents
+deep red warning glow
+off-white and carbon black minimal palette
+```
+
+### V7 Parameter Suffixes
+
+Use these as practical defaults:
+
+```text
+--v 7 --raw
+--v 7 --raw --oref [reference] --ow [weight]
+--v 7 --raw --s [value] --c [value]
+--v 7 --raw --sref [style reference] --sw [weight]
+```
+
+Quick intent guide:
+
+- `Need stronger literal adherence`: lower `--s`
+- `Need more artistic push`: raise `--s`
+- `Need more variety`: raise `--c`
+- `Need style consistency`: use `--sref` and `--sw`
+- `Need stronger identity carry in V7`: use `--oref` and `--ow`
+
+Legacy parameters to avoid unless explicitly requested:
+
+- `--hd`
+- `--test`
+- `--testp`
+- `--creative`
+- `--upbeta`
+
+## Combined Midjourney Examples
+
+### Character Full-Body Example
+
+```text
+one academy girl, age 17, same face and same hairstyle as the selected reference, quiet top-student temperament, slim build, dark uniform blazer with silver trim and pleated skirt, standing straight, solo character, full body, centered composition, plain light gray background, clean comic linework, soft cel shading, Chinese webtoon animation still, jade green accents, controlled palette, readable silhouette, refined fabric folds, precise costume seams --ar 9:16 --v 7 --raw --oref [reference] --ow 300
+```
+
+### Scene Master Example
+
+```text
+abandoned observatory classroom, circular room with cracked skylight, old desks pushed to the edge, central ritual diagram on the floor, rainy dusk, cold academy mystery world, readable wide composition, clean comic linework, soft cel shading, Chinese webtoon animation still, off-white and carbon black minimal palette, high resolution, intricate details, atmospheric depth, readable foreground midground background --ar 16:9 --v 7 --raw
+```
+
+### VFX Keyframe Example
+
+```text
+unstable portal flare, ruby red and deep red energy logic, layered smoke and electric filaments, opening above a ceremonial seal in a dark room, readable silhouette, clean comic linework, soft cel shading, Chinese webtoon animation still, layered emissive color, glow falloff, energy filaments, clean negative space --ar 16:9 --v 7 --raw
 ```
 
 ## Banana Pro Edit Patterns
